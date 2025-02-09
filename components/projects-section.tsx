@@ -36,7 +36,7 @@ export default function ProjectsSection() {
     return () => window.removeEventListener("resize", checkScreenSize)
   }, [])
 
-  const handleHover = (id: string, rowIndex: number) => {
+  const handleHover = (id: string) => {
     if (isLargeScreen) {
       setExpandedCard(id)
     }
@@ -51,7 +51,7 @@ export default function ProjectsSection() {
   }
 
   return (
-    <section className="mx-auto max-w-full py-8">
+    <section className="mx-auto w-full py-8">
       <div className="flex backdrop-blur-md w-fit ">
         {Object.entries(categories).map(([key, { label, icon }]) => (
           <button
@@ -60,8 +60,8 @@ export default function ProjectsSection() {
             className={`px-4 py-2 text-sm font-medium transition-colors flex flex-row items-center gap-2
                 ${
                   activeTab === label
-                    ? "text-sky-800 bg-white/50"
-                    : "bg-white/40 text-sky-700/60 hover:bg-white/40 hover:text-sky-600"
+                    ? "bg-neutral-200 dark:bg-white/10 sky:bg-white/40"
+                    : "bg-neutral-200/40 dark:bg-white/5 sky:bg-white/20  "
                 }`}
           >
             {icon}
@@ -71,8 +71,8 @@ export default function ProjectsSection() {
 
           <ThemeToggle/>
       </div>
-      <div className="overflow-hidden bg-white/50 backdrop-blur-md">
-        <div className="p-6">
+      <div className="overflow-hidden bg-neutral-200 dark:bg-white/10 sky:bg-white/40 backdrop-blur-md w-full">
+        <div className="p-4 w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -83,14 +83,14 @@ export default function ProjectsSection() {
                 hidden: { opacity: 0 },
                 visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
               }}
-              className="flex flex-wrap gap-4"
+              className="flex flex-wrap"
             >
               {projects[activeTab]?.map((project, index) => (
                 <ProjectCard
                   key={project.id}
                   {...project}
                   state={getCardState(project.id, index)}
-                  onHover={(id) => handleHover(id, index)}
+                  onHover={(id) => handleHover(id)}
                   index={index}
                   isLargeScreen={isLargeScreen}
                 />

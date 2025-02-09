@@ -1,34 +1,56 @@
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { Skeleton } from "./ui/skeleton";
+import Image from "next/image";
 
 interface ProjectCardProps {
-  id: string
-  title: string
-  tags?: string[]
-  image: string
-  state: "Expanded" | "Shrunk" | "None"
-  onHover: (id: string) => void
-  index?: number
-  isLargeScreen: boolean
+  id: string;
+  title: string;
+  tags?: string[];
+  image: string;
+  state: "Expanded" | "Shrunk" | "None";
+  onHover: (id: string) => void;
+  index?: number;
+  isLargeScreen: boolean;
 }
 
-export default function ProjectCard({ id, title, tags, image, state, onHover, isLargeScreen }: ProjectCardProps) {
-  const safeTags = Array.isArray(tags) ? tags : []
+export default function ProjectCard({
+  id,
+  title,
+  tags,
+  image,
+  state,
+  onHover,
+  isLargeScreen,
+}: ProjectCardProps) {
+  const [imageLoaded, setImageLoaded] = useState(false);
+  const safeTags = Array.isArray(tags) ? tags : [];
+
+  useEffect(() => {
+    setImageLoaded(false);
+    const img = document.createElement("img");
+    img.src = image;
+    const handleLoad = () => setImageLoaded(true);
+    img.addEventListener("load", handleLoad);
+    if (img.complete) handleLoad();
+    return () => img.removeEventListener("load", handleLoad);
+  }, [image]);
 
   const getWidth = () => {
-    if (!isLargeScreen) return "100%"
+    if (!isLargeScreen) return "100%";
     switch (state) {
       case "Expanded":
-        return "calc(40% - 1rem)"
+        return "calc(40%)";
       case "Shrunk":
-        return "calc(30% - 1rem)"
+        return "calc(30%)";
       default:
-        return "calc(33.33% - 1rem)"
+        return "calc(33.33%)";
     }
-  }
+  };
 
   return (
     <motion.div
-      className="relative overflow-hidden bg-black h-64 w-full lg:w-[calc(33.33%)]"
+      className="relative overflow-hidden lg:h-[22vw] h-96 w-full lg:w-[calc(33.33%)] p-2"
       style={{ width: getWidth() }}
       onHoverStart={() => onHover(id)}
       onHoverEnd={() => onHover("")}
@@ -39,42 +61,46 @@ export default function ProjectCard({ id, title, tags, image, state, onHover, is
         visible: { opacity: 1, x: 0 },
       }}
     >
-      <div className="relative h-full w-full group">
-        <img
+      <div className="relative h-full w-full group aspect-square">
+        {!imageLoaded && (
+          <Skeleton className="h-full w-full absolute inset-0 rounded-none" />
+        )}
+
+        <Image
           src={image || "/placeholder.svg"}
           alt={title}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
-        <motion.div
-          className="absolute inset-0 bg-black/20 group-hover:bg-black/60 transition-colors duration-300"
-          initial={{ opacity: 0 }}
-          whileHover={{ opacity: 1 }}
+          layout="fill"
+          className={`object-cover transition-opacity duration-300 ${
+            imageLoaded ? "opacity-100" : "opacity-0"
+          }`}
+          onLoad={() => setImageLoaded(true)}
         />
 
         <motion.div
-          className="absolute inset-0 flex flex-col justify-between p-6"
-          initial={{ opacity: 0, y: 20 }}
+          className="absolute inset-0 flex flex-col justify-between bg-clip-content"
+          initial={{ opacity: 0, y: 0 }}
           whileHover={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.3 }}
         >
-          {safeTags.length > 0 && (
-            <motion.div
-              className="flex flex-wrap gap-2"
-              initial={{ y: -20, opacity: 0 }}
-              whileHover={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.1 }}
-            >
-              {safeTags.map((tag, index) => (
-                <span key={index} className="rounded bg-black/50 px-2 py-1 text-xs font-medium dark:text-white text-black">
-                  {tag}
-                </span>
-              ))}
-            </motion.div>
-          )}
-          <h3 className="text-xl font-bold dark:text-white text-black">{title}</h3>
+          <div className="h-full flex flex-col justify-end bg-gradient-to-t from-[#101010] via-[#101010]/25 to-transparent p-4 gap-2">
+            <h3 className="text-xl font-medium text-white">{title}</h3>
+            <div className="flex flex-row gap-1">
+              {safeTags.length > 0 && (
+                <>
+                  {safeTags.map((tag, index) => (
+                    <span
+                      key={index}
+                      className="rounded bg-black/50 px-2 py-1 text-xs font-medium text-white font-mono"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </>
+              )}
+            </div>
+          </div>
         </motion.div>
       </div>
     </motion.div>
-  )
+  );
 }
-

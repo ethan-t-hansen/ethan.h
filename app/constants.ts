@@ -1,69 +1,76 @@
 export const projects = {
   design: [
     {
-      id: "d1",
-      title: "Financial Platform",
-      tags: ["3D", "BRAND", "WEB"],
-      image:
-        "https://pbs.twimg.com/media/GiJK5L8XcAA5ivr?format=jpg&name=medium",
+      id: "1",
+      title: "Blueprint",
+      tags: ["3D", "BRANDING", "ANIMATION"],
+      image: "/projects/blueprint.png",
     },
     {
-      id: "d2",
-      title: "BTQ Technologies",
-      tags: ["BRAND", "WEB", "ILLUSTRATION"],
-      image:
-        "https://pbs.twimg.com/media/GgSjPl2a8AAryqi?format=jpg&name=medium",
+      id: "2",
+      title: "BizTech WebApp",
+      tags: ["UI / UX", "PROTOTYPING"],
+      image: "/projects/biztech-webapp.png",
+    },
+
+    {
+      id: "3",
+      title: "NFC Companion App",
+      tags: ["MOBILE", "UI / UX", "PROTOTYPING"],
+      image: "/projects/nfc-companion.png",
     },
     {
-      id: "d3",
-      title: "Data Visualization",
-      tags: ["WEB", "DATA"],
-      image:
-        "https://pbs.twimg.com/media/Gd8qMjgXAAEemVP?format=jpg&name=small",
+      id: "4",
+      title: "MIS Night",
+      tags: ["BRANDING", "DESIGN"],
+      image: "/projects/mis-night.png",
     },
     {
-      id: "d4",
-      title: "Financial Platform",
-      tags: ["3D", "BRAND", "WEB"],
-      image:
-        "https://pbs.twimg.com/media/GiJK5L8XcAA5ivr?format=jpg&name=medium",
+      id: "5",
+      title: "Dataverse",
+      tags: ["BRANDING", "DESIGN"],
+      image: "/projects/dataverse.png",
     },
     {
-      id: "d5",
-      title: "BTQ Technologies",
-      tags: ["BRAND", "WEB", "ILLUSTRATION"],
-      image:
-        "https://pbs.twimg.com/media/GgSjPl2a8AAryqi?format=jpg&name=medium",
+      id: "6",
+      title: "Tri-Mentorship",
+      tags: ["BRANDING", "DESIGN"],
+      image: "/projects/tri-mentorship.png",
+    },
+
+    {
+      id: "7",
+      title: "Van Dwelling",
+      tags: ["WEB DESIGN", "FREELANCE"],
+      image: "/projects/van-dwelling.png",
     },
     {
-      id: "d6",
-      title: "Data Visualization",
-      tags: ["WEB", "DATA"],
-      image:
-        "https://pbs.twimg.com/media/Gd8qMjgXAAEemVP?format=jpg&name=small",
+      id: "8",
+      title: "NSCC Projects",
+      tags: ["BRANDING", "DESIGN"],
+      image: "/projects/nscc.png",
+    },
+    {
+      id: "9",
+      title: "Misc Projects",
+      tags: ["ADOBE", "GRAPHIC DESIGN"],
+      image: "/projects/misc-projects.png",
     },
   ],
   development: [
     {
-      id: "s1",
-      title: "React Dashboard",
-      tags: ["REACT", "DASHBOARD"],
+      id: "1",
+      title: "UBCMA Membership Portal",
+      tags: ["REACT", "NEXTJS", "FIREBASE"],
       image:
-        "https://pbs.twimg.com/media/GdKnHFObEAAdSKm?format=jpg&name=medium",
+        "/projects/ma-membership-portal.png",
     },
     {
-      id: "s2",
-      title: "API Integration",
-      tags: ["API", "BACKEND"],
+      id: "2",
+      title: "BizTag",
+      tags: ["REACT", "FIGMA API"],
       image:
-        "https://pbs.twimg.com/media/Gclq78uacAAe-oF?format=jpg&name=medium",
-    },
-    {
-      id: "s3",
-      title: "Mobile App",
-      tags: ["MOBILE", "REACT NATIVE"],
-      image:
-        "https://pbs.twimg.com/media/GbN5FUmXoAAG5OU?format=jpg&name=900x900",
+        "/projects/biztag.png",
     },
   ],
 };
