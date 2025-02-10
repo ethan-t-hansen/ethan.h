@@ -1,6 +1,5 @@
 "use client";
 
-import { MousePointer2 } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 const CustomCursor = () => {
