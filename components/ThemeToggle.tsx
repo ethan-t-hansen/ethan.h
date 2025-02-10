@@ -1,19 +1,14 @@
 "use client";
-import { Cloud, Monitor, Moon, Sun } from "lucide-react";
+import { Cloud, Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 
 export function ThemeToggle() {
   const { theme, setTheme } = useTheme();
 
   const buttons = [
+    { label: "sky", icon: <Cloud width={13} />, active: theme === "sky" },
     { label: "light", icon: <Sun width={13} />, active: theme === "light" },
     { label: "dark", icon: <Moon width={13} />, active: theme === "dark" },
-    { label: "sky", icon: <Cloud width={13} />, active: theme === "sky" },
-    {
-      label: "system",
-      icon: <Monitor width={13} />,
-      active: theme === "system",
-    },
   ];
   
   return (

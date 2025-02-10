@@ -1,14 +1,15 @@
 "use client";
 
-import ProjectsSection from "@/components/projects-section";
+import ProjectsSection from "@/components/ProjectsSection";
 
 export default function Page() {
+
   return (
     <main className="relative pt-16 pr-8 lg:pr-48 lg:justify-start justify-center">
       <div className="mx-auto max-w-6xl mb-4">
         <div className="rounded-full bg-[url(/img/profile-pic.png)] bg-cover w-32 h-32 shadow-[inset_0_0_20px_rgba(255,255,255,0.6)] drop-shadow-lg border-white mb-8" />
 
-        <p className="text-4xl leading-tight font-thin font-serif mb-8 flex-row flex">
+        <p className="text-4xl leading-tight font-regular font-sans mb-8 flex-row flex">
           Creative developer exploring digital experience through 3D, animation,
           and web.
         </p>
@@ -24,7 +25,7 @@ export default function Page() {
           </p>
         </div>
       </div>
-      <ProjectsSection />
+      <ProjectsSection/>
     </main>
   );
 }

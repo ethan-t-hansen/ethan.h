@@ -66,8 +66,8 @@
   }
 
   .sky {
-    --background: 204 100% 50%; /* Bright Sky Blue */
-    --foreground: 0 0% 100%; /* White Text */
+    --background: 204 100% 50%;
+    --foreground: 0 0% 100%;
   }
 }
 
