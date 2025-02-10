@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Serif, Onest } from "next/font/google";
 import "./globals.css";
-import { SiteSidebar } from "@/components/SiteSidebar";
-import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
 import { Background } from "@/components/scenes/background";
-import CustomCursor from "@/components/CustomCursor";
+import { NavBar } from "@/components/NavBar";
 
 const onest = Onest({
   variable: "--font-onest",
@@ -38,18 +36,16 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           themes={["light", "dark", "sky"]}
-          defaultTheme="sky"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <CustomCursor />
-          <SidebarProvider>
-            <Background />
+          <Background />
 
-            <SiteSidebar />
-            <SidebarTrigger className="dark:text-white text-black visible md:invisible p-4" />
-            <div className="relative z-20">{children}</div>
-          </SidebarProvider>
+          <div className="relative z-20 mx-32">
+            <NavBar />
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

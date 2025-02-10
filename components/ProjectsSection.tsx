@@ -56,7 +56,7 @@ export default function ProjectsSection() {
   };
 
   return (
-    <section className="mx-auto w-full py-8">
+    <section className="w-full py-8">
       <div className="flex backdrop-blur-md w-fit ">
         {Object.entries(categories).map(([key, { label, icon }]) => (
           <button

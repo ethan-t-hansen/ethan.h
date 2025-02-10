@@ -50,7 +50,7 @@ export default function ProjectCard({
 
   return (
     <motion.div
-      className="relative overflow-hidden lg:h-[22vw] h-96 w-full lg:w-[calc(33.33%)] p-2"
+      className="overflow-hidden lg:h-[22vw] md:h-96 h-auto w-full lg:w-[calc(33.33%)] p-2"
       style={{ width: getWidth() }}
       onHoverStart={() => onHover(id)}
       onHoverEnd={() => onHover("")}
