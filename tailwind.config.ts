@@ -41,9 +41,13 @@ export default {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
+        dark: {
+          background: "#101010",
+          foreground: "#ffffff", 
+        },
         sky: {
-          background: "#0ea5e9", // Example sky theme background color
-          foreground: "#ffffff", // Ensure light text on sky background
+          background: "#0ea5e9",
+          foreground: "#ffffff", 
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
