@@ -7,8 +7,8 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 const contactLinks = [
   {
     icon: <Phone className="h-4 w-4" />,
-    href: "tel:(406) 555-0120",
-    text: "(406) 555-0120",
+    href: "",
+    text: "(604) 440-3277",
     type: "tel",
   },
   {
