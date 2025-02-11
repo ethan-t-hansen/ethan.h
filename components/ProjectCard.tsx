@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { Skeleton } from "./ui/skeleton";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 interface ProjectCardProps {
   id: string;
