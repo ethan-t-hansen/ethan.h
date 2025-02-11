@@ -3,8 +3,8 @@
 export default function Page() {
   return (
     <main className="relative pt-16 pr-8 lg:pr-48 lg:justify-start justify-center max-w-[900px]">
-      <h3 className="text-3xl font-regular mb-8 font-sans"> About </h3>
-      <div className="font-light space-y-8">
+      <h3 className="text-3xl font-regular mb-8 font-sans tracking-tight"> About </h3>
+      <div className="font-light opacity-80 space-y-8">
         <p>
           I believe that digital interaction can be playful and fun if we decide
           to make it so.

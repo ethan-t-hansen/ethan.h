@@ -1,5 +1,5 @@
-import Link from "next/link"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
 import type React from "react" // Added import for React
 
 interface NavItemProps extends React.ComponentProps<typeof Link> {
@@ -9,11 +9,10 @@ interface NavItemProps extends React.ComponentProps<typeof Link> {
 export function NavItem({ children, className, ...props }: NavItemProps) {
   return (
     <Link
-      className={cn("group relative px-8 py-2 text-sm font-medium font-mono text-foreground/90 hover:text-foreground", className)}
+      className={cn("group relative px-4 py-2 text-xl md:text-sm font-medium text-foreground/90 hover:text-foreground font-mono", className)}
       {...props}
     >
       {children}
-      {/* Corner highlights */}
       <span className="absolute left-0 top-0 h-2 w-2 opacity-0 group-hover:opacity-100">
         <span className="absolute left-0 top-0 h-[1px] w-2 bg-foreground" />
         <span className="absolute left-0 top-0 h-2 w-[1px] bg-foreground" />

@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
 import { Background } from "@/components/scenes/background";
 import { NavBar } from "@/components/NavBar";
+import { Toaster } from "@/components/ui/toaster";
 
 const onest = Onest({
   variable: "--font-onest",
@@ -42,10 +43,12 @@ export default function RootLayout({
         >
           <Background />
 
-          <div className="relative z-20 mx-32">
+          <div className="relative z-20 mx-8 lg:mx-32">
             <NavBar />
             {children}
           </div>
+          
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

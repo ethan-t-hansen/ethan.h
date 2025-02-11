@@ -81,5 +81,7 @@ export default {
     plugin(({ addVariant }) => {
       addVariant("sky", ":is(.sky &)");
     }),
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    require("tailwindcss-animate")
   ],
 } satisfies Config;
