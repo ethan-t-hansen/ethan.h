@@ -2,7 +2,6 @@
 
 import { useToast } from "@/hooks/use-toast";
 import { Phone, Mail, Calendar, Copy } from "lucide-react"; // Import Lucide icons
-import { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const contactLinks = [
