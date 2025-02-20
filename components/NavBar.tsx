@@ -1,19 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+// import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavItem } from "./NavItem";
+import Link from "next/link";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const menuItems = [
+    { href: "/", label: "HOME", external: false },
+    { href: "/sandbox", label: "SANDBOX", external: false },
     { href: "/about", label: "ABOUT", external: false },
     { href: "/contact", label: "CONTACT", external: false },
     {
       href: "https://github.com/ethan-t-hansen",
-      label: "GITHUB",
+      label: "GITHUB",  
       external: true,
     },
   ];
@@ -61,15 +64,16 @@ export function NavBar() {
   };
 
   return (
-    <>
-      <header className="py-4">
-        <nav className="flex h-12 items-center justify-between">
-          <Link href="/" className="flex flex-row items-center gap-2">
+    <div className="absolute inset-x-0 top-0 z-50">
+      <header className="py-8">
+        <nav className="flex h-12 items-start justify-between">
+          <Link href="/" className="flex flex-row items-center mt-2">
             <div className="text-lg font-regular">ethan.h</div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-4">
+
+          <div className="hidden md:flex flex-col items-end">
             {menuItems.slice(0, 6).map((item) => (
               <NavItem
                 key={item.href}
@@ -127,8 +131,8 @@ export function NavBar() {
             exit="exit"
             className="fixed inset-0 z-50 bg-background"
           >
-            <div className="pt-16 w-full h-full overflow-auto">
-              <div className="space-y-8 px-4">
+            <div className="pt-32 w-full h-full overflow-auto">
+              <div className="space-y-4 px-4">
                 {menuItems.map((item, index) => (
                   <motion.div
                     key={item.href}
@@ -143,6 +147,7 @@ export function NavBar() {
                       onClick={() => item.external ? {} : setIsOpen(false)}
                       target={item.external ? "_blank" : ""}
                       rel="noopener noreferrer"
+                      className="text-4xl opacity-100"
                     >
                       {item.label}
                     </NavItem>
@@ -153,6 +158,6 @@ export function NavBar() {
           </motion.div>
         )}
       </AnimatePresence>
-    </>
+      </div >
   );
 }

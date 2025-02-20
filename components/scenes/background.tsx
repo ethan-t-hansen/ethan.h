@@ -19,7 +19,7 @@ export const Background = () => {
   }
 
   return (
-    <div className="fixed inset-0 -z-10 transition-all duration-300 bg-[#f4f4f4] dark:bg-[#101010] 
+    <div className="fixed inset-0 -z-10 transition-all duration-300 bg-background 
     sky:bg-gradient-to-tr sky:from-blue-700 sky:via-blue-500 sky:to-blue-200">
       {activeTheme === "sky" && <Sky />}
     </div>

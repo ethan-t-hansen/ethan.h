@@ -1,30 +1,29 @@
 "use client";
 
-import ProjectsSection from "@/components/ProjectsSection";
+import ProjectGrid from "@/components/ProjectGrid";
 
 export default function Page() {
-
   return (
-    <main className="mt-12 lg:justify-start justify-center items-start">
-      <div className="max-w-6xl mb-4">
-
-        <p className="text-2xl md:text-4xl leading-tight font-regular font-sans mb-8 flex-row flex tracking-tight">
-          Creative developer exploring digital experience through 3D, animation,
-          and web.
-        </p>
-
-        <div className="space-y-2">
-          <p className="text-sm font-medium opacity-50 font-mono">CURRENTLY</p>
-          <p className="text-md ">
-            Design engineering for customer apps @ ICBC.
+    <main className="lg:justify-start justify-center items-start">
+      <div className="max-w-6xl h-screen flex flex-col justify-center items-center">
+        <div>
+          <p className="text-3xl md:text-4xl lg:text-5xl font-regular font-sans flex-row flex tracking-tight text-center mb-4">
+            Creative Developer / Product Designer
           </p>
-          <p className="text-md">
-            Studying business + computer science @ the University of British
-            Columbia.
-          </p>
+
+          <div className="flex md:gap-0 gap-4 md:justify-between text-xs font-regular">
+            <p className="opacity-60">CURRENTLY</p>
+            <div className="flex flex-col items-start md:items-end text-left">
+              <p>Business + CS @ The University of British Columbia</p>
+              <p>Design Engineering @ ICBC</p>
+            </div>
+            <p className="opacity-60">BASED IN</p>
+            <p>Vancouver, Canada</p>
+          </div>
         </div>
       </div>
-      <ProjectsSection/>
+      <p className="w-full text-center text-xs opacity-50"> / SELECTED PROJECTS /</p>
+      <ProjectGrid/>
     </main>
   );
 }

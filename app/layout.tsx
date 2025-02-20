@@ -43,7 +43,7 @@ export default function RootLayout({
         >
           <Background />
 
-          <div className="relative z-20 mx-8 lg:mx-32">
+          <div className="relative z-20 mx-6 lg:mx-40">
             <NavBar />
             {children}
           </div>

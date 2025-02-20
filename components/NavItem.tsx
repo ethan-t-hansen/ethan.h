@@ -9,26 +9,10 @@ interface NavItemProps extends React.ComponentProps<typeof Link> {
 export function NavItem({ children, className, ...props }: NavItemProps) {
   return (
     <Link
-      className={cn("group relative px-4 py-2 text-xl md:text-sm font-medium text-foreground/90 hover:text-foreground font-mono", className)}
+      className={cn("group relative px-2 py-1 text-[10px] text-foreground/90 hover:text-foreground flex justify-end w-fit font-sans opacity-60 hover:opacity-100 transition-all duration-300", className)}
       {...props}
     >
       {children}
-      <span className="absolute left-0 top-0 h-2 w-2 opacity-0 group-hover:opacity-100">
-        <span className="absolute left-0 top-0 h-[1px] w-2 bg-foreground" />
-        <span className="absolute left-0 top-0 h-2 w-[1px] bg-foreground" />
-      </span>
-      <span className="absolute right-0 top-0 h-2 w-2 opacity-0 group-hover:opacity-100">
-        <span className="absolute right-0 top-0 h-[1px] w-2 bg-foreground" />
-        <span className="absolute right-0 top-0 h-2 w-[1px] bg-foreground" />
-      </span>
-      <span className="absolute bottom-0 left-0 h-2 w-2 opacity-0 group-hover:opacity-100">
-        <span className="absolute bottom-0 left-0 h-[1px] w-2 bg-foreground" />
-        <span className="absolute left-0 bottom-0 h-2 w-[1px] bg-foreground" />
-      </span>
-      <span className="absolute bottom-0 right-0 h-2 w-2 opacity-0 group-hover:opacity-100">
-        <span className="absolute bottom-0 right-0 h-[1px] w-2 bg-foreground" />
-        <span className="absolute right-0 bottom-0 h-2 w-[1px] bg-foreground" />
-      </span>
     </Link>
   )
 }

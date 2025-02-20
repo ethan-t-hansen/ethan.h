@@ -2,7 +2,7 @@
 
 export default function Page() {
   return (
-    <main className="relative pt-16 pr-8 lg:pr-48 lg:justify-start justify-center max-w-[900px]">
+    <main className="relative pr-8 lg:pr-48 lg:justify-start justify-center max-w-[900px] min-h-screen pt-48">
       <h3 className="text-3xl font-regular mb-8 font-sans tracking-tight"> About </h3>
       <div className="font-light opacity-80 space-y-8">
         <p>
@@ -12,7 +12,7 @@ export default function Page() {
         <p>
           Currently developing customer-facing fullstack applications @ ICBC.
           Also studying Business + Computer Science at the University of British
-          Columbia, exploring at the intersection of digital design and software
+          Columbia. I like to explore at the intersection of digital design and software
           development.
         </p>
         <p>

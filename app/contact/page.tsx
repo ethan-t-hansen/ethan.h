@@ -51,7 +51,7 @@ export default function Page() {
   };
 
   return (
-    <main className="relative pt-16 pr-8 lg:pr-48 lg:justify-start justify-center max-w-[900px]">
+    <main className="relative pr-8 lg:pr-48 lg:justify-start justify-center max-w-[900px] min-h-screen pt-48">
       <h3 className="text-3xl font-regular mb-8 font-sans tracking-tight">
         {" "}
         Contact{" "}
