@@ -3,7 +3,6 @@ import { IBM_Plex_Serif, Onest } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
-import { Background } from "@/components/scenes/background";
 import { NavBar } from "@/components/NavBar";
 import { Toaster } from "@/components/ui/toaster";
 
@@ -37,11 +36,10 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           themes={["light", "dark", "sky"]}
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
-          <Background />
 
           <div className="relative z-20 mx-6 lg:mx-40">
             <NavBar />

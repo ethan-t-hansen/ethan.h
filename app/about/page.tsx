@@ -1,5 +1,3 @@
-"use client";
-
 export default function Page() {
   return (
     <main className="relative pr-8 lg:pr-48 lg:justify-start justify-center max-w-[900px] min-h-screen pt-48">

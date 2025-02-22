@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 // import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavItem } from "./NavItem";
@@ -8,6 +8,19 @@ import Link from "next/link";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setIsVisible(currentScrollY < lastScrollY || currentScrollY < 10);
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const menuItems = [
     { href: "/", label: "HOME", external: false },
@@ -16,7 +29,7 @@ export function NavBar() {
     { href: "/contact", label: "CONTACT", external: false },
     {
       href: "https://github.com/ethan-t-hansen",
-      label: "GITHUB",  
+      label: "GITHUB",
       external: true,
     },
   ];
@@ -64,100 +77,106 @@ export function NavBar() {
   };
 
   return (
-    <div className="absolute inset-x-0 top-0 z-50">
-      <header className="py-8">
-        <nav className="flex h-12 items-start justify-between">
-          <Link href="/" className="flex flex-row items-center mt-2">
-            <div className="text-lg font-regular">ethan.h</div>
-          </Link>
+    <motion.div
+      initial={{ opacity: 1 }}
+      animate={{ opacity: isVisible ? 1 : 0 }}
+      transition={{ duration: 0.3, ease: "easeInOut" }}
+      className="fixed inset-x-0 top-0 z-50 bg-none pointer-events-none px-40"
+    >
+        <header className="py-8">
+          <nav className="flex h-12 items-start justify-between">
+            <Link href="/" className="flex flex-row items-center mt-2 pointer-events-auto">
+              <div className="text-lg font-regular">ethan.h</div>
+            </Link>
 
-          {/* Desktop Navigation */}
+            {/* Desktop Navigation */}
 
-          <div className="hidden md:flex flex-col items-end">
-            {menuItems.slice(0, 6).map((item) => (
-              <NavItem
-                key={item.href}
-                href={item.href}
-                target={item.external ? "_blank" : ""}
-                rel="noopener noreferrer"
-              >
-                {item.label}
-              </NavItem>
-            ))}
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="relative h-12 w-12 md:hidden z-[101]"
-            aria-label="Toggle menu"
-          >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="flex h-6 w-6 flex-col items-center justify-center">
-                <span
-                  className={`absolute h-[1px] bg-foreground transition-all duration-300 ${
-                    isOpen
-                      ? "w-6 translate-y-0 rotate-45"
-                      : "w-6 -translate-y-1"
-                  }`}
-                />
-                <span
-                  className={`absolute h-[1px] w-6 bg-foreground transition-all duration-300 ${
-                    isOpen
-                      ? "opacity-0 translate-x-2"
-                      : "opacity-100 translate-x-0"
-                  }`}
-                />
-                <span
-                  className={`absolute h-[1px] bg-foreground transition-all duration-300 ${
-                    isOpen
-                      ? "w-6 translate-y-0 -rotate-45"
-                      : "w-6 translate-y-1"
-                  }`}
-                />
-              </div>
+            <div className="hidden md:flex flex-col items-end pointer-events-auto">
+              {menuItems.slice(0, 6).map((item) => (
+                <NavItem
+                  key={item.href}
+                  href={item.href}
+                  target={item.external ? "_blank" : ""}
+                  rel="noopener noreferrer"
+                  className="px-0"
+                >
+                  {item.label}
+                </NavItem>
+              ))}
             </div>
-          </button>
-        </nav>
-      </header>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence mode="wait">
-        {isOpen && (
-          <motion.div
-            variants={backgroundVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            className="fixed inset-0 z-50 bg-background"
-          >
-            <div className="pt-32 w-full h-full overflow-auto">
-              <div className="space-y-4 px-4">
-                {menuItems.map((item, index) => (
-                  <motion.div
-                    key={item.href}
-                    custom={index}
-                    variants={menuItemVariants}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                  >
-                    <NavItem
-                      href={item.href}
-                      onClick={() => item.external ? {} : setIsOpen(false)}
-                      target={item.external ? "_blank" : ""}
-                      rel="noopener noreferrer"
-                      className="text-4xl opacity-100"
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="relative h-12 w-12 md:hidden z-[101] pointer-events-auto"
+              aria-label="Toggle menu"
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="flex h-6 w-6 flex-col items-center justify-center">
+                  <span
+                    className={`absolute h-[1px] bg-foreground transition-all duration-300 ${
+                      isOpen
+                        ? "w-6 translate-y-0 rotate-45"
+                        : "w-6 -translate-y-1"
+                    }`}
+                  />
+                  <span
+                    className={`absolute h-[1px] w-6 bg-foreground transition-all duration-300 ${
+                      isOpen
+                        ? "opacity-0 translate-x-2"
+                        : "opacity-100 translate-x-0"
+                    }`}
+                  />
+                  <span
+                    className={`absolute h-[1px] bg-foreground transition-all duration-300 ${
+                      isOpen
+                        ? "w-6 translate-y-0 -rotate-45"
+                        : "w-6 translate-y-1"
+                    }`}
+                  />
+                </div>
+              </div>
+            </button>
+          </nav>
+        </header>
+
+        {/* Mobile Menu Overlay */}
+        <AnimatePresence mode="wait">
+          {isOpen && (
+            <motion.div
+              variants={backgroundVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="fixed inset-0 z-50 bg-background"
+            >
+              <div className="pt-32 w-full h-full overflow-auto">
+                <div className="space-y-4 px-4">
+                  {menuItems.map((item, index) => (
+                    <motion.div
+                      key={item.href}
+                      custom={index}
+                      variants={menuItemVariants}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
                     >
-                      {item.label}
-                    </NavItem>
-                  </motion.div>
-                ))}
+                      <NavItem
+                        href={item.href}
+                        onClick={() => (item.external ? {} : setIsOpen(false))}
+                        target={item.external ? "_blank" : ""}
+                        rel="noopener noreferrer"
+                        className="text-4xl opacity-100"
+                      >
+                        {item.label}
+                      </NavItem>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      </div >
+            </motion.div>
+          )}
+        </AnimatePresence>
+    </motion.div>
   );
 }
