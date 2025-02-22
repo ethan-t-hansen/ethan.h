@@ -11,7 +11,7 @@ export default function Page() {
         Sandbox{" "}
       </h3>
 
-      <div className="columns-1 md:columns-2 lg:columns-2 gap-x-8 space-y-16 justify-items-center border-2">
+      <div className="columns-1 md:columns-2 lg:columns-2 gap-x-8 space-y-16 justify-items-center">
         {sandbox_projects.map((project) => (
           <div
             key={project.title}
