@@ -7,7 +7,7 @@ export default function ProjectGrid() {
       <div className="flex flex-row items-center mb-12 gap-4">
         <p className="text-nowrap text-xs opacity-50"> / SELECTED PROJECTS /</p>
       </div>
-      <div className="columns-1 md:columns-2 gap-x-16 justify-items-center">
+      <div className="columns-1 md:columns-2 gap-x-8 md:gap-x=12 lg:gap-x-16 justify-items-center">
         {projects.map((project, index) => (
           <div
             key={project.title}

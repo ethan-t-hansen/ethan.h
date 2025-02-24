@@ -34,12 +34,11 @@ export function ProjectCard({ title, tags, image, route }: ProjectCardProps) {
             </video>
           </div>
         ) : (
-          <div className="flex w-full h-fit md:h-[36rem]">
+          <div className="flex w-full h-96 md:h-[36rem]">
             <Image
               src={image || "/placeholder.svg"}
               alt={title}
-              width={512}
-              height={640}
+              layout="fill"
               className="group-hover:scale-105 object-cover transition-all duration-500"
             />
           </div>
