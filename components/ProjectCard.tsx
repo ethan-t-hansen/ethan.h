@@ -14,7 +14,7 @@ export function ProjectCard({ title, tags, image, route }: ProjectCardProps) {
   return (
     <Link
       href={route}
-      className="block opacity-90 md:opacity-40 md:hover:opacity-95 group transition-all duration-500 break-inside-avoid"
+      className="block opacity-90 w-full md:opacity-40 md:hover:opacity-95 group transition-all duration-500 break-inside-avoid"
     >
       <div className="relative overflow-hidden">
         {image.includes("mp4") || image.includes("webm") ? (
@@ -34,12 +34,13 @@ export function ProjectCard({ title, tags, image, route }: ProjectCardProps) {
             </video>
           </div>
         ) : (
-          <div className="flex w-full h-96 md:h-[36rem]">
+          <div className="flex w-full h-fit md:h-[36rem]">
             <Image
               src={image || "/placeholder.svg"}
               alt={title}
-              layout="fill"
-              className="group-hover:scale-105 object-cover transition-all duration-500"
+              width={500} // Placeholder value; it scales with `w-full`
+              height={500} // Adjust based on aspect ratio
+              className="group-hover:scale-105 w-full h-full object-cover transition-all duration-500"
             />
           </div>
         )}
