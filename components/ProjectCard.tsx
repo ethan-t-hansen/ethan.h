@@ -13,7 +13,7 @@ interface ProjectCardProps {
 export function ProjectCard({ title, tags, image, route }: ProjectCardProps) {
   return (
     <Link
-      href={route}
+      href={`/project/${route}`}
       className="block opacity-90 w-full md:opacity-40 md:hover:opacity-95 group transition-all duration-500 break-inside-avoid"
     >
       <div className="relative overflow-hidden">
@@ -25,7 +25,7 @@ export function ProjectCard({ title, tags, image, route }: ProjectCardProps) {
               loop
               disableRemotePlayback
               playsInline
-              className="pointer-events-none touch-none select-none w-full h-auto object-cover group-hover:scale-105 transition-all duration-500"
+              className="pointer-events-none touch-none select-none object-cover group-hover:scale-105 transition-all duration-500"
               controlsList="noplaybackrate nodownload nofullscreen"
               disablePictureInPicture
             >
@@ -38,8 +38,8 @@ export function ProjectCard({ title, tags, image, route }: ProjectCardProps) {
             <Image
               src={image || "/placeholder.svg"}
               alt={title}
-              width={500} // Placeholder value; it scales with `w-full`
-              height={500} // Adjust based on aspect ratio
+              width={500}
+              height={500}
               className="group-hover:scale-105 w-full h-full object-cover transition-all duration-500"
             />
           </div>

@@ -41,7 +41,7 @@ export default function Layout() {
   }, [])
 
   return (
-    <div className="relative flex flex-col md:flex-row my-32 gap-24">
+    <div className="relative flex flex-col md:flex-row my-24 gap-24">
 
       <div ref={containerRef} className="h-fit flex items-center w-fit">
         <div>

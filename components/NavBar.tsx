@@ -81,12 +81,12 @@ export function NavBar() {
       initial={{ opacity: 1 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed inset-x-0 top-0 z-50 bg-none pointer-events-none px-40"
+      className="fixed inset-x-0 top-0 z-50 bg-none pointer-events-none mx-6 lg:mx-40"
     >
         <header className="py-8">
           <nav className="flex h-12 items-start justify-between">
             <Link href="/" className="flex flex-row items-center mt-2 pointer-events-auto">
-              <div className="text-lg font-regular">ethan.h</div>
+              <div className="text-sm font-regular">ethan.h</div>
             </Link>
 
             {/* Desktop Navigation */}
@@ -123,8 +123,8 @@ export function NavBar() {
                   <span
                     className={`absolute h-[1px] w-6 bg-foreground transition-all duration-300 ${
                       isOpen
-                        ? "opacity-0 translate-x-2"
-                        : "opacity-100 translate-x-0"
+                        ? "opacity-0"
+                        : "opacity-100"
                     }`}
                   />
                   <span

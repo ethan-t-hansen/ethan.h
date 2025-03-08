@@ -1,3 +1,16 @@
+import { Blueprint } from '@/components/project-pages/Blueprint'
+import TextScroll from '@/components/TextScroll'
+
+export interface Project {
+  id: string,
+  title: string,
+  description: string,
+  tags: string[],
+  image: string,
+  route: string,
+  content: () => React.JSX.Element,
+}
+
 export interface Experience {
   id: number
   company: string
@@ -77,42 +90,52 @@ export const work_experience: Experience[] = [
   },
 ]
 
-export const projects = [
+export const projects: Project[] = [
   {
-    id: "1",
+    id: "blueprint",
     title: "Blueprint NFC Companion App",
+    description: "Networking is hard. Through NFC (Near Field Communication) and an integrated software platform, we made it easier for students to connect with professionals and each other at our flagship conference using personalized data and innovative technology.",
     tags: ["3D", "Branding", "Mobile", "Interface Design", "Prototyping"],
     image: "/projects/video/blueprint-video.webm",
     route: "/blueprint",
+    content: Blueprint,
   },
   {
-    id: "2",
+    id: "bt-web",
     title: "BizTech Web v2",
+    description: "Description",
     tags: ["Interface Design", "Prototyping"],
     image: "/projects/bt-web.png",
     route: "/bt-web",
+    content: TextScroll,
   },
   {
-    id: "3",
+    id: "van-dwelling",
     title: "Vancouver Dwelling",
+    description: "Description",
     tags: ["Web design", "Freelance"],
     image: "/projects/van-dwelling.png",
     route: "/van-dwelling",
+    content: TextScroll,
   },
 
   {
-    id: "4",
+    id: "membership-portal",
     title: "UBCMA Membership Portal",
+    description: "Description",
     tags: ["React", "Nextjs", "Firebase"],
     image: "/projects/video/ma-mockup.webm",
     route: "/membership-portal",
+    content: TextScroll,
   },
   {
-    id: "5",
+    id: "biztag",
     title: "Nametag Generation Figma Plugin",
+    description: "Description",
     tags: ["React", "Figma API", "Scripting"],
     image: "/projects/video/biztag-demo.webm",
     route: "/biztag",
+    content: TextScroll,
   },
 ];
 

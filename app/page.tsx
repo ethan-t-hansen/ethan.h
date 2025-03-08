@@ -1,4 +1,5 @@
 import ExperienceSection from "@/components/Experience";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
 import TextScroll from "@/components/TextScroll";
@@ -10,7 +11,7 @@ export default function Page() {
       <ProjectGrid />
       <TextScroll />
       <ExperienceSection />
-      <div className="h-64"></div>
+      <Footer/>
     </main>
   );
 }
