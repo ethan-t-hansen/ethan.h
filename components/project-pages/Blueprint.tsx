@@ -189,6 +189,47 @@ export const Blueprint = () => {
         </div>
       </div>
 
+      <div className="-mx-40 w-screen h-auto bg-clip-border px-8">
+        <Image
+          src="/img/blueprint/wireframes.webp"
+          width={2000}
+          height={1000}
+          className="self-center w-full h-full object-cover"
+          alt="Header"
+        />
+      </div>
+
+      <div className="-mx-40 w-screen h-auto bg-clip-border px-8">
+        <Image
+          src="/img/blueprint/wrapped.webp"
+          width={2000}
+          height={1000}
+          className="self-center w-full h-full object-cover"
+          alt="Header"
+        />
+      </div>
+
+
+      <div className="-mx-40 w-screen h-auto bg-clip-border">
+        <Image
+          src="/img/blueprint/blueprint-collage.webp"
+          width={2000}
+          height={1000}
+          className="self-center w-full h-full object-cover"
+          alt="Header"
+        />
+      </div>
+
+      <div className="tracking-tight text-md md:text-xl font-regular">
+          BluePrint 2025 was a resounding success, with over 200 attendees and
+          80 delegates, and 40+ companies in attendance. The NFC technology
+          proved to be a hit, with attendees raving about how easy it was to
+          connect with others and how they could easily remember who they had
+          talked to. The connections journal had resounding success, with attendees
+          appreciating the ability to look back at who they had met and what
+          they had talked about.
+      </div>
+
       
 
     </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { projects } from "@/app/constants";
+import Footer from "@/components/Footer";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
@@ -46,6 +47,8 @@ export default function Project() {
         </div>
       </div>
       {project?.content && project.content()}
+
+      <Footer/>
     </main>
   );
 }
