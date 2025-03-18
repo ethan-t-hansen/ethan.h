@@ -14,6 +14,9 @@ export default function Project() {
       <div className="flex flex-col gap-4 md:gap-8 w-full mb-24">
         <div className="uppercase tracking-tighter text-md md:text-xl font-regular">
           {project?.title}
+          <div className="tracking-normal text-xs md:text-s font-regular text-gray-400">
+            Role: {project?.role}
+          </div>
         </div>
         {project?.image.includes("mp4") || project?.image.includes("webm") ? (
           <div className="flex h-48 md:h-[28rem] w-full">

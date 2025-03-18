@@ -1,9 +1,11 @@
 import { Blueprint } from '@/components/project-pages/Blueprint'
+import { MembershipPortal } from '@/components/project-pages/MembershipPortal'
 import TextScroll from '@/components/TextScroll'
 
 export interface Project {
   id: string,
   title: string,
+  role: string,
   description: string,
   tags: string[],
   image: string,
@@ -94,6 +96,7 @@ export const projects: Project[] = [
   {
     id: "blueprint",
     title: "Blueprint NFC Companion App",
+    role: "Product Designer - 3D & UI/UX",
     description: "Networking is hard. Through NFC (Near Field Communication) and an integrated software platform, we made it easier for students to connect with professionals and each other at our flagship conference using personalized data and innovative technology.",
     tags: ["3D", "Branding", "Mobile", "Interface Design", "Prototyping"],
     image: "/projects/video/blueprint-video.webm",
@@ -103,6 +106,7 @@ export const projects: Project[] = [
   {
     id: "bt-web",
     title: "BizTech Web v2",
+    role: "Product Designer - UI/UX",
     description: "Description",
     tags: ["Interface Design", "Prototyping"],
     image: "/projects/bt-web.png",
@@ -112,6 +116,7 @@ export const projects: Project[] = [
   {
     id: "van-dwelling",
     title: "Vancouver Dwelling",
+    role: "Freelance Designer & Web Developer",
     description: "Description",
     tags: ["Web design", "Freelance"],
     image: "/projects/van-dwelling.png",
@@ -122,15 +127,17 @@ export const projects: Project[] = [
   {
     id: "membership-portal",
     title: "UBCMA Membership Portal",
-    description: "Description",
-    tags: ["React", "Nextjs", "Firebase"],
+    role: "Software Developer",
+    description: "UBCMA stands as UBC's only marketing focused club. Each year, the club sells membership to students and hosts events through Showpass, which offers limited features to suit the club's needs.  Our team built a centralized web application to replace this process, ultimately decreasing costs, streamlining workflows, and fostering community",
+    tags: ["React", "Next.js", "Firebase", "Stripe"],
     image: "/projects/video/ma-mockup.webm",
     route: "/membership-portal",
-    content: TextScroll,
+    content: MembershipPortal,
   },
   {
     id: "biztag",
     title: "Nametag Generation Figma Plugin",
+    role: "Software Developer",
     description: "Description",
     tags: ["React", "Figma API", "Scripting"],
     image: "/projects/video/biztag-demo.webm",

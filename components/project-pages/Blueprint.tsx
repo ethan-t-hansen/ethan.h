@@ -189,7 +189,7 @@ export const Blueprint = () => {
         </div>
       </div>
 
-      <div className="-mx-40 w-screen h-auto bg-clip-border px-8">
+      <div className="-mx-40 w-screen h-auto bg-clip-border px-6">
         <Image
           src="/img/blueprint/wireframes.webp"
           width={2000}
@@ -199,7 +199,7 @@ export const Blueprint = () => {
         />
       </div>
 
-      <div className="-mx-40 w-screen h-auto bg-clip-border px-8">
+      <div className="lg:-mx-40 -mx-6 w-screen h-auto bg-clip-border lg:px-6 px-2">
         <Image
           src="/img/blueprint/wrapped.webp"
           width={2000}
