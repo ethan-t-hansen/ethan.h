@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 export const BizTag = () => {
   return (
     <div className="space-y-24">
