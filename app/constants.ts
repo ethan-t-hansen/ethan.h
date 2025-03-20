@@ -1,3 +1,4 @@
+import { BizTag } from '@/components/project-pages/BizTag'
 import { Blueprint } from '@/components/project-pages/Blueprint'
 import { MembershipPortal } from '@/components/project-pages/MembershipPortal'
 import TextScroll from '@/components/TextScroll'
@@ -136,13 +137,13 @@ export const projects: Project[] = [
   },
   {
     id: "biztag",
-    title: "Nametag Generation Figma Plugin",
-    role: "Software Developer",
-    description: "Description",
+    title: "BizTag - Nametag Generation Figma Plugin",
+    role: "Plugin Developer",
+    description: "Designers spend hours manually porting names from a spreadsheet into their designs to create nametags and other custom visual assets. Figma lacked the features to deal with variable data like Adobe, but their plugin API ecosystem left potential for an open source solution to this common problem.",
     tags: ["React", "Figma API", "Scripting"],
     image: "/projects/video/biztag-demo.webm",
     route: "/biztag",
-    content: TextScroll,
+    content: BizTag,
   },
 ];
 

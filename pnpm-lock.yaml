@@ -29,6 +29,12 @@ importers:
       '@radix-ui/react-visually-hidden':
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.0.3(@types/react@19.0.8))(@types/react@19.0.8)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      '@rive-app/react-canvas':
+        specifier: ^4.18.3
+        version: 4.18.3(react@18.2.0)
+      '@rive-app/react-webgl':
+        specifier: ^4.18.3
+        version: 4.18.3(react@18.2.0)
       OrbitControls:
         specifier: link:three/examples/jsm/controls/OrbitControls
         version: link:three/examples/jsm/controls/OrbitControls
@@ -1480,11 +1486,27 @@ packages:
   '@rive-app/canvas@2.26.3':
     resolution: {integrity: sha512-u91nWyqDyTr1Ct3k5P1H+s0vHWP5HmcCFniWJhKeWP0gl/hX5hEQ2dMGrtt4s0WPucMbkZJBuxwMJrRkK6KaEQ==}
 
+  '@rive-app/canvas@2.26.4':
+    resolution: {integrity: sha512-a9bSM2Hwe2K5hcRMC0dDfR4ygDgrJhVrEtv2L+QYS8bmjI2V2IgZsocKvtc/gW7Gt+R7NIBNgcy/vW1hl6KzFg==}
+
+  '@rive-app/react-canvas@4.18.3':
+    resolution: {integrity: sha512-0bRoiFlel6zUY8KBhD6AA1Tzr83h/PSXwm9d4BJqU72r16gg56Z4uLxupgmGdSAb5pCFP7LzKhjuoY3aa3JyBg==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0
+
+  '@rive-app/react-webgl@4.18.3':
+    resolution: {integrity: sha512-RTpch1h7OOksUnG7clF6oytJpHRTvVrN1zNz9as/yNDSBEbspIfFtju/NLJFfKTb7Glr7Z3G9r+WJpNvf1cfJA==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0
+
   '@rive-app/webgl2@2.26.3':
     resolution: {integrity: sha512-NfJcr7p45BV1ES5Mdx6aGmjBTgH6rfjYQD6pksvQ9wZIWnXlSN0Gh+HZZE2MJB0pNX65o0GB/AVM7WdvWz0bWw==}
 
   '@rive-app/webgl@2.26.3':
     resolution: {integrity: sha512-dSNLe5XmcFOFZbqtdDTOI9e5XC6ukON4QDvlpzPCAY5HZG9ljXoVxF+rTVfSSO3brO/tWt3tCVcvQvk2kEp8Qw==}
+
+  '@rive-app/webgl@2.26.4':
+    resolution: {integrity: sha512-dyu6NaT97CeciFuGr4pkNy7fh8HdZnBnM1GBTmyj5rxUGN0WiOD8XOjl+aAWqce1qaTpm0wtqos0uODCkb5+ZQ==}
 
   '@rtsao/scc@1.1.0':
     resolution: {integrity: sha512-zt6OdqaDoOnJ1ZYsCYGt9YmWzDXl4vQdKTyJev62gFhRGKdx7mcT54V9KIjg+d2wi9EXsPvAPKe7i7WjfVWB8g==}
@@ -5024,9 +5046,23 @@ snapshots:
 
   '@rive-app/canvas@2.26.3': {}
 
+  '@rive-app/canvas@2.26.4': {}
+
+  '@rive-app/react-canvas@4.18.3(react@18.2.0)':
+    dependencies:
+      '@rive-app/canvas': 2.26.4
+      react: 18.2.0
+
+  '@rive-app/react-webgl@4.18.3(react@18.2.0)':
+    dependencies:
+      '@rive-app/webgl': 2.26.4
+      react: 18.2.0
+
   '@rive-app/webgl2@2.26.3': {}
 
   '@rive-app/webgl@2.26.3': {}
+
+  '@rive-app/webgl@2.26.4': {}
 
   '@rtsao/scc@1.1.0': {}
 

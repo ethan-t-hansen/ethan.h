@@ -16,6 +16,8 @@
     "@radix-ui/react-toast": "^1.2.6",
     "@radix-ui/react-tooltip": "^1.1.7",
     "@radix-ui/react-visually-hidden": "^1.1.2",
+    "@rive-app/react-canvas": "^4.18.3",
+    "@rive-app/react-webgl": "^4.18.3",
     "OrbitControls": "link:three/examples/jsm/controls/OrbitControls",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

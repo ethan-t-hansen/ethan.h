@@ -1,6 +1,14 @@
 export default function Hero() {
+  const Fade: React.FC = () => {
+    return (
+      <div className="absolute -bottom-4 h-32 w-screen bg-gradient-to-t from-black to-black/0">
+        <div className="absolute -bottom-4 h-screen w-screen bg-black/30 -z-10"/>
+      </div>
+    );
+  };
+
   return (
-    <div className="relative w-full h-screen flex flex-col justify-center items-center">
+    <div className="relative w-screen h-screen flex flex-col justify-center items-center -mx-40 mb-32">
       <div>
         <p className="text-3xl md:text-4xl lg:text-5xl font-regular font-sans flex-row flex tracking-tight text-center mb-4">
           Creative Developer / Product Designer
@@ -16,6 +24,7 @@ export default function Hero() {
           <p>Vancouver, Canada</p>
         </div>
       </div>
+      <Fade />
     </div>
   );
 }
