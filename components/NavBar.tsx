@@ -171,7 +171,7 @@ export function NavBar() {
                         }}
                         target={item.external ? "_blank" : ""}
                         rel="noopener noreferrer"
-                        className="text-4xl opacity-100"
+                        className="text-4xl opacity-100 pointer-events-auto"
                       >
                         {item.label}
                       </NavItem>
