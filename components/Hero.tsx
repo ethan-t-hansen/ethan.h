@@ -8,11 +8,11 @@ export default function Hero() {
   };
 
   return (
-    <div className="relative w-screen h-screen flex flex-col justify-center items-center -mx-40 mb-32">
+    <div className="w-full h-screen flex flex-col justify-center items-center mb-32">
       <div>
-        <p className="text-3xl md:text-4xl lg:text-5xl font-regular font-sans flex-row flex tracking-tight text-center mb-4">
+        <div className="text-3xl md:text-4xl lg:text-4xl font-regular font-sans flex-row flex tracking-tight justify-center text-center mb-4">
           Creative Developer / Product Designer
-        </p>
+        </div>
 
         <div className="flex md:gap-0 gap-4 md:justify-between text-xs font-regular">
           <p className="opacity-60">CURRENTLY</p>
