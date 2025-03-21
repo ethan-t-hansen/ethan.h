@@ -11,6 +11,7 @@ export function NavItem({ children, className, ...props }: NavItemProps) {
     <Link
       className={cn("group relative px-2 py-1 text-[10px] text-foreground/90 hover:text-foreground flex justify-end w-fit font-sans opacity-60 hover:opacity-100 transition-all duration-300", className)}
       {...props}
+      prefetch={true}
     >
       {children}
     </Link>

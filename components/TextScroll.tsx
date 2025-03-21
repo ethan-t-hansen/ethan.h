@@ -7,11 +7,8 @@ const lines = [
   "digital interactions",
   "a little more fun.",
   "",
-  "Exploring Figma, Rive,",
-  "Spline, and AI tools.",
-  "",
   "Experienced in design",
-  "systems and collaborating",
+  "systems and collaboration",
   "with developers."
 ]
 
@@ -96,12 +93,12 @@ function Line({
   return (
     <div className="relative pb-2 md:pb-4">
 
-      <div className="opacity-40 text-2xl md:text-5xl tracking-tight leading-tight text-foreground text-nowrap">
+      <div className="opacity-40 text-2xl md:text-4xl tracking-tight leading-tight text-foreground text-nowrap">
         {text}
       </div>
 
       <div
-        className="absolute inset-0 text-2xl md:text-5xl tracking-tight leading-tight text-foreground overflow-hidden whitespace-nowrap"
+        className="absolute inset-0 text-2xl md:text-4xl tracking-tight leading-tight text-foreground overflow-hidden whitespace-nowrap"
         style={{
           width: `${lineProgress * (text.length*10)}%`,
         }}

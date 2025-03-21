@@ -85,7 +85,7 @@ export function NavBar() {
     >
         <header className="py-8">
           <nav className="flex h-12 items-start justify-between">
-            <Link href="/" className="flex flex-row items-center mt-2 pointer-events-auto">
+            <Link href="/" prefetch={true} className="flex flex-row items-center mt-2 pointer-events-auto">
               <div className="text-sm font-regular">ethan.h</div>
             </Link>
 
@@ -162,8 +162,13 @@ export function NavBar() {
                       exit="exit"
                     >
                       <NavItem
+                        key={item.href}
                         href={item.href}
-                        onClick={() => (item.external ? {} : setIsOpen(false))}
+                        onClick={() => {
+                          if (!item.external) {
+                            setIsOpen(false);
+                          }
+                        }}
                         target={item.external ? "_blank" : ""}
                         rel="noopener noreferrer"
                         className="text-4xl opacity-100"

@@ -9,7 +9,7 @@ export default function ExperienceSection() {
         <p className="text-nowrap text-xs opacity-50">/ EXPERIENCE /</p>
       </div>
 
-      <div className="w-full columns-2">
+      <div className="w-full grid grid-cols-1 md:grid-cols-2">
         <div className="flex flex-col">
           {work_experience.map((experience) => (
             <div key={experience.id} className="w-full py-4 space-y-1">

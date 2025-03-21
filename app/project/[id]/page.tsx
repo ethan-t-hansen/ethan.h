@@ -1,21 +1,32 @@
 "use client";
 
-import { projects } from "@/app/constants";
+import { small_projects, large_projects } from "@/app/constants";
 import Footer from "@/components/Footer";
+import ProjectLinkButton from "@/components/ProjectLinkButton";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
 export default function Project() {
   const params = useParams();
-  const project = projects.find((project) => project.id === params.id);
+  const project = small_projects
+    .concat(large_projects)
+    .find((project) => project.id === params.id);
 
   return (
     <main className="relative lg:justify-start justify-center min-h-screen pt-40 w-full mb-32">
       <div className="flex flex-col gap-4 md:gap-8 w-full mb-24">
-        <div className="uppercase tracking-tighter text-md md:text-xl font-regular">
-          {project?.title}
-          <div className="tracking-normal text-xs md:text-s font-regular text-gray-400">
-            Role: {project?.role}
+        <div className="flex flex-row justify-between items-end">
+          <div className="uppercase tracking-tighter text-md md:text-xl font-regular">
+            {project?.title}
+            <div className="tracking-normal text-xs md:text-s font-regular text-gray-400">
+              Role: {project?.role}
+            </div>
+          </div>
+
+          <div className="flex flex-row gap-2">
+            {project?.additionalLinks?.map((item, index) => (
+              <ProjectLinkButton item={item} key={index}/>
+            ))}
           </div>
         </div>
         {project?.image.includes("mp4") || project?.image.includes("webm") ? (
@@ -51,7 +62,7 @@ export default function Project() {
       </div>
       {project?.content && project.content()}
 
-      <Footer/>
+      <Footer />
     </main>
   );
 }
