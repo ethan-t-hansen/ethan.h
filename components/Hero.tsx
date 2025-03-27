@@ -1,11 +1,4 @@
 export default function Hero() {
-  const Fade: React.FC = () => {
-    return (
-      <div className="absolute -bottom-4 h-32 w-screen bg-gradient-to-t from-black to-black/0">
-        <div className="absolute -bottom-4 h-screen w-screen bg-black/30 -z-10"/>
-      </div>
-    );
-  };
 
   return (
     <div className="w-full h-screen flex flex-col justify-center items-center mb-32">
@@ -24,7 +17,6 @@ export default function Hero() {
           <p>Vancouver, Canada</p>
         </div>
       </div>
-      <Fade />
     </div>
   );
 }
