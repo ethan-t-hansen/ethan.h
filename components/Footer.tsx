@@ -10,7 +10,7 @@ export default function Footer() {
         BACK TO TOP
         <ArrowUp height={16} width={16}/>
       </a>
-      <p>© FEBRUARY 2025</p>
+      <p>© MAY 2025</p>
     </div>
   );
 }
