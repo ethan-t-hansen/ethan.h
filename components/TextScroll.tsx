@@ -3,11 +3,11 @@
 import { useRef, useEffect, useState } from "react"
 
 const lines = [
-  "Designing to make",
-  "digital interactions",
+  "Making the way we",
+  "interact with the world",
   "a little more fun.",
   "",
-  "Experienced in design",
+  "Specialized in design",
   "systems and collaboration",
   "with developers."
 ]

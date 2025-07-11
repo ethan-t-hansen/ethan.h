@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { NavItem } from "./NavItem";
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
 export function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,6 +31,11 @@ export function NavBar() {
     {
       href: "https://github.com/ethan-t-hansen",
       label: "GITHUB",
+      external: true,
+    },
+        {
+      href: "https://www.linkedin.com/in/ethanth/",
+      label: "LINKEDIN",
       external: true,
     },
   ];
@@ -81,11 +87,11 @@ export function NavBar() {
       initial={{ opacity: 1 }}
       animate={{ opacity: isVisible ? 1 : 0 }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
-      className="fixed inset-x-0 top-0 z-50 bg-none pointer-events-none mx-6 lg:mx-40"
+      className="fixed inset-x-0 top-0 z-50 bg-none pointer-events-none mx-6 lg:mx-24"
     >
         <header className="py-8">
-          <nav className="flex h-12 items-start justify-between">
-            <Link href="/" prefetch={true} className="flex flex-row items-center mt-2 pointer-events-auto">
+          <nav className="flex h-fit items-center md:items-start justify-between">
+            <Link href="/" prefetch={true} className="flex flex-row items-center pointer-events-auto">
               <div className="text-sm font-regular">ethan.h</div>
             </Link>
 
@@ -171,9 +177,10 @@ export function NavBar() {
                         }}
                         target={item.external ? "_blank" : ""}
                         rel="noopener noreferrer"
-                        className="text-4xl opacity-100 pointer-events-auto"
+                        className="flex flex-row text-4xl opacity-100 pointer-events-auto items-center gap-4"
                       >
                         {item.label}
+                        {item.external && <ArrowUpRight strokeWidth={1.5} className="w-12 h-12" />}
                       </NavItem>
                     </motion.div>
                   ))}

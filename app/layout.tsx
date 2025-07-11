@@ -35,13 +35,12 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          themes={["light", "dark", "sky"]}
           defaultTheme="dark"
-          enableSystem
+          forcedTheme="dark"
           disableTransitionOnChange
         >
 
-          <div className="relative z-20 mx-6 lg:mx-40">
+          <div className="relative z-20 mx-6 lg:mx-24">
             <NavBar />
             {children}
           </div>
