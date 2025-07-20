@@ -5,7 +5,7 @@ export default function Hero() {
 
         <div className="flex flex-col gap-2 text-3xl md:text-4xl font-regular tracking-tight mb-4 md:w-3/4">
           <div className="text-2xl md:text-3xl">
-            {"Hey 👋🏻 I'm Ethan, a designer focused on the intersection between development and creativity"}
+            {"Hey 👋🏻 I'm Ethan, a designer focused on the intersection between development and creativity."}
           </div>
         </div>
 

@@ -10,7 +10,7 @@ export default async function ProjectGrid() {
   const small_projects = projects.filter((project) => !project.featured);
 
   return (
-    <section className="container mx-auto mt-16 md:pb-12">
+    <section className="container w-full mt-16 md:pb-12">
       <div className="flex flex-row items-center mt-16 mb-8 gap-4">
         <p className="text-nowrap text-xs opacity-70"> / SELECTED PROJECTS /</p>
       </div>

@@ -6,6 +6,7 @@ import { MDXContent } from "mdx/types";
 import type { Metadata } from "next/types";
 import MediaPreview from "@/components/MediaPreview";
 import { notFound } from "next/navigation";
+import { ProjectTag } from "@/components/ProjectTag";
 
 export type PostMetadata = Metadata & {
   title: string;
@@ -16,7 +17,11 @@ export type PostMetadata = Metadata & {
   image: string;
 };
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
 
   let Post: MDXContent;
@@ -35,8 +40,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   return (
     <main className="relative lg:justify-start justify-center min-h-screen w-full mt-32">
-      <div className="flex flex-col gap-4 md:gap-8 w-full mb-24">
-        <div className="flex flex-row justify-between items-end">
+      <div className="flex flex-col gap-4 w-full mb-16">
+        <div className="flex flex-col md:flex-row justify-between gap-4 md:items-end">
           <div className="uppercase tracking-tighter text-md md:text-xl font-regular">
             {metadata?.title}
             <div className="tracking-normal text-xs md:text-s font-regular text-gray-400">
@@ -44,7 +49,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             </div>
           </div>
 
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-wrap gap-2">
             {metadata?.additionalLinks?.map((item, index) => (
               <ProjectLinkButton item={item} key={index} />
             ))}
@@ -53,6 +58,11 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <MediaPreview src={metadata.image} />
         <div className="tracking-tight text-md md:text-xl font-regular">
           {metadata?.description}
+        </div>
+        <div className="flex flex-wrap gap-1">
+          {metadata?.tags.map((tag, index) => (
+            <ProjectTag key={index} tagKey={tag} />
+          ))}
         </div>
       </div>
       <Post components={components} />

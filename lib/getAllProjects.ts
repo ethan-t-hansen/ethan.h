@@ -1,3 +1,4 @@
+import { TagConfig } from '@/constants/tags'
 import fs from 'fs'
 import path from 'path'
 
@@ -14,6 +15,7 @@ export async function getAllProjects() {
       return {
         slug,
         ...metadata,
+        tags: (metadata.tags || []).slice().sort((a: string, b: string) => a.localeCompare(b)),
       }
     })
   )
@@ -21,8 +23,9 @@ export async function getAllProjects() {
   return projects as {
     slug: string
     title: string
+    role: string
     tags: string[]
-    image: string
+    previewImage: string
     featured: boolean
   }[]
 }

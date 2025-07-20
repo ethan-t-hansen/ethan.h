@@ -1,13 +1,173 @@
+import { LinkType } from "@/app/constants";
+import { TAGS } from "@/constants/tags";
+
 export const metadata = {
   title: "UBCMA Membership Portal",
+  role: "Development Lead",
   description:
     "UBCMA stands as UBC's only marketing focused club. Each year, the club sells membership to students and hosts events through Showpass, which offers limited features to suit the club's needs.  Our team built a centralized web application to replace this process, ultimately decreasing costs, streamlining workflows, and fostering community",
   date: "2025-01-27",
-  tags: ["React", "Next.js", "PostgreSQL", "Drizzle", "Railway", "Stripe", "Redis"],
-  role: "Development Lead",
-  additionalLinks: [],
+  tags: ["React", "PostgreSQL", "Drizzle", "Railway", "Stripe", "Redis"],
+  additionalLinks: [
+    {
+      url: "https://www.figma.com/community/plugin/1429338330818806179/biztag-name-tag-generator",
+      linkType: LinkType.WEBSITE,
+      cta: "UBCMA's Website",
+    },
+    {
+      url: "https://github.com/ethan-t-hansen/biztag",
+      linkType: LinkType.WEBSITE,
+      cta: "Visit our Portal",
+    },
+  ],
   image: "/projects/video/ma-mockup.webm",
+  previewImage: "/projects/video/ma-mockup.webm",
   featured: true,
 };
 
-<div className="flex h-32 w-full items-center justify-center">/ PROJECT PAGE COMING SOON /</div>
+<div className="space-y-16 md:space-y-24">
+
+<SectionColumns 
+  h1="PROJECT OVERVIEW" 
+  h2="CORE OBJECTIVES" 
+  body1="The UBCMA Membership Portal is a centralized platform designed to
+      manage the lifecycle of a student’s membership in the club. From event
+      registration and ticketing to alumni networking and job listings, the
+      portal empowers both members and club executives with intuitive,
+      role-based tools." 
+  body2="Our primary goal was to provide a seamless experience for students to feel
+      like a member of a community, and to help our internal exec team make
+      data-driven decisions. We facilitated this by offering exclusive access to
+      events, opportunities, and perks such as discounts and private job
+      postings. We built out an admin dashboard that ran queries on our database
+      and displayed insightful revenue and demographic data for our execs on a
+      dashboard." 
+  />
+
+<div className="-mx-6 lg:-mx-24 w-screen h-96 bg-clip-border">
+  <Image
+    src="/img/ma/ma-banner.jpg"
+    width={2000}
+    height={500}
+    className="self-center w-full h-full object-cover"
+    alt="Header"
+  />
+</div>
+
+</div>
+
+### 🔐 Role-Based Access
+
+- **Basic Users:** Can browse events but not register or access member-only features.
+- **Members:** Gain full access to events, digital tickets, confirmations, and more.
+- **Admins:** Can manage all data, create events, view analytics, and handle ticket scanning.
+
+### 📅 Event Management
+
+- All users can view upcoming events.
+- Members can sign up and receive:
+  - Digital tickets (with QR codes)
+  - Email confirmation and proof of purchase
+- Admins can:
+  - Create/edit events with custom signup forms
+  - View registrations and attendee data
+  - Validate check-ins via QR scans (backend verified)
+
+### 👥 Alumni Network (Low Priority)
+
+- Members can search past UBCMA delegates.
+- Profiles include affiliation and public contact details.
+
+### 💼 Job Portal (Low Priority)
+
+- Curated feed of marketing-related job listings.
+- Future integration with alumni profiles for warm intros.
+
+### 📊 Admin Dashboard
+
+- View member demographics (faculty, year).
+- Monitor revenue and event attendance.
+- Analyze engagement trends over time.
+
+---
+
+## 🧱 Technical Highlights
+
+### Authentication & Access Control
+
+- **Better Auth** (OAuth, email/password, sessions, MFA)
+- Role-based route protection (middleware + backend guards)
+
+### Modular & Scalable Backend
+
+- **Express.js** with **Drizzle ORM**
+- Clean separation of routes, controllers, and types
+- Stripe integration for payments and ticketing
+
+### Scalable Deployment Stack
+
+- **Frontend:** Next.js (App Router) deployed via Vercel
+- **Backend:** Express (TypeScript) & PostgreSQL hosted on Railway
+- CI/CD powered by GitHub
+- Centralized auth via Better Auth API
+
+<Image
+  src={"/projects/membership-portal/tech-stack.png"}
+  alt="UBCMA Membership Portal Infrastructure Diagram"
+  className="rounded-xl my-6"
+  width={800}
+  height={450}
+/>
+
+---
+
+## 🧠 Development Practices
+
+- Feature branches follow `username/mp-#` naming convention.
+- PRs reviewed before merging to `dev`; only team leads squash-merge into `main`.
+- Interactive rebasing used to maintain clean commit history.
+- Build checks (`pnpm build`) enforced before PR.
+
+---
+
+## 🗂 Frontend Architecture
+
+mp-frontend/
+├── app/ → (admin), (auth), (main)
+├── components/ → Shared UI
+├── lib/ → Auth, queries, helpers
+├── hooks/, helpers/, constants/
+├── middleware.ts → Role-based access
+├── tailwind.config.ts → Styling via ShadCN + Tailwind
+
+markdown
+Copy
+Edit
+
+### Key Libraries:
+
+- [Next.js](https://nextjs.org/) (App Router, dynamic routing)
+- [ShadCN/UI](https://ui.shadcn.com/) (components)
+- [TanStack](https://tanstack.com/) (queries, forms, tables)
+
+---
+
+## 🔗 Backend Architecture
+
+mp-backend/
+├── controllers/ → Query logic (Drizzle)
+├── routes/ → API endpoints
+├── lib/ → Better Auth + helpers
+├── db/ → PostgreSQL setup
+
+### Key Libraries:
+
+- [Express.js](https://expressjs.com/)
+- [Drizzle ORM](https://orm.drizzle.team/)
+- [Better Auth](https://www.better-auth.com/)
+
+---
+
+**Built with:** TypeScript, Next.js, Express, PostgreSQL, Railway, Stripe, Better Auth  
+**Role:** Full-stack engineering, system architecture, contributor workflow management  
+**Status:** Production-ready, used daily by UBCMA members and execs

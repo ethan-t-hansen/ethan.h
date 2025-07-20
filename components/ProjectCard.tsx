@@ -2,23 +2,34 @@
 
 import Link from "next/link";
 import MediaPreview from "./MediaPreview";
+import { ProjectTag } from "./ProjectTag";
 
 export interface ProjectCardProps {
   slug: string;
   title: string;
+  role: string;
   tags: string[];
-  image: string;
+  previewImage: string;
   featured: boolean;
 }
 
-export function ProjectCard({ slug, title, tags, image }: ProjectCardProps) {
+export function ProjectCard({
+  slug,
+  title,
+  role,
+  tags,
+  previewImage,
+}: ProjectCardProps) {
   return (
     <Link
       href={`/project/${slug}`}
-      className="block opacity-90 w-full md:opacity-40 md:hover:opacity-95 group transition-all duration-500 break-inside-avoid"
+      className="block opacity-90 w-full md:opacity-70 md:hover:opacity-100 group transition-all duration-500 break-inside-avoid"
     >
       <div className="relative overflow-hidden">
-        <MediaPreview src={image} className="flex h-fit w-full aspect-[5/3] md:aspect-square" />
+        <MediaPreview
+          src={previewImage}
+          className="flex h-fit w-full aspect-[5/3] md:aspect-square"
+        />
 
         <div className="opacity-0 group-hover:opacity-60 transition-all duration-300">
           <span className="absolute left-0 top-0 h-2 w-2">
@@ -40,8 +51,13 @@ export function ProjectCard({ slug, title, tags, image }: ProjectCardProps) {
         </div>
       </div>
       <div className="mt-4">
-        <h3 className="text-md font-regular mb-1">{title}</h3>
-        <p className="text-xs font-light text-gray-400">{tags.join(", ")}</p>
+        <h3 className="text-md font-regular">{title}</h3>
+        <h4 className="text-xs font-regular mb-4 opacity-60">{role}</h4>
+        <div className="flex flex-wrap gap-1">
+          {tags.map((tag, index) => (
+            <ProjectTag key={index} tagKey={tag} />
+          ))}
+        </div>
       </div>
     </Link>
   );

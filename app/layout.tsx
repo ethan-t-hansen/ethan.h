@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Serif, Onest } from "next/font/google";
+import { IBM_Plex_Serif, Manrope, Onest } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
@@ -9,12 +9,6 @@ import { Toaster } from "@/components/ui/toaster";
 const onest = Onest({
   variable: "--font-onest",
   subsets: ["latin"],
-});
-
-const ibmPlexSerif = IBM_Plex_Serif({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-  variable: "--font-ibm-plex-serif",
 });
 
 export const metadata: Metadata = {
@@ -31,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${onest.variable} ${ibmPlexSerif.variable} font-sans antialiased`}
+        className={`${onest.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
@@ -39,12 +33,11 @@ export default function RootLayout({
           forcedTheme="dark"
           disableTransitionOnChange
         >
-
           <div className="relative z-20 mx-6 lg:mx-24">
             <NavBar />
             {children}
           </div>
-          
+
           <Toaster />
         </ThemeProvider>
       </body>

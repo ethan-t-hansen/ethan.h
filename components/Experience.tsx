@@ -1,6 +1,22 @@
 "use client";
 
-import { club_experience, work_experience } from "@/app/constants";
+import { club_experience, Experience, work_experience } from "@/app/constants";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
+import { Button } from "./ui/button";
+
+const ExperienceComponent = ({ experience }: { experience: Experience }) => {
+  return (
+    <div key={experience.id} className="w-full py-4 space-y-1">
+      <h3 className="text-md font-medium text-foreground">
+        {experience.title}
+      </h3>
+      <p className="text-xs opacity-60">
+        {experience.company} • {experience.type}
+      </p>
+      <p className="text-xs opacity-60">{experience.date}</p>
+    </div>
+  );
+};
 
 export default function ExperienceSection() {
   return (
@@ -12,29 +28,13 @@ export default function ExperienceSection() {
       <div className="w-full grid grid-cols-1 md:grid-cols-2">
         <div className="flex flex-col">
           {work_experience.map((experience) => (
-            <div key={experience.id} className="w-full py-4 space-y-1">
-              <h3 className="text-md font-medium text-foreground">
-                {experience.title}
-              </h3>
-              <p className="text-xs opacity-60">
-                {experience.company} • {experience.type}
-              </p>
-              <p className="text-xs opacity-60">{experience.date}</p>
-            </div>
+            <ExperienceComponent experience={experience} key={experience.id}/>
           ))}
         </div>
 
         <div className="flex flex-col">
           {club_experience.map((experience) => (
-            <div key={experience.id} className="w-full py-4 space-y-1">
-              <h3 className="text-md font-medium text-foreground">
-                {experience.title}
-              </h3>
-              <p className="text-xs opacity-60">
-                {experience.company} • {experience.type}
-              </p>
-              <p className="text-xs opacity-60">{experience.date}</p>
-            </div>
+            <ExperienceComponent experience={experience} key={experience.id}/>
           ))}
         </div>
       </div>
