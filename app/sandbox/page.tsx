@@ -49,7 +49,7 @@ export default function Page() {
               </div>
               <div className="mt-4">
                 <h3 className="text-md font-regular mb-1">{project.title}</h3>
-                <p className="text-sm font-light text-gray-400">
+                <p className="text-sm font-light text-zinc-400">
                   {project.description}
                 </p>
               </div>

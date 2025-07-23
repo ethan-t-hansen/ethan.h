@@ -31,8 +31,8 @@ export default function NotFound() {
         animateOn="view"
         revealDirection="start"
         sequential={true}
-        encryptedClassName="text-gray-400 mb-6"
-        parentClassName="text-gray-400 mb-6"
+        encryptedClassName="text-zinc-400 mb-6"
+        parentClassName="text-zinc-400 mb-6"
       />
       <ProjectLinkButton
         item={{ url: "/", cta: "Return to home", icon: <HomeIcon width={16} height={16}/> }}

@@ -44,7 +44,7 @@ export default async function Page({
         <div className="flex flex-col md:flex-row justify-between gap-4 md:items-end">
           <div className="uppercase tracking-tighter text-md md:text-xl font-regular">
             {metadata?.title}
-            <div className="tracking-normal text-xs md:text-s font-regular text-gray-400">
+            <div className="tracking-normal text-xs md:text-s font-regular text-zinc-400">
               Role: {metadata?.role}
             </div>
           </div>

@@ -11,7 +11,7 @@ export default function Page() {
       <ProjectGrid />
       <TextScroll />
       <ExperienceSection />
-      <Footer/>
+      <Footer />
     </main>
   );
 }

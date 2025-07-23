@@ -1,8 +1,6 @@
 "use client";
 
 import { club_experience, Experience, work_experience } from "@/app/constants";
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "./ui/hover-card";
-import { Button } from "./ui/button";
 
 const ExperienceComponent = ({ experience }: { experience: Experience }) => {
   return (

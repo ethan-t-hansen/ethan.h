@@ -1,4 +1,4 @@
-import { LinkType } from "@/app/constants"; 
+import { LinkType } from "@/app/constants";
 import { TAGS } from "@/constants/tags";
 
 export const metadata = {
@@ -15,9 +15,28 @@ export const metadata = {
       cta: "View Site",
     },
   ],
-  image: "/projects/spawn/logo-animation.webm",
-  previewImage: "/projects/spawn/logo-animation.webm",
+  image: "/projects/spawn/cover.webm",
+  previewImage: "/projects/spawn/cover.webm",
   featured: true,
 };
 
-<div className="flex h-32 w-full items-center justify-center">/ PROJECT PAGE COMING SOON /</div>
+<div className="space-y-16 md:space-y-24">
+
+<SectionColumns
+  h1="MAKING PLANS IS HARD"
+  h2="INTRODUCING SPAWN"
+  body1="Coordinating plans with your friends can be frustrating, especially last minute. In your 20s especially, everyone is at different stages of their lives and it can be hard to find a single time to get together and create memories - the status quo becomes scrolling social media for hours instead of going out there and having fun."
+  body2="Spawn started as a simple hackathon idea to build an app that helps you connect with others, spontaneously. We wanted to minimize those 'Hey, are you guys free on this day?' messages that get left on read for 24 hours, and ensure you never have to consider when2meet. Instead, we wanted a way to casually let your network know what you're up to, and give them the option to join in on the fun at their leisure."
+/>
+
+<div className="-mx-6 lg:-mx-24 w-screen h-48 md:h-64 lg:h-96 bg-clip-border">
+  <Image
+    src="/projects/spawn/ig-collage.png"
+    width={2000}
+    height={500}
+    className="self-center w-full h-full object-cover"
+    alt="Header"
+  />
+</div>
+
+</div>

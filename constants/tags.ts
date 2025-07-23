@@ -9,9 +9,6 @@ import {
   SiSupabase,
   SiRust,
   SiGoland,
-  SiTailwindcss,
-  SiVercel,
-  SiIos,
   SiJavascript,
   SiIced,
   SiAwslambda,
@@ -20,6 +17,7 @@ import {
   SiDrizzle,
   SiRive,
   SiRailway,
+  SiLinear,
 } from "react-icons/si";
 import { MdOutlineStyle, MdScreenshot } from "react-icons/md";
 import { TbCube3dSphere } from "react-icons/tb";
@@ -178,5 +176,10 @@ export const TAGS: Record<string, TagConfig> = {
     label: "Wordpress",
     icon: FaWordpress,
     borderColor: "#3D5DEA"
+  },
+  Linear: {
+    label: "Linear",
+    icon: SiLinear,
+    borderColor: "#f1f1f1"
   }
 };

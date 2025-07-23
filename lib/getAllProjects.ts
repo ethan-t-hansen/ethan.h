@@ -1,4 +1,3 @@
-import { TagConfig } from '@/constants/tags'
 import fs from 'fs'
 import path from 'path'
 
