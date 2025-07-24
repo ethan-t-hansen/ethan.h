@@ -18,8 +18,8 @@ export function ProjectCardSmall({
       href={`/project/${slug}`}
       className="flex flex-row gap-4 opacity-90 md:opacity-70 md:hover:opacity-100 group transition-all duration-500 break-inside-avoid"
     >
-      <div className="w-48 relative overflow-hidden">
-        <MediaPreview src={previewImage} className="flex h-24" />
+      <div className="w-48 relative h-fit">
+        <MediaPreview src={previewImage} className="flex h-24 w-full aspect-[4/3]" width={500} height={400}/>
         <div className="opacity-0 group-hover:opacity-60 transition-all duration-300">
           <span className="absolute left-0 top-0 h-2 w-2">
             <span className="absolute left-0 top-0 h-[1px] w-4 bg-foreground" />

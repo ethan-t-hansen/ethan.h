@@ -7,6 +7,7 @@ import type { Metadata } from "next/types";
 import MediaPreview from "@/components/MediaPreview";
 import { notFound } from "next/navigation";
 import { ProjectTag } from "@/components/ProjectTag";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export type PostMetadata = Metadata & {
   title: string;
@@ -39,36 +40,39 @@ export default async function Page({
   const components = getMDXComponents();
 
   return (
-    <main className="relative lg:justify-start justify-center min-h-screen w-full mt-32">
-      <div className="flex flex-col gap-4 w-full mb-16">
-        <div className="flex flex-col md:flex-row justify-between gap-4 md:items-end">
-          <div className="uppercase tracking-tighter text-md md:text-xl font-regular">
-            {metadata?.title}
-            <div className="tracking-normal text-xs md:text-s font-regular text-zinc-400">
-              Role: {metadata?.role}
+    <>
+      <ScrollToTop />
+      <main className="relative lg:justify-start justify-center min-h-screen h-screen w-full mt-32">
+        <div className="flex flex-col gap-4 w-full mb-16">
+          <div className="flex flex-col md:flex-row justify-between gap-4 md:items-end">
+            <div className="uppercase tracking-tighter text-md md:text-xl font-regular">
+              {metadata?.title}
+              <div className="tracking-normal text-xs md:text-s font-regular text-zinc-400">
+                Role: {metadata?.role}
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {metadata?.additionalLinks?.map((item, index) => (
+                <ProjectLinkButton item={item} key={index} />
+              ))}
             </div>
           </div>
-
-          <div className="flex flex-wrap gap-2">
-            {metadata?.additionalLinks?.map((item, index) => (
-              <ProjectLinkButton item={item} key={index} />
+          <MediaPreview src={metadata.image} />
+          <div className="tracking-tight text-md md:text-xl font-regular">
+            {metadata?.description}
+          </div>
+          <div className="flex flex-wrap gap-1">
+            {metadata?.tags.map((tag, index) => (
+              <ProjectTag key={index} tagKey={tag} />
             ))}
           </div>
         </div>
-        <MediaPreview src={metadata.image} />
-        <div className="tracking-tight text-md md:text-xl font-regular">
-          {metadata?.description}
-        </div>
-        <div className="flex flex-wrap gap-1">
-          {metadata?.tags.map((tag, index) => (
-            <ProjectTag key={index} tagKey={tag} />
-          ))}
-        </div>
-      </div>
-      <Post components={components} />
+        <Post components={components} />
 
-      <Footer />
-    </main>
+        <Footer />
+      </main>
+    </>
   );
 }
 

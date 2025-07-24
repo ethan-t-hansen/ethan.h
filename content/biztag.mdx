@@ -7,12 +7,12 @@ export const metadata = {
   description:
     "Designers spend hours manually porting names from a spreadsheet into their designs to create nametags and other custom visual assets. Figma lacked the features to deal with variable data like Adobe, but their plugin API ecosystem left potential for an open source solution to this common problem.",
   date: "2025-01-27",
-  tags: ["React", "Figma",],
+  tags: ["React", "Figma"],
   additionalLinks: [
     {
       url: "https://www.figma.com/community/plugin/1429338330818806179/biztag-name-tag-generator",
       linkType: LinkType.FIGMA,
-      cta: "View on Figma Community",
+      cta: "Figma Plugin Page",
     },
     {
       url: "https://github.com/ethan-t-hansen/biztag",
@@ -26,54 +26,12 @@ export const metadata = {
 };
 
 <div className="space-y-16 md:space-y-24">
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div className="flex flex-col gap-1 text-md font-medium md:w-3/4">
-      <h3>OVERVIEW</h3>
-      <p className="text-xs font-light">
-        University events like conferences, case competitions, and hackathons are more than just fun—they're core to student growth. These experiences blend creativity, networking, and real-world problem-solving. But behind the scenes, organizers often face time-consuming design tasks, such as creating name tags for professional partners. That’s where BizTag comes in.
-      </p>
-    </div>
-    <div className="flex flex-col gap-1 text-md font-medium md:w-3/4">
-      <h3>WHAT IT DOES</h3>
-      <p className="text-xs font-light">
-        <strong>BizTag</strong> is a Figma plugin I built to automate the entire name tag creation workflow. By integrating with Figma’s Plugin API and a third-party QR code generator, BizTag instantly produces front-and-back name tags for event partners—no manual layout work needed.
-      </p>
-    </div>
-  </div>
+  <SectionColumns
+    h1="PROJECT OVERVIEW"
+    h2="SOLUTION"
+    body1="University events like conferences, case competitions, and hackathons are more than just fun—they're core to student growth. These experiences blend creativity, networking, and real-world problem-solving. But behind the scenes, organizers often face time-consuming design tasks, such as creating name tags for professional partners. That’s where BizTag comes in."
+    body2="BizTag is a Figma plugin I built to automate the entire name tag creation workflow. By integrating with Figma’s Plugin API and a third-party QR code generator, BizTag instantly produces front-and-back name tags for event partners—no manual layout work needed."
+  />
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <div className="flex flex-col gap-1 text-md font-medium md:w-3/4">
-      <h3>FEATURES</h3>
-      <p>
-        Upload a custom background and a <code>.csv</code> or <code>.json</code> file with partner info, and BizTag will:
-        <ul className="list-disc list-inside mt-2 text-muted-foreground">
-          <li>Lay out name, position, company, and pronouns on the front</li>
-          <li>Generate a QR code linking to LinkedIn on the back</li>
-          <li>Wrap everything in a clean, customizable auto-layout frame</li>
-        </ul>
-        It’s built by a designer, for designers—making bulk name tag creation feel effortless.
-      </p>
-    </div>
-    <div className="flex flex-col gap-1 text-md font-medium md:w-3/4">
-      <h3>HOW IT WORKS</h3>
-      <p>
-        <strong>Input Background:</strong> Upload a <code>.png</code> or <code>.jpeg</code> background image of any resolution.
-        <br/>
-        <strong>Partner Data Schema:</strong>
-        <code>
-          {`type Partner = {
-            firstname: string;
-            lastname: string;
-            position: string;
-            pronouns: string;
-            linkedin: string;
-          };`}
-        </code>
-      </p>
-    </div>
-  </div>
-
-  <div className="tracking-tight text-md md:text-xl font-regular">
-    BizTag has already saved hours of work for organizers running large conferences. By simplifying the tedious parts of name tag creation, it enables teams to focus more on delivering a polished experience.
-  </div>
+  {/* <LinkPreview url="https://www.figma.com/community/plugin/1429338330818806179/biztag-name-tag-generator" width={400}/> */}
 </div>

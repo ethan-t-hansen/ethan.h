@@ -7,8 +7,21 @@ export default {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    './mdx-components.tsx',
-    './content/**/*.{md,mdx}',
+    "./mdx-components.tsx",
+    "./content/**/*.{md,mdx}",
+  ],
+  safelist: [
+    "grid",
+    "grid-cols-2",
+    "text-zinc-300",
+    "text-base",
+    "text-sm",
+    "gap-16",
+    "w-3/4",
+    "mb-16",
+    "rounded-xl",
+    "self-center",
+    "opacity-80",
   ],
   theme: {
     extend: {
@@ -45,11 +58,11 @@ export default {
         },
         dark: {
           background: "#101010",
-          foreground: "#ffffff", 
+          foreground: "#ffffff",
         },
         sky: {
           background: "#0ea5e9",
-          foreground: "#ffffff", 
+          foreground: "#ffffff",
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -78,8 +91,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['var(--font-onest)'],
-        serif: ['var(--font-ibm-plex-serif)'],
+        sans: ["var(--font-onest)"],
+        serif: ["var(--font-ibm-plex-serif)"],
       },
     },
   },
@@ -88,6 +101,6 @@ export default {
       addVariant("sky", ":is(.sky &)");
     }),
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    require("tailwindcss-animate")
+    require("tailwindcss-animate"),
   ],
 } satisfies Config;

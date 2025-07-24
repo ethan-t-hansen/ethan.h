@@ -2,7 +2,11 @@ import type { MDXComponents } from "mdx/types";
 import Image, { ImageProps } from "next/image";
 import ClientVideo from "./components/ClientVideo";
 import { cn } from "./lib/utils";
-import { DynamicSectionHeader, Section } from "./components/DynamicSectionHeader";
+import {
+  DynamicSectionHeader,
+  Section,
+} from "./components/DynamicSectionHeader";
+import ImageMarquee from "./components/ImageMarquee";
 
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
@@ -10,8 +14,13 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
 
     Video: ({ src }: { src: string }) => <ClientVideo src={src} />,
 
-    DynamicSectionHeader: ({sections}: {sections: Section[]}) => <DynamicSectionHeader sections={sections}/>,
+    DynamicSectionHeader: ({ sections }: { sections: Section[] }) => (
+      <DynamicSectionHeader sections={sections} />
+    ),
 
+    ImageMarquee: ({ folder }: { folder: string }) => (
+      <ImageMarquee folder={folder} />
+    ),
     SectionColumns: ({
       h1,
       h2,
