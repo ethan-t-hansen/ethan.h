@@ -26,13 +26,13 @@ const contactLinks = [
   {
     icon: <FaGithub className="h-4 w-4" />,
     href: "https://github.com/ethan-t-hansen", // Replace with your GitHub username
-    text: "/ethan-t-hansen",
+    text: "github.com/ethan-t-hansen",
     type: "link",
   },
   {
     icon: <FaLinkedin className="h-4 w-4" />, // LinkedIn Icon
     href: "https://www.linkedin.com/in/ethanth", // Replace with your LinkedIn profile
-    text: "/ethanth", // Customize link text
+    text: "linkedin.com/ethanth", // Customize link text
     type: "link",
   },
 ];

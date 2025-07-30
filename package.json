@@ -39,7 +39,8 @@
     "react-icons": "^5.4.0",
     "rive-react": "^4.18.2",
     "tailwind-merge": "^3.0.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "vercel": "^44.6.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

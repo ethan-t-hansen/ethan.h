@@ -29,13 +29,8 @@ export function NavBar() {
     { href: "/about", label: "ABOUT", external: false },
     { href: "/contact", label: "CONTACT", external: false },
     {
-      href: "https://github.com/ethan-t-hansen",
-      label: "GITHUB",
-      external: true,
-    },
-        {
-      href: "https://www.linkedin.com/in/ethanth/",
-      label: "LINKEDIN",
+      href: "https://8gjt2hpyoydupxo2.public.blob.vercel-storage.com/resume.pdf",
+      label: "RESUME",
       external: true,
     },
   ];
