@@ -1,10 +1,9 @@
 "use client";
 
-// import Image from "next/image";
-import Link from "next/link";
 import MediaPreview from "./MediaPreview";
 import { ProjectCardProps } from "./ProjectCard";
 import { ProjectTag } from "./ProjectTag";
+import Link from "next/link"
 
 export function ProjectCardSmall({
   slug,

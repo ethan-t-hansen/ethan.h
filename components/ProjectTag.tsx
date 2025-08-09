@@ -24,7 +24,7 @@ export function ProjectTag({ tagKey }: ProjectTagProps) {
 
   return (
     <span
-      className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-xs font-medium border backdrop-blur-sm"
+      className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-xs font-medium border backdrop-blur-sm text-nowrap"
       style={{
         border: `1px solid ${borderColor}`,
         background: `${borderColor}2A`,

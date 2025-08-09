@@ -12,9 +12,40 @@ const onest = Onest({
 });
 
 export const metadata: Metadata = {
-  title: "ethan.h",
+  title: {
+    template: '%s | Ethan Hansen',
+    default: 'Ethan Hansen',
+  },
   description:
-    "Creative developer exploring digital experience through 3D, animation, and web.",
+    "Ethan's Design Engineer Portfolio - showcasing design, engineering, and business projects with a focus on creativity and innovation.",
+  keywords: ["Ethan", "Hansen", "Portfolio", "Design", "Engineering", "Business"],
+  openGraph: {
+    title: "Ethan's Portfolio",
+    description:
+      "Showcasing design, engineering, and business projects with creativity and innovation.",
+    url: "https://www.ethanthansen.com",
+    siteName: "Ethan's Portfolio",
+    images: [
+      {
+        url: "https://rvkf0y9jdjpjjuzl.public.blob.vercel-storage.com/portfolio-preview.png",
+        width: 1200,
+        height: 630,
+        alt: "Ethan's Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ethan's Portfolio",
+    description:
+      "Design, engineering, and business projects by Ethan.",
+    images: ["https://rvkf0y9jdjpjjuzl.public.blob.vercel-storage.com/portfolio-preview.png"],
+  },
+  alternates: {
+    canonical: "https://www.ethanthansen.com",
+  },
 };
 
 export default function RootLayout({
@@ -24,9 +55,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${onest.variable} font-sans antialiased`}
-      >
+      <body className={`${onest.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

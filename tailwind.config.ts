@@ -94,6 +94,24 @@ export default {
         sans: ["var(--font-onest)"],
         serif: ["var(--font-ibm-plex-serif)"],
       },
+      keyframes: {
+        glow: {
+          "0%, 100%": {
+            boxShadow: "inset 0 0 8px rgba(255,255,255,0.2)",
+          },
+          "50%": {
+            boxShadow: "inset 0 0 15px rgba(255,255,255,0.5)",
+          },
+        },
+        shine: {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        glow: "glow 3s ease-in-out infinite",
+        shine: "shine 3s ease-in-out infinite",
+      },
     },
   },
   plugins: [
