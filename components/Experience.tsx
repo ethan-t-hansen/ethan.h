@@ -19,7 +19,7 @@ const ExperienceComponent = ({ experience }: { experience: Experience }) => {
 export default function ExperienceSection() {
   return (
     <div>
-      <div className="flex flex-row items-center mb-4 gap-4 my-24">
+      <div className="flex flex-row items-center mb-4 gap-4">
         <p className="text-nowrap text-xs opacity-50">/ EXPERIENCE /</p>
       </div>
 
