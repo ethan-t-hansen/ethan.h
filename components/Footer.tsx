@@ -7,7 +7,7 @@ export default function Footer() {
       <p>© JULY 2025</p>
       <Link
         href="#"
-        className="flex flex-row gap-1 text-white hover:underline items-center"
+        className="flex flex-row gap-1 text-foreground hover:underline items-center"
       >
         BACK TO TOP
         <ArrowUp height={16} width={16} />

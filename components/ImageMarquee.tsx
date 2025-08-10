@@ -1,18 +1,24 @@
 "use client";
 
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
 
 type Props = {
   folder: string;
+  direction?: "left" | "right"
 };
 
-export default function ImageMarquee({ folder }: Props) {
+export default function ImageMarquee({ folder, direction }: Props) {
   const [images, setImages] = useState<string[]>([]);
 
   const isMobile = useIsMobile();
+
+  const { theme } = useTheme();
+
+  const color = theme === "dark" ? "#000000" : "#ffffff"
 
   useEffect(() => {
     const fetchImages = async () => {
@@ -29,7 +35,7 @@ export default function ImageMarquee({ folder }: Props) {
   }, [folder]);
 
   return (
-    <Marquee speed={50} gradient={true} gradientWidth={isMobile ? 96 : 164} pauseOnHover gradientColor="#000000">
+    <Marquee speed={50} gradient={true} gradientWidth={isMobile ? 96 : 164} pauseOnHover gradientColor={color} direction={direction} loop={0} autoFill>
       {images.map((src, idx) => (
         <Image
           key={idx}

@@ -1,9 +1,7 @@
-import ScrollGallery from "@/components/ScrollGallery";
 import ExperienceSection from "@/components/Experience";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
-import DesignPhilosophy from "@/components/DesignPhilosophy";
 
 export default function Page() {
   return (
