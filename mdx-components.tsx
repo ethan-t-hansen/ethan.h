@@ -35,11 +35,11 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div className="flex flex-col text-md font-medium gap-1 md:w-3/4">
           <h3>{h1}</h3>
-          <div className="text-xs font-light">{body1}</div>
+          <div className="text-sm font-light">{body1}</div>
         </div>
         <div className="flex flex-col text-md font-medium gap-1 md:w-3/4">
           <h3>{h2}</h3>
-          <div className="text-xs font-light">{body2}</div>
+          <div className="text-sm font-light">{body2}</div>
         </div>
       </div>
     ),
