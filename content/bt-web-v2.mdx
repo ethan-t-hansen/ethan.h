@@ -4,10 +4,27 @@ import { TAGS } from "@/constants/tags";
 export const metadata = {
   title: "BizTech Web v2 - Event Portal",
   role: "Developer & UI/UX Designer",
+  team: ['Ethan Hansen','Kevin Xiao', 'Benny Chinvanich'],
   description: "",
   date: "2025-01-27",
   tags: ["Serverless", "AWS Lambda", "DynamoDB", "React", "Figma"],
-  additionalLinks: [],
+  additionalLinks: [
+    {
+      url: "https://app.ubcbiztech.com",
+      linkType: LinkType.WEBSITE,
+      cta: "Webapp",
+    },
+    {
+      url: "https://github.com/ubc-biztech/bt-web-v2",
+      linkType: LinkType.GITHUB,
+      cta: "Frontend Repo",
+    },
+    {
+      url: "https://github.com/ubc-biztech/serverless-biztechapp",
+      linkType: LinkType.GITHUB,
+      cta: "Backend Repo",
+    },
+  ],
   image: "/projects/bt-web-v2/cover.webp",
   previewImage: "/projects/bt-web-v2/cover.webp",
   featured: true,

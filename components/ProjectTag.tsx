@@ -1,7 +1,8 @@
 "use client";
 
 import { TAGS } from "@/constants/tags";
-import { cn } from "@/lib/utils";
+import { cn, darkenColor } from "@/lib/utils";
+import { useTheme } from "next-themes";
 
 type TagKey = keyof typeof TAGS;
 
@@ -10,6 +11,9 @@ interface ProjectTagProps {
 }
 
 export function ProjectTag({ tagKey }: ProjectTagProps) {
+
+  const { theme } = useTheme();
+
   const tag = TAGS[tagKey as TagKey];
 
   if (!tag) {
@@ -22,6 +26,10 @@ export function ProjectTag({ tagKey }: ProjectTagProps) {
 
   const { icon: Icon, label, borderColor } = tag;
 
+
+  const color =
+    theme === "light" ? darkenColor(borderColor, 0.4) : borderColor;
+
   return (
     <span
       className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-xs font-medium border backdrop-blur-sm text-nowrap"
@@ -31,7 +39,7 @@ export function ProjectTag({ tagKey }: ProjectTagProps) {
       }}
     >
       <Icon className={cn(`w-3 h-3 shrink-0`)} style={{ color: borderColor }} />
-      <p style={{color: borderColor}}>{label}</p>
+      <p style={{color: color }}>{label}</p>
     </span>
   );
 }

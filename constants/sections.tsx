@@ -12,7 +12,7 @@ export const maSections: Section[] = [
     icon: SiLinear,
     content: (
       <div className="text-sm">
-        <p className="mb-16 text-zinc-300 text-base">
+        <p className="mb-16 text-muted-foreground text-base">
           To build our Membership Portal, I led development using Linear to
           manage sprints, coordinate tasks across teams, and track
           implementation progress in real time. Linear gave us the visibility
@@ -26,7 +26,7 @@ export const maSections: Section[] = [
             <h3 className="text-base font-medium mb-1">
               Task Management & Documentation
             </h3>
-            <p className="text-zinc-300">
+            <p className="text-muted-foreground">
               Our issue board tracked work across all of our devs in a
               traditional kanban board style. We used tags for frontend/backend,
               features, and infrastructure to filter issues by area of
@@ -48,7 +48,7 @@ export const maSections: Section[] = [
             <h3 className="text-base font-medium mb-1">
               Timeline & Project Forecasting
             </h3>
-            <p className="text-zinc-300">
+            <p className="text-muted-foreground">
               We used Linear’s timeline view to define clear development
               phases—starting with onboarding and authentication, and
               progressing through Stripe integration, email automation, and the
@@ -70,7 +70,7 @@ export const maSections: Section[] = [
             <h3 className="text-base font-medium mb-1">
               Integration & Workflows
             </h3>
-            <p className="text-zinc-300">
+            <p className="text-muted-foreground">
               We integrated GitHub, Slack, and Notion with Linear to keep
               discussions, documentation, and code reviews in sync. Synced
               comments and context from Slack threads into Linear issues Linked
@@ -97,7 +97,7 @@ export const maSections: Section[] = [
     icon: FaGithub,
     content: (
       <div className="grid grid-cols-2 gap-16">
-        <p className="mb-16 text-zinc-300 text-base w-3/4">
+        <p className="mb-16 text-muted-foreground text-base w-3/4">
           We used a standard version control strategy to manage releases, test
           in preview, and isolate features. Combined with Linear's Github
           integrations, our developers were able to work in parallel and in

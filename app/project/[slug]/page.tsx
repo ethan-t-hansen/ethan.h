@@ -51,11 +51,13 @@ export default async function Page({
                 {metadata?.title}
               </h1>
 
-              <div className="flex flex-col md:flex-row gap-2 text-zinc-300 capitalize tracking-normal mt-1 text-xs md:text-s font-regular">
+              <div className="flex flex-col md:flex-row gap-2 text-muted-foreground capitalize tracking-normal mt-1 text-xs md:text-s font-regular">
                 <p>
                   Role: {metadata?.role}
                 </p>
+                {metadata?.team && (
                 <p className="md:block hidden"> | </p>
+                )}
                 {metadata?.team && (
                   <div>
                     Team:{" "}

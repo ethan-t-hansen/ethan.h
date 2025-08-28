@@ -50,8 +50,8 @@ export const DynamicSectionHeader: React.FC<DynamicSectionHeaderProps> = ({
   };
 
   return (
-    <div className="bg-black text-white min-h-screen">
-      <div className="border-b border-zinc-800">
+    <div className="text-foreground min-h-screen">
+      <div className="border-b border-muted-foreground">
         <div className="flex items-center justify-between py-4">
           <motion.div
             key={`header-${validatedActiveSection}`}
@@ -60,7 +60,7 @@ export const DynamicSectionHeader: React.FC<DynamicSectionHeaderProps> = ({
             transition={{ duration: 0.2, ease: "easeOut" }}
           >
             <motion.div
-              className="text-xs text-gray-400 mb-1 uppercase"
+              className="text-xs text-muted-foreground mb-1 uppercase"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.05, duration: 0.2 }}
@@ -88,8 +88,8 @@ export const DynamicSectionHeader: React.FC<DynamicSectionHeaderProps> = ({
                   onClick={() => handleSectionChange(index)}
                   className={`p-3 rounded-lg transition-all duration-200 ${
                     isActive
-                      ? "bg-zinc-900 text-white border-2 border-[#00AB6A] shadow-lg"
-                      : "bg-zinc-900 text-gray-400 hover:bg-zinc-700 hover:text-white border-2 border-transparent"
+                      ? "bg-background text-foreground border border-[#00AB6A] shadow-lg"
+                      : "bg-background text-muted-foreground hover:opacity-80 hover:text-muted-foreground border border-foreground/5"
                   }`}
                   style={
                     isActive
