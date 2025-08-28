@@ -16,8 +16,8 @@ export const metadata = {
   date: "2025-01-27",
   tags: ["3D", "Branding", "Figma", "Mobile"],
   additionalLinks: [],
-  image: "/projects/video/blueprint-video.webm",
-  previewImage: "/projects/video/blueprint-video.webm",
+  image: "/projects/blueprint/blueprint-video.webm",
+  previewImage: "/projects/blueprint/blueprint-video.webm",
   featured: true,
   priority: 1,
 };
@@ -42,7 +42,7 @@ export const metadata = {
 
 <div className="-mx-6 lg:-mx-24 w-screen h-96 bg-clip-border">
   <Image
-    src="/img/blueprint/panel-header.webp"
+    src="/projects/blueprint/panel.webp"
     width={2000}
     height={500}
     className="self-center w-full h-full object-cover"
@@ -70,13 +70,13 @@ export const metadata = {
       associated with networking.'
 />
 
-<div className="bg-white/[0.07] h-fit w-screen -mx-6 lg:-mx-24 py-16 px-6 md:px-24 space-y-16 md:space-y-24">
+<div className="bg-foreground/5 h-fit w-screen -mx-6 lg:-mx-24 py-16 px-6 md:px-24 space-y-16 md:space-y-24">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
     <Image
-      src="/img/blueprint/pain-points.png"
+      src="/projects/blueprint/ux/pain-points.png"
       height={320}
       width={640}
-      className="self-center"
+      className="self-center invert hue-rotate-180 dark:invert-0 dark:hue-rotate-0"
       alt="Pain points"
     />
     <div className="flex flex-col gap-1 justify-center">
@@ -93,10 +93,10 @@ export const metadata = {
     </div>
   </div>
   <Image
-    src="/img/blueprint/current-user-journey.png"
+    src="/projects/blueprint/ux/current-user-journey.png"
     height={640}
     width={1280}
-    className="self-center"
+    className="self-center invert hue-rotate-180 dark:invert-0 dark:hue-rotate-0"
     alt="Current user journey"
   />
 </div>
@@ -105,7 +105,7 @@ export const metadata = {
 
 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
   <div className="flex flex-col text-md font-regular gap-2 md:w-4/5">
-    <h3>PROBLEM STATEMENT</h3>
+    <h3 className='text-muted-foreground'>PROBLEM STATEMENT</h3>
     <div className="text-xl md:text-2xl font-medium tracking-tight">
       Conference attendees come to BluePrint to make meaningful connections but
       have trouble remembering who they have talked to and where to find them, 
@@ -113,7 +113,7 @@ export const metadata = {
     </div>
   </div>
   <div className="flex flex-col text-md font-regular gap-2 md:w-4/5">
-    <h3>FRAMING A SOLUTION</h3>
+    <h3 className='text-muted-foreground'>FRAMING A SOLUTION</h3>
     <div className="text-xl md:text-2xl font-medium tracking-tight">
       How might we foster the connections between attendees and delegates made
       at BluePrint and highlight the value that each attendee gained by attending?
@@ -123,12 +123,12 @@ export const metadata = {
 
 {" "}
 
-<div className="bg-white/[0.07] h-fit w-screen -mx-6 lg:-mx-24 py-16 px-6 md:px-24 space-y-16 md:space-y-24">
+<div className="bg-foreground/5 h-fit w-screen -mx-6 lg:-mx-24 py-16 px-6 md:px-24 space-y-16 md:space-y-24">
   <Image
-    src="/img/blueprint/revised-user-journey.png"
+    src="/projects/blueprint/ux/revised-user-journey.png"
     height={640}
     width={1280}
-    className="self-center"
+    className="self-center invert hue-rotate-180 dark:invert-0 dark:hue-rotate-0"
     alt="Pain points"
   />
 </div>
@@ -145,13 +145,29 @@ export const metadata = {
       </div>
     </div>
 
+    <div className='grid grid-cols-3 gap-2 md:gap-8'>
     <Image
-      src="/img/blueprint/home+profile.png"
+      src="/projects/blueprint/prototypes/app/Home.png"
       height={640}
       width={1280}
       className="self-center"
       alt="App prototype designs"
     />
+            <Image
+      src="/projects/blueprint/prototypes/app/Connection Made.png"
+      height={640}
+      width={1280}
+      className="self-center"
+      alt="App prototype designs"
+    />
+        <Image
+      src="/projects/blueprint/prototypes/app/Attendee Profile (Connected).png"
+      height={640}
+      width={1280}
+      className="self-center"
+      alt="App prototype designs"
+    />
+    </div>
 
   </div>
 
@@ -177,28 +193,14 @@ export const metadata = {
 
   </div>
 
-<div className="-mx-6 md:-mx-24 w-[96vw] justify-self-center h-auto bg-clip-border px-6 space-y-24">
-  <Image
-    src="/img/blueprint/wireframes.webp"
-    width={2000}
-    height={1000}
-    className="self-center w-full h-full object-cover"
-    alt="Header"
-  />
-  <Image
-    src="/img/blueprint/wrapped.webp"
-    width={2000}
-    height={1000}
-    className="self-center w-full h-full object-cover"
-    alt="Header"
-  />
+<div className="-mx-6 lg:-mx-24 w-screen space-y-8 bg-clip-border">
+  <ImageMarquee folder="projects/blueprint/prototypes/app" direction='right'/>
+  <ImageMarquee folder="projects/blueprint/prototypes/wrapped" direction='left'/>
 </div>
-
-{" "}
 
 <div className="-mx-6 md:-mx-24 w-screen h-auto bg-clip-border">
   <Image
-    src="/img/blueprint/blueprint-collage.webp"
+    src="/projects/blueprint/image-collage.webp"
     width={2000}
     height={1000}
     className="self-center w-full h-full object-cover"

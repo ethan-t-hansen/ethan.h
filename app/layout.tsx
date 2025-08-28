@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
 import { NavBar } from "@/components/NavBar";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeToggle } from "@/components/ThemeToggle";
 
 const onest = Onest({
   variable: "--font-onest",
@@ -58,15 +59,16 @@ export default function RootLayout({
       <body className={`${onest.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
-          forcedTheme="dark"
+          defaultTheme="system"
           disableTransitionOnChange
         >
           <div className="relative z-20 mx-6 lg:mx-24">
             <NavBar />
             {children}
           </div>
-
+          <div className="fixed bottom-4 right-4 z-[999]">
+            <ThemeToggle />
+          </div>
           <Toaster />
         </ThemeProvider>
       </body>

@@ -31,12 +31,12 @@ export function ProjectCard({
           className="absolute flex h-fit w-full aspect-[5/3] md:aspect-square"
         />
 
-        <div className="opacity-0 absolute bottom-0 left-0 group-hover:opacity-100 transition-opacity duration-200 w-full h-full bg-gradient-to-t from-black/80 to-black/20">
+        <div className="opacity-0 absolute bottom-0 left-0 group-hover:opacity-100 transition-opacity duration-200 w-full h-full bg-gradient-to-t from-black/80 to-black/0">
           <div className="absolute flex flex-col bottom-4 left-4">
-            <span className="text-foreground font-medium text-lg">
+            <span className="text-white font-medium text-lg">
               {title}
             </span>
-            <span className="text-muted-foreground text-sm">
+            <span className="text-neutral-400 text-sm">
               {role}
             </span>
           </div>

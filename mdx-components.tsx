@@ -18,8 +18,8 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       <DynamicSectionHeader sections={sections} />
     ),
 
-    ImageMarquee: ({ folder }: { folder: string }) => (
-      <ImageMarquee folder={folder} />
+    ImageMarquee: ({ folder, direction }: { folder: string, direction?: "left" | "right" }) => (
+      <ImageMarquee folder={folder} direction={direction} />
     ),
     SectionColumns: ({
       h1,

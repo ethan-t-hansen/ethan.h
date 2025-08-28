@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import MediaPreview from "./MediaPreview";
 
 const images = [
   "/projects/mis-night.png",
