@@ -59,7 +59,7 @@ export default function RootLayout({
       <body className={`${onest.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           disableTransitionOnChange
         >
           <div className="relative z-20 mx-6 lg:mx-24">
