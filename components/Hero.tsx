@@ -5,14 +5,14 @@ export default function Hero() {
 
         <div className="flex flex-col gap-2 text-3xl md:text-4xl font-regular tracking-tight mb-4 md:w-3/4">
           <div className="text-2xl md:text-3xl">
-            {"Hey 👋🏻 I'm Ethan, a designer focused on the intersection between development and creativity."}
+            {"Hey! I'm Ethan, a creative developer with industry experience in both product design and frontend engineering."}
           </div>
         </div>
 
         <div className="flex gap-6 text-xs font-regular">
           <div className="flex flex-col md:flex-row md:gap-2">
-            <p className="opacity-60">WORKING AS</p>
-            <p>Design Eng Intern @ ICBC</p>
+            <p className="opacity-60">PREVIOUSLY</p>
+            <p>UX Engineering Intern @ ICBC</p>
           </div>
           <div className="flex flex-col md:flex-row md:gap-2">
             <p className="opacity-60">STUDYING</p>

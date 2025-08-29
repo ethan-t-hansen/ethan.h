@@ -3,66 +3,56 @@ import { TAGS } from "@/constants/tags";
 
 export const metadata = {
   title: "Spawn - iOS App",
-  role: "Product Design Lead",
+  role: "Product Design Lead, iOS Developer",
+  team: [
+    "Ethan Hansen",
+    "Daniel Agapov",
+    "Daniel Lee",
+    "Shane Mander",
+    "Haley Wong",
+  ],
   description:
     "An app that makes being spontaneous a little easier. Spawn lets you casually let your friends in on what you're up to, and see what your friends are doing in real-time. Whether it's a spontaneous trip to the beach or a last-minute dinner, Spawn helps you connect with friends and make the most of your free time.",
   date: "2025-07-15",
-  tags: ["Mobile", "Design Systems", "Branding", "Figma"],
+  tags: ["Mobile", "Design Systems", "Branding", "Figma", "SwiftUI"],
   additionalLinks: [
     {
-      url: "https://getspawn.com",
-      linkType: LinkType.WEBSITE,
-      cta: "View Site",
+      url: "https://github.com/Daggerpov/Spawn-App-iOS-SwiftUI?tab=readme-ov-file",
+      linkType: LinkType.GITHUB,
+      cta: "iOS Codebase",
+    },
+    {
+      url: "https://apps.apple.com/ca/app/spawn/id6738635871?platform=iphone",
+      linkType: LinkType.APPLE,
+      cta: "View on App Store",
     },
   ],
   image: "/projects/spawn/cover.webm",
   previewImage: "/projects/spawn/cover.webm",
   featured: true,
-   priority: 2,
+  priority: 2,
 };
 
-<div className="space-y-16 md:space-y-24">
+*Authors Note: This project is a* ***Work in Progress***
 
-<SectionColumns
-  h1="MAKING PLANS IS HARD"
-  h2="INTRODUCING SPAWN"
-  body1="Coordinating plans with your friends can be frustrating, especially last minute. In your 20s especially, everyone is at different stages of their lives and it can be hard to find a single time to get together and create memories - the status quo becomes scrolling social media for hours instead of going out there and having fun."
-  body2="Spawn started as a simple hackathon idea to build an app that helps you connect with others, spontaneously. We wanted to minimize those 'Hey, are you guys free on this day?' messages that get left on read for 24 hours, and ensure you never have to consider when2meet. Instead, we wanted a way to casually let your network know what you're up to, and give them the option to join in on the fun at their leisure."
-/>
+---
 
-{/* <div className="-mx-6 lg:-mx-24 w-screen h-48 md:h-64 lg:h-96 bg-clip-border">
-  <Image
-    src="/projects/spawn/ig-collage.png"
-    width={2000}
-    height={500}
-    className="self-center w-full h-full object-cover"
-    alt="Header"
-  />
-</div>
+# Project Overview
 
-<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-  <div className="flex flex-col text-md font-regular gap-2 md:w-4/5">
-    <h3>PROBLEM STATEMENT</h3>
-    <div className="text-xl md:text-2xl font-medium tracking-tight">
-      Planning individually is time consuming, and messaging group chats can
-      feel like talking to a wall. Although people clearly want to get out and
-      have fun with their friends, having to plan so far in advance makes
-      scrolling instagram reels that much more inticing.
-    </div>
-  </div>
-  <div className="flex flex-col text-md font-regular gap-2 md:w-4/5">
-    <h3>FRAMING A SOLUTION</h3>
-    <div className="text-xl md:text-2xl font-medium tracking-tight">
-      How might reduce the friction in the activity-planning process, and
-      encourage spontaneous activity through intelligent and user-friendly
-      design?
-    </div>
-  </div>
-</div> */}
+Spawn started as a hackathon project with a simple idea - make spontaneous planning simple. Coordinating plans with your friends can be frustrating, especially in cold and rainy Vancouver. In our city in particular, it can sometimes feel like our friends need 5 days of notice to go out for an hour, and the status quo becomes scrolling social media for hours instead of going out and having fun.
 
-<div className="-mx-6 lg:-mx-24 w-screen space-y-8 bg-clip-border">
-  <ImageMarquee folder="projects/spawn/wireframes/onboarding" />
-  <ImageMarquee folder="projects/spawn/wireframes/social" />
-</div>
+## Fostering Spontaneity
 
-</div>
+The purpose of the app was to remove the friction in plan making, but that was a difficult UX task. How can we make something more intuitive and casual than google calendar while still offering all of the data that is needed to plan an event?
+
+---
+
+<ImageMarquee folder="projects/spawn/wireframes/onboarding" />
+
+<div className="my-12"/>
+
+<ImageMarquee folder="projects/spawn/wireframes/social" />
+
+---
+
+*[More details coming soon]*

@@ -22,7 +22,7 @@ import {
 import { MdOutlineStyle, MdScreenshot } from "react-icons/md";
 import { TbCube3dSphere } from "react-icons/tb";
 import { IconType } from "react-icons";
-import { FaApple, FaMobile, FaPenNib, FaWordpress } from "react-icons/fa";
+import { FaApple, FaAws, FaMobile, FaPenNib, FaSwift, FaWordpress } from "react-icons/fa";
 import { Component } from "lucide-react";
 
 export type TagConfig = {
@@ -181,5 +181,15 @@ export const TAGS: Record<string, TagConfig> = {
     label: "Linear",
     icon: SiLinear,
     borderColor: "#f1f1f1"
+  },
+  AWS: {
+    label: "AWS",
+    icon: FaAws,
+    borderColor: "#FF9900"
+  },
+  SwiftUI: {
+    label: "SwiftUI",
+    icon: FaSwift,
+    borderColor: "#62c0ff"
   }
 };

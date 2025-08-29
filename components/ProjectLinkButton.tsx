@@ -1,6 +1,6 @@
 import { ExternalLink, LinkType } from "@/app/constants";
 import Link from "next/link";
-import { FaFigma, FaGithub } from "react-icons/fa";
+import { FaApple, FaFigma, FaGithub } from "react-icons/fa";
 import { Globe } from "lucide-react";
 
 export default function ProjectLinkButton({ item }: { item: ExternalLink }) {
@@ -17,6 +17,9 @@ export default function ProjectLinkButton({ item }: { item: ExternalLink }) {
       break;
     case LinkType.WEBSITE:
       icon = <Globe size={16} />;
+      break;
+    case LinkType.APPLE:
+      icon = <FaApple size={16} />;
       break;
     default:
       break;

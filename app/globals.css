@@ -80,6 +80,9 @@ body {
   font-family: sans-serif; 
 }
 
+.no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
 
 
 /* TRANSITIONS */

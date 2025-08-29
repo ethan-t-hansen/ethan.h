@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Onest } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
 import { NavBar } from "@/components/NavBar";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeToggle } from "@/components/ThemeToggle";
-
-const onest = Onest({
-  variable: "--font-onest",
-  subsets: ["latin"],
-});
+import { nanumPenScript, onest } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: {
@@ -56,7 +51,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${onest.variable} font-sans antialiased`}>
+      <body className={`${onest.variable} ${nanumPenScript.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"

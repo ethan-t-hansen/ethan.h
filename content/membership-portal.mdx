@@ -6,17 +6,19 @@ import { maSections } from "@/constants/sections";
 export const metadata = {
   title: "UBCMA Membership Portal",
   role: "Development Lead",
+  team: ["Ethan Hansen", "Janaye Cheong", "Kevin Gu", "Daniel Lee"],
   description:
-    "UBCMA stands as UBC's only marketing focused club. Each year, the club sells membership to students and hosts events through Showpass, which offers limited features to suit the club's needs.  Our team built a centralized web application to replace this process, ultimately decreasing costs, streamlining workflows, and fostering community",
+    "A full-stack production platform to foster community and growth within the marketing space at UBC. This app supports UBCMA's membership and event ticketing ecosystem, delivering opportunity to engaged students.",
   date: "2025-01-27",
   tags: [
-    "React",
-    "PostgreSQL",
+    "AWS",
     "Drizzle",
-    "Railway",
-    "Stripe",
-    "Redis",
     "Linear",
+    "PostgreSQL",
+    "Railway",
+    "React",
+    "Redis",
+    "Stripe",
   ],
   additionalLinks: [
     {
@@ -24,61 +26,108 @@ export const metadata = {
       linkType: LinkType.WEBSITE,
       cta: "Webapp",
     },
-        {
+    {
       url: "https://github.com/ubcma/mp-frontend",
       linkType: LinkType.GITHUB,
       cta: "Frontend Repo",
     },
-        {
+    {
       url: "https://github.com/ubcma/mp-backend",
       linkType: LinkType.GITHUB,
       cta: "Backend Repo",
     },
   ],
-  image: "/projects/video/ma-mockup.webm",
-  previewImage: "/projects/video/ma-mockup.webm",
+  image: "/projects/membership-portal/mp-video.webm",
+  previewImage: "/projects/membership-portal/mp-video.webm",
   featured: true,
-   priority: 3,
+  priority: 3,
 };
 
-<div className="space-y-16 md:space-y-24">
+# Project Overview
 
-<SectionColumns
-  h1="PROJECT OVERVIEW"
-  h2="CORE OBJECTIVES"
-  body1="The UBCMA Membership Portal is a centralized platform designed to
-      manage the lifecycle of a student’s membership in the club. From event
-      registration and ticketing to alumni networking and job listings, the
-      portal empowers both members and club executives with intuitive,
-      role-based tools."
-  body2="Our primary goal was to provide a seamless experience for students to feel
-      like a member of a community, and to help our internal exec team make
-      data-driven decisions. We facilitated this by offering exclusive access to
-      events, opportunities, and perks such as discounts and private job
-      postings. We built out an admin dashboard that ran queries on our database
-      and displayed insightful revenue and demographic data for our execs on a
-      dashboard."
+The UBCMA Membership Portal is a centralized platform designed to manage the lifecycle of a student’s membership in the club. From event registration and ticketing, to alumni networking and job postings, the portal enables both members and club executives to capitalize on MA's resources.
+
+Our goal was centralized around what it means to be a **Member**. Previously, membership acted as a transaction for our club to gain incremental revenue in exchange for allowing access to our events, but there was real opportunity to foster engagement and community through a centralized membership platform. Building this app not only opened up numerous benefits for our members such as exclusive access to events, job postings, and alumni connections, but also gave our internal teams access to analytics that were previously unavailable with third party vendors such as Showpass or Bounce.
+
+## Business Impact
+
+Last year, the first MVP of the membership portal drove **~$5700** in revenues and facilitated **>400** event signups. Now, with a more scalable and robust tech stack with fine tuned user experiences, we aim to exceed these numbers by over **50%**.
+
+---
+
+# Tech stack
+
+Under the previous team, the first prototype leveraged Next.js' fullstack capabilities with Nextjs API and Firebase. Approaching this year, I realized that although it may increase delivery speed in the short term, too much of the business logic was coupled with Frontend UI and the codebase quickly became difficult to manage. We decided to opt for a separated frontend app and backend service instead, which greatly improved dev experience. Additionally, we were able to perform complex queries much faster with PostgreSQL + Drizzle ORM in comparison to Firebases' Node.js SDK.
+
+<Image
+  src={"/projects/membership-portal/architecture-diagram.png"}
+  alt="UBCMA Membership Portal Architecture Diagram"
+  height={100}
+  width={1280}
+  className="self-center rounded-xl brightness-100 col-span-2"
+  caption="A high level system design diagram for the UBCMA membership platform"
 />
 
-  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+### Frontend Methodology
 
-    <div className="flex flex-col text-md font-medium gap-1 w-3/4">
-      <h3>APP ARCHITECTURE</h3>
-      <div className="text-sm font-light">
-        Railway proved to be a user friendly and cost-effective solution to manage our express backend, Postgres database, and Redis instance all in one place. We used Stripe SDK for secure payment infrastructure, Better auth for a simple authentication solution compatible with TypeScript and Express, and GitHub for version control. Our frontend is a Next.js + React application styled with Tailwind + ShadCN and deployed on vercel.
-      </div>
-    </div>
+[Next.js](https://nextjs.org/) comes packaged with server side rendering capabilities, middleware, Next API routes, and streamlined CI/CD with the [Vercel](https://vercel.com/) ecosystem. I wanted to focus on delivery speed with a tech stack that my team was familiar with, and [React](https://react.dev/) + [ShadCN](https://ui.shadcn.com/) + [Tailwind](https://tailwindcss.com/) fit those requirements perfectly despite some performance overhead compared to other frameworks such as Vite.
 
-    <Image
-      src={"/projects/membership-portal/tech-stack.png"}
-      alt="UBCMA Membership Portal Infrastructure Diagram"
-      height={640}
-      width={1280}
-      className="self-center rounded-xl"
-    />
+### Backend Infrastructure
 
-  </div>
+A [TypeScript (TS)](https://www.typescriptlang.org/) based backend was chosen for shared type notation with the Frontend stack. [Node.js](https://nodejs.org/en) and [Express](https://expressjs.com/) are the standard with TS, and any performances differences between Golang or Python's FastAPI were not significant enough to outweigh the TS ecosystem benefits. Our backend uses [Drizzle ORM](https://orm.drizzle.team/) for typesafe communication with our dockerized [PostgreSQL](https://www.postgresql.org/) instance, and a [Redis cache](https://redis.io/) was spun up for user session storage and payment intent persistence during checkout. [Better-auth](https://www.better-auth.com/)'s out-of-the-box authentication endpoints and configurations integrated perfectly with our backend stack without reliance on third party cloud providers like Supabase or Clerk.
 
-<DynamicSectionHeader sections={maSections} />
+### External Services
 
+[Stripe](https://stripe.com/en-ca) is our provider for all secure payment methods, which allowed us to offer apple pay, autofill for payment and billing, customer tracking, refunding, and discount codes. [AWS Simple Email Service (SES)](https://aws.amazon.com/ses/) was configured for event ticket issuance and account verification with minimal downtime and latency. For Object Storage, we opted for [UploadThing](https://uploadthing.com/) as an alternative to AWS S3, as they offered a generous 2GB free tier with a simple library compatible with express.
+
+---
+
+# Project Management
+
+I leveraged [Linear](https://linear.app/) to manage sprints, coordinate tasks across teams, and track implementation progress in real time. Linear gave us the visibility and structure to move from idea to implementation with speed and confidence. It became a powerful way to drive cross-functional collaboration, scope clarity, and shippable outcomes.
+
+<div className="flex flex-row -space-x-80 space-y-16">
+
+  <Image
+    src={"/projects/membership-portal/kanban.png"}
+    alt="Linear Board"
+    height={640}
+    width={1280}
+    className="self-center rounded-xl"
+  />
+  <Image
+    src={"/projects/membership-portal/slack.png"}
+    alt="Linear Slack Integration"
+    height={640}
+    width={1280}
+    className="self-center rounded-xl"
+  />
+  <Image
+    src={"/projects/membership-portal/timeline.png"}
+    alt="Linear Project Timelines"
+    height={640}
+    width={1280}
+    className="self-center rounded-xl"
+  />
 </div>
+<p className='text-xs text-muted-foreground mt-2'> Linear project workspace & Slack automations</p>
+
+### Task Management & Documentation
+
+Our issue board tracked work across all of our devs in a traditional kanban board style. Tags were used for frontend/backend, features, and infrastructure to filter issues by area of responsibility. Some other organization strategies I employed:
+
+- Status-based workflows to visualize progress (e.g. blocked, in-progress, needs support)
+- Used custom labels for ownership and tech stack 
+- Implemented PR-linked automation to reduce manual tracking 
+
+This allowed us to move fast while keeping overhead low.  In addition, I used Linear’s timeline view to define clear development phases—starting with onboarding and authentication, and progressing through Stripe integration, email automation, and the alumni network. This gave our team a shared mental model of what needed to ship, when, and why, as well as which features are blocking.
+
+### Integration & Workflows
+
+Our team integrated GitHub, Slack, and Notion with Linear to keep discussions, documentation, and code reviews in sync. I set up a three way sync between GitHub PR reviews, Linear issues, and Slack Threads that kept relevant stakeholders in the loop for new features and bug fixes. Updates to our documentation would be logged in a dedicated slack channel, with previews into changes. By consolidating these tools, the friction between the platforms was minimized and kept the whole team aligned asynchronously.
+
+---
+
+# Approaching the year
+
+At the time of publishing, this app has just been deployed to production at [app.ubcma.ca](https://app.ubcma.ca/). Feel free to try it out and let me know what you think!

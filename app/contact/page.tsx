@@ -58,7 +58,7 @@ export default function Page() {
       </h3>
       <div className="font-light space-y-8">
         <div className="space-y-6">
-          <p className="text-md opacity-80">
+          <p className="text-md text-zinc-900 dark:text-zinc-200">
             Thanks for visiting my site! If you have any questions or would like
             to connect, feel free to reach out at the links below.
           </p>
