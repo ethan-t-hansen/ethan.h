@@ -1,4 +1,4 @@
-import { Nanum_Pen_Script, Onest } from "next/font/google";
+import { JetBrains_Mono, Nanum_Pen_Script, Onest, Sometype_Mono } from "next/font/google";
 
 export const nanumPenScript = Nanum_Pen_Script({
   variable: "--font-nanum-pen-script",
@@ -8,5 +8,10 @@ export const nanumPenScript = Nanum_Pen_Script({
 
 export const onest = Onest({
   variable: "--font-onest",
+  subsets: ["latin"],
+});
+
+export const sometypeMono = Sometype_Mono({
+  variable: "--font-sometype-mono",
   subsets: ["latin"],
 });
