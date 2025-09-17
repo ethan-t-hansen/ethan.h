@@ -1,16 +1,14 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import MediaPreview from "./MediaPreview";
 import Link from "next/link";
-import { sometypeMono } from "@/lib/fonts";
 
 export interface ProjectCardProps {
   slug: string;
   title: string;
   role: string;
   tags: string[];
-  type: string;
+  type?: string;
   previewImage: string;
   featured: boolean;
 }
@@ -19,7 +17,7 @@ export function ProjectCard({
   slug,
   title,
   role,
-  type,
+  // type,
   // tags,
   previewImage,
 }: ProjectCardProps) {

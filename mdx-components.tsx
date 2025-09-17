@@ -26,7 +26,16 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       </div>
     ),
 
-    Video: ({ src }: { src: string }) => <ClientVideo src={src} />,
+    Video: ({ src, caption }: { src: string; caption?: string }) => (
+      <div className="my-12">
+        <div className="rounded-xl overflow-hidden">
+          <ClientVideo src={src} className="w-full" />
+        </div>
+        {caption && (
+          <p className="text-xs text-muted-foreground mt-2"> {caption} </p>
+        )}
+      </div>
+    ),
 
     DynamicSectionHeader: ({ sections }: { sections: Section[] }) => (
       <DynamicSectionHeader sections={sections} />
