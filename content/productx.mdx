@@ -1,0 +1,94 @@
+import { LinkType } from "@/app/constants";
+import { TAGS } from "@/constants/tags";
+
+export const metadata = {
+  title: "ProductX Hackathon Judging Portal",
+  role: "UI/UX Designer",
+  type: "Design",
+  description:
+    "Optimizing the hackathon judging logistics through accessible design and premium experience for both hackers and judges.",
+  date: "2025-03-05",
+  tags: ["Figma"],
+  additionalLinks: [
+      // {
+      //   url: "https://github.com/ethan-t-hansen/rust-text-editor",
+      //   linkType: LinkType.GITHUB,
+      //   cta: "View on GitHub",
+      // },
+    ],
+  image: "/projects/productx/cover.jpg",
+  previewImage: "/projects/productx/cover.jpg",
+  featured: true,
+};
+
+# Project Overview
+
+Hackathons are messy under the hood. Judges scramble with paper rubrics, scores get lost between rounds, and execs waste hours manually aggregating results. For students, feedback often never makes it back to them.
+
+My role was to lead the design of a digital judging system that **simplified** score input, **automated** aggregation, and **closed the feedback loop** between judges and participants.
+
+**Our Vision:** make judging and mentorship transparent, reliable, and actually useful — not just transactional checkboxes.
+
+
+---
+
+## The Problem
+
+1. Judges were juggling paper and pen during fast‑paced presentations → frustrating, error‑prone.
+
+2. Students rarely received meaningful feedback after the event → huge missed learning opportunity.
+
+3. Execs spent hours manually pushing scores into spreadsheets and normalizing judge scores to ensure fair compeitition → inefficient and stressful.
+
+4. Mentorship tickets through Biztix lacked context and students couldn’t tell who could help them best.
+
+---
+
+# How might we digitize hackathon judging and mentor matching in a way that feels effortless, reliable, and scalable?
+
+---
+
+<Image src="/projects/productx/judging-interface.png" width={1080} height={1080} caption="The judging rubric interface seen by judges for an individual team."/>
+
+
+# Our Solution
+
+
+We designed and built a two‑sided judging system paired with enhanced mentor matching inside Biztix.
+
+## Digital Rubrics for Judges
+
+Judges scored teams on a clean, rubric‑based form optimized for speed and focus. We allowed judges to return and edit scores before the submission deadline, while logging any edits to ensure transparency and fairness. Each rubric entry was persisted in **DynamoDB**, eliminating manual aggregation and enabling our team to normalize any tendencies from certain judges.
+
+## Student Dashboards
+
+After the event, hackers could log into the portal and view a detailed breakdown of each Judge's comments. The hierarchy was intentional: qualitative feedback surfaced first, then aggregate scores → shifting the emphasis from competition to growth.
+
+## Executive Tools
+
+Our team could make quick decisions supported by live visibility into score progress by team and by judge. Additionally, the app supported .csv exporting to enable additional data analysis if needed.
+
+<Image src="/projects/productx/presentation.jpg" width={1080} height={1080} caption="The hacker portal being used during the final round of ProductX 2025."/>
+
+# The Impact
+
+- Judges spent less time fumbling with paper and more time actually evaluating projects.
+
+- Execs avoided hours of manual spreadsheet work → everything was aggregated live.
+
+- Students received meaningful, attributed feedback for the first time — and could actually learn from it.
+
+- Mentor requests became smarter: students could reach out to the right person instead of guessing in the dark.
+
+For me, this project felt like a turning point: it wasn’t just about building a feature, but reshaping the culture of feedback at BizTech hackathons.
+
+
+---
+
+# Key Takeaways
+
+1. **Design for confidence.** Judges shouldn’t worry about losing data or making a mistake — editable digital scoring gave them assurance.
+
+2. **Feedback > scores.** Students overwhelmingly cared more about what judges said than the exact number breakdowns.
+
+3. **Transparency builds trust.** Execs, judges, and students all had visibility into their role, which made the system feel fair and accountable.
