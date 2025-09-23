@@ -26,7 +26,16 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       </div>
     ),
 
-    Video: ({ src }: { src: string }) => <ClientVideo src={src} />,
+    Video: ({ src, caption }: { src: string; caption?: string }) => (
+      <div className="my-12">
+        <div className="rounded-xl overflow-hidden">
+          <ClientVideo src={src} className="w-full" />
+        </div>
+        {caption && (
+          <p className="text-xs text-muted-foreground mt-2"> {caption} </p>
+        )}
+      </div>
+    ),
 
     DynamicSectionHeader: ({ sections }: { sections: Section[] }) => (
       <DynamicSectionHeader sections={sections} />
@@ -103,26 +112,26 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
         //   // "before:absolute before:inset-0 before:bg-gradient-to-r before:from-sky-300 before:via-purple-400 before:to-pink-400 before:blur-sm before:opacity-10 before:content-[''] before:rounded-sm"
         // )}
         className="font-semibold bg-gradient-to-tr from-sky-600 dark:from-sky-300 dark:to-sky-100 to-sky-400 bg-clip-text text-transparent 
-             [text-shadow:0_0_6px_rgba(223,233,235,0.4),0_0_12px_rgba(223,233,235,0.3)] overflow-visible pr-[2px]"
+             [text-shadow:0_0_6px_rgba(223,233,235,0.4),0_0_12px_rgba(223,233,235,0.3)] overflow-visible"
       >
         {children}
       </strong>
     ),
     ul: (props) => (
-      <ul
-        className="list-disc list-inside my-4 text-zinc-900 dark:text-zinc-300"
-        {...props}
-      />
-    ),
-    ol: (props) => (
-      <ol
-        className="list-decimal list-inside my-4 text-zinc-900 dark:text-zinc-300"
-        {...props}
-      />
-    ),
-    li: (props) => (
-      <li className="my-1 text-zinc-900 dark:text-zinc-300" {...props} />
-    ),
+  <ul
+    className="list-disc list-outside my-4 pl-6 text-zinc-900 dark:text-zinc-300"
+    {...props}
+  />
+),
+ol: (props) => (
+  <ol
+    className="list-decimal list-outside my-4 pl-6 text-zinc-900 dark:text-zinc-300"
+    {...props}
+  />
+),
+li: (props) => (
+  <li className="my-1 leading-relaxed text-zinc-900 dark:text-zinc-300" {...props} />
+),
     a: (props) => (
       <a
         {...props}

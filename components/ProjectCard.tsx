@@ -8,6 +8,7 @@ export interface ProjectCardProps {
   title: string;
   role: string;
   tags: string[];
+  type?: string;
   previewImage: string;
   featured: boolean;
 }
@@ -16,6 +17,7 @@ export function ProjectCard({
   slug,
   title,
   role,
+  // type,
   // tags,
   previewImage,
 }: ProjectCardProps) {

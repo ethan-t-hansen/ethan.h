@@ -54,14 +54,6 @@ export const club_experience: Experience[] = [
     date: "May 2023 - Dec 2023",
     points: ["Sample"],
   },
-  {
-    id: 5,
-    company: "Commerce Undergraduate Society",
-    title: "IT Director",
-    type: "University Club",
-    date: "Sept 2022 - May 2023",
-    points: ["Sample"],
-  },
 ];
 
 export const work_experience: Experience[] = [
@@ -70,19 +62,11 @@ export const work_experience: Experience[] = [
     company: "ICBC",
     title: "Design Engineer Intern",
     type: "Internship",
-    date: "Jan 2025 - Present",
-    points: ["Sample"],
-  },
-    {
-    id: 2,
-    company: "Spawn",
-    title: "Product Design Lead",
-    type: "IOS App",
-    date: "Apr 2025 - Present",
+    date: "Jan 2025 - Aug 2025",
     points: ["Sample"],
   },
   {
-    id: 3,
+    id: 2,
     company: "Moment Energy",
     title: "UI / UX Engineer Intern",
     type: "Internship",
@@ -90,7 +74,7 @@ export const work_experience: Experience[] = [
     points: ["Sample"],
   },
   {
-    id: 4,
+    id: 3,
     company: "Crown Agencies Secretariat (Government)",
     title: "UX & Digital Strategy Intern",
     type: "Internship",
@@ -98,7 +82,7 @@ export const work_experience: Experience[] = [
     points: ["Sample"],
   },
   {
-    id: 5,
+    id: 4,
     company: "Ibbaka",
     title: "Data Analytics Intern",
     type: "Internship",
@@ -152,7 +136,7 @@ export const sandbox_projects = [
   },
   {
     id: "9",
-    title: "Fluted Glass Feathering w/ Rive",
+    title: "Fluted Glass Feathering with Rive",
     description:
       "Design exploration for Rive's feathering capabilities (13kb file size)",
     image: "/projects/video/rive-feathering-glass-demo.webm",
