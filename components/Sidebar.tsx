@@ -13,7 +13,7 @@ export function Sidebar() {
       children: [
         { name: "BluePrint", href: "/project/blueprint" },
         { name: "Spawn", href: "/project/spawn" },
-        { name: "BizTag", href: "/project/productx" },
+        { name: "ProductX", href: "/project/productx" },
         { name: "VanDwelling", href: "/project/vancouver-dwelling" },
       ],
     },
