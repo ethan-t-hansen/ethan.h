@@ -7,7 +7,7 @@ export default function Sandbox() {
       {sandbox_projects.map((project) => (
         <div key={project.title}>
           <div className="block hover:rotate-1 group transition-all duration-300 break-inside-avoid">
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden border-[0.5px] shadow-md">
               {project.image.includes("mp4") ||
               project.image.includes("webm") ? (
                 <div className="flex md:h-auto">

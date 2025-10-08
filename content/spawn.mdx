@@ -43,7 +43,7 @@ Spawn started as a hackathon project with a simple idea - make spontaneous plann
   alt="Spawn Early Research"
   height={400}
   width={1280}
-  className="self-center rounded-xl brightness-100 col-span-2"
+  className="self-center brightness-100"
   caption="Early research insights from our initial survey of UBC students"
 />
 
@@ -65,14 +65,14 @@ Its clear that students and young adults alike find grievances with traditional 
 
 # Version 1 - Early Explorations
 
-The first iteration of the app was designed for a UX competition hosted at UBC. The system was built around the idea of **events** filling a social media feed, and a **map** where you could see the locations of all of your friends' events from a birdseye view. 
+The first iteration of the app was designed for a UX competition hosted at UBC. The system was built around the idea of **events** filling a social media feed, and a **map** where you could see the locations of all of your friends' events from a birdseye view.
 
 <Image
   src={"/projects/spawn/early-explorations.png"}
   alt="Wireframes of early design explorations"
   height={400}
   width={1280}
-  className="self-center rounded-xl brightness-100 col-span-2"
+  className="self-center brightness-100"
   caption="The 1st iteration of prototypes designed for BizTech's UXOpen design competition by the original Spawn team."
 />
 
@@ -94,18 +94,20 @@ When I joined the team, I built a new design system from scratch in Figma. This 
 
 We decided to pivot the app to focus more on **activities types** rather than events. Originally our idea was to group your friends with **tags** (ex. "Basketball Buddies", "Study Group", "Party Crew") and have users create **events** that their friends could join. However, we found that this created friction in the user experience, as users had to go through a tedious process to choose who to invite. Instead, we decided to simplify the process by allowing users to create **activities** that were categorized by **activity types** (ex. "Gym", "Chill", "Hiking"). This allowed users to quickly create an activity and have all of their friends who were interested in that activity type notified.
 
+<Image
+  src={"/projects/spawn/wireframes.png"}
+  alt="Wireframes of current implemented designs"
+  height={400}
+  width={1280}
+  className="self-center brightness-100"
+  caption="The new prototypes for Spawn v1, released on the app store."
+/>
+
 ## Implementation
 
 We hoped to build a user culture such that whenever a user is doing something like going to the gym or relaxing at the park, they could announce that to their friend network in a few button taps. From there, all of their friends would see what they were up to, when it was happening, and where it was going to be through our map feature.
 
 We built the app using **SwiftUI** for mobile and **Java** + **Springboot** + **MySQL** for the backend. We used **Firebase** for account verification and push notifications. We leveraged the iOS native **MapKit** framework for our geolocation features.
-
-<div className="space-y-8 my-16">
-
-<ImageMarquee folder={"projects/spawn/wireframes/onboarding"} direction="right"/>
-<ImageMarquee folder={"projects/spawn/wireframes/social"}/>
-
-</div>
 
 ---
 

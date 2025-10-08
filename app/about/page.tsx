@@ -18,12 +18,12 @@ export default function Page() {
   );
 
   return (
-    <main className="relative lg:pr-48 lg:justify-start justify-center max-w-[900px] min-h-screen py-32">
-      <h3 className="text-3xl font-regular mb-8 font-sans tracking-tight">
+    <main className="relative lg:pr-48 lg:justify-start justify-center max-w-[900px] min-h-screen py-24">
+      <h3 className="text-2xl font-regular mb-4 font-sans tracking-tight">
         {" "}
         About{" "}
       </h3>
-      <div className="font-light space-y-8 text-zinc-900 dark:text-zinc-200">
+      <div className="font-light text-sm space-y-3 text-zinc-900 dark:text-zinc-200 mb-12">
         <p>
           I&apos;m exploring and building at the intersection of product design
           and fullstack app development. Currently studying Business + Computer
@@ -46,8 +46,8 @@ export default function Page() {
         </p>
 
         <p> Here&apos;s a few of my adventures from my undergrad! </p>
-        <PolaroidGallery />
       </div>
+      <PolaroidGallery />
     </main>
   );
 }

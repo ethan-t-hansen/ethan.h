@@ -27,12 +27,6 @@ const polaroids: Polaroid[] = [
     description: "Langkawi, Malaysia",
   },
   {
-    src: "/about/gateways.png",
-    alt: "Gateways",
-    date: "11.16.24",
-    description: "MA Gateways, UBC",
-  },
-  {
     src: "/about/dataverse.png",
     alt: "Dataverse",
     date: "11.30.24",
@@ -65,7 +59,7 @@ export default function PolaroidGallery() {
           flex
           overflow-x-scroll
           md:overflow-visible
-          space-x-0 md:-space-x-12
+          space-x-0
           py-4 px-6 md:py-0 md:px-0
           no-scrollbar
         "
@@ -77,7 +71,7 @@ export default function PolaroidGallery() {
             <motion.div
               key={i}
               className={clsx(
-                "relative bg-zinc-50 shadow-xl rounded-sm border border-zinc-200 p-2 w-40 md:w-48",
+                "relative bg-zinc-50 border border-zinc-200 p-2 w-40 md:w-48",
                 "flex flex-col items-center flex-shrink-0"
               )}
               style={{
@@ -97,7 +91,7 @@ export default function PolaroidGallery() {
                 alt={p.alt}
                 width={240}
                 height={300}
-                className="rounded-sm object-cover aspect-[4/5]"
+                className="object-cover aspect-[4/5]"
               />
               <div className={`mt-2 text-center ${nanumPenScript.className}`}>
                 <p className="md:text-xl text-zinc-700">{p.description}</p>

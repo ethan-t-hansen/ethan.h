@@ -1,4 +1,8 @@
-import { Nanum_Pen_Script, Onest, Sometype_Mono } from "next/font/google";
+import {
+  Nanum_Pen_Script,
+  Rethink_Sans,
+  Sometype_Mono,
+} from "next/font/google";
 
 export const nanumPenScript = Nanum_Pen_Script({
   variable: "--font-nanum-pen-script",
@@ -6,12 +10,12 @@ export const nanumPenScript = Nanum_Pen_Script({
   subsets: ["latin"],
 });
 
-export const onest = Onest({
-  variable: "--font-onest",
+export const sometypeMono = Sometype_Mono({
+  variable: "--font-sometype-mono",
   subsets: ["latin"],
 });
 
-export const sometypeMono = Sometype_Mono({
-  variable: "--font-sometype-mono",
+export const rethinkSans = Rethink_Sans({
+  variable: "--font-rethink-sans",
   subsets: ["latin"],
 });

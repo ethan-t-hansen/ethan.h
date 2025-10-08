@@ -86,7 +86,7 @@ export const DynamicSectionHeader: React.FC<DynamicSectionHeaderProps> = ({
                 <motion.button
                   key={index}
                   onClick={() => handleSectionChange(index)}
-                  className={`p-3 rounded-lg transition-all duration-200 ${
+                  className={`p-3 transition-all duration-200 ${
                     isActive
                       ? "bg-background text-foreground border border-[#00AB6A] shadow-lg"
                       : "bg-background text-muted-foreground hover:opacity-80 hover:text-muted-foreground border border-foreground/5"
