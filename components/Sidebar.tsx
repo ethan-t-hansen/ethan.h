@@ -28,16 +28,6 @@ export function Sidebar() {
   ];
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
 
   const menuItems = [
     { href: "/about", label: "About" },
@@ -66,17 +56,13 @@ export function Sidebar() {
     return delay;
   };
 
-  if (isMobile === null) {
-    return null;
-  }
-
   // Mobile view
-  if (isMobile) {
-    // Reset counter for each render
-    delayCounter = 0;
+  // Reset counter for each render
+  delayCounter = 0;
 
-    return (
-      <>
+  return (
+    <>
+      <div className="md:hidden">
         {/* Mobile menu button */}
         <motion.button
           onClick={() => setIsOpen(!isOpen)}
@@ -241,84 +227,82 @@ export function Sidebar() {
             </motion.div>
           )}
         </AnimatePresence>
-      </>
-    );
-  }
-
-  // Desktop view
-  return (
-    <aside className="w-48 min-w-48 border-r bg-background p-6 fixed top-0 left-0 h-screen overflow-y-auto">
-      {/* Logo */}
-      <div className="mb-8">
-        <Link href="/" className="inline-block bg-muted px-3 py-2">
-          <span className="text-base font-semibold">ethan.h</span>
-        </Link>
       </div>
 
-      {/* Main Navigation */}
-      <nav className="space-y-1 mb-8">
-        {menuItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            target={item.label == "CV" ? "_blank" : ""}
-            className="flex flex-row text-lg font-medium hover:text-muted-foreground"
-          >
-            {item.label}
-            {item.label == "CV" && (
-              <ArrowUpRight size={12} className="mt-1.5 ml-1" />
-            )}
+      {/* Desktop View */}
+      <aside className="w-48 min-w-48 border-r bg-background p-6 fixed top-0 left-0 h-screen overflow-y-auto hidden md:block">
+        {/* Logo */}
+        <div className="mb-8">
+          <Link href="/" className="inline-block bg-muted px-3 py-2">
+            <span className="text-base font-semibold">ethan.h</span>
           </Link>
-        ))}
-      </nav>
-
-      <div className="w-full border-muted-foreground/20 border-t my-8" />
-
-      {/* Project Sections */}
-      {projects.map((section) => (
-        <div key={section.name} className="mb-8">
-          <>
-            <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-              {section.name}
-            </h3>
-            <div className="space-y-1">
-              {section.children?.map((child) => (
-                <Link
-                  key={child.href || child.name}
-                  href={child.href || "#"}
-                  className="block text-sm hover:text-muted-foreground "
-                >
-                  {child.name}
-                </Link>
-              ))}
-            </div>
-          </>
         </div>
-      ))}
 
-      <div className="w-full border-muted-foreground/20 border-t my-8" />
-
-      {/* Contact Section */}
-      <div className="">
-        <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-          Contact
-        </h3>
-        <div className="space-y-1">
-          {contactLinks.map((link) => (
+        {/* Main Navigation */}
+        <nav className="space-y-1 mb-8">
+          {menuItems.map((item) => (
             <Link
-              key={link.href}
-              href={link.href}
-              className="block text-sm hover:text-muted-foreground "
+              key={item.href}
+              href={item.href}
+              target={item.label == "CV" ? "_blank" : ""}
+              className="flex flex-row text-lg font-medium hover:text-muted-foreground"
             >
-              {link.label}
+              {item.label}
+              {item.label == "CV" && (
+                <ArrowUpRight size={12} className="mt-1.5 ml-1" />
+              )}
             </Link>
           ))}
-        </div>
-      </div>
+        </nav>
 
-      <div className="absolute bottom-4 left-4">
-        <ThemeToggle />
-      </div>
-    </aside>
+        <div className="w-full border-muted-foreground/20 border-t my-8" />
+
+        {/* Project Sections */}
+        {projects.map((section) => (
+          <div key={section.name} className="mb-8">
+            <>
+              <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+                {section.name}
+              </h3>
+              <div className="space-y-1">
+                {section.children?.map((child) => (
+                  <Link
+                    key={child.href || child.name}
+                    href={child.href || "#"}
+                    className="block text-sm hover:text-muted-foreground "
+                  >
+                    {child.name}
+                  </Link>
+                ))}
+              </div>
+            </>
+          </div>
+        ))}
+
+        <div className="w-full border-muted-foreground/20 border-t my-8" />
+
+        {/* Contact Section */}
+        <div className="">
+          <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
+            Contact
+          </h3>
+          <div className="space-y-1">
+            {contactLinks.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block text-sm hover:text-muted-foreground "
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        <div className="absolute bottom-4 left-4">
+          <ThemeToggle />
+        </div>
+      </aside>
+    </>
   );
 }

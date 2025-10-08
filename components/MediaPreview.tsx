@@ -15,7 +15,7 @@ export default function MediaPreview({ src, className, width, height }: { src: s
     <div className={clsx("relative overflow-hidden", className || "flex h-48 md:h-[28rem] w-full")}>
       
       {isLoading && (
-        <div className="absolute inset-0 bg-zinc-800 animate-pulse" />
+        <div className="absolute inset-0 bg-zinc-100 dark:bg-zinc-800 animate-pulse" />
       )}
 
       {isVideo ? (

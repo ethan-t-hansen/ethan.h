@@ -73,23 +73,34 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
 
     h1: (props) => (
       <h1
-        className="text-2xl font-medium mt-10 mb-6 tracking-tight"
+        className="text-2xl font-medium mb-6 tracking-tight"
         {...props}
       />
     ),
     h2: (props) => (
-      <h2 className="text-xl font-medium tracking-tight mb-4 mt-8" {...props} />
+      <h2 className="text-xl font-medium tracking-tight mt-8 mb-3" {...props} />
     ),
     h3: ({ children, ...props }) => (
       <h3
         {...props}
         className={cn(
-          "text-lg font-medium tracking-tight mb-2 mt-8",
+          "text-lg font-medium tracking-tight mt-6 mb-2",
           props.className
         )}
       >
         {children}
       </h3>
+    ),
+    h4: ({ children, ...props }) => (
+      <h4
+        {...props}
+        className={cn(
+          "text-sm font-medium text-muted-foreground tracking-wide mb-2",
+          props.className
+        )}
+      >
+        {children}
+      </h4>
     ),
     p: ({ children, ...props }) => (
       <p

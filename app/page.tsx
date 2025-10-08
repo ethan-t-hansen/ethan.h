@@ -5,7 +5,7 @@ import ProjectGrid from "@/components/ProjectGrid";
 
 export default function Page() {
   return (
-    <main className="lg:justify-start justify-center items-start space-y-8 mt-24">
+    <main className="lg:justify-start justify-center items-start space-y-8 mt-16 md:mt-24">
       <Hero />
       <ContactTeamsSection />
 

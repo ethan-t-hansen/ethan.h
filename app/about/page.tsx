@@ -20,8 +20,7 @@ export default function Page() {
   return (
     <main className="relative lg:pr-48 lg:justify-start justify-center max-w-[900px] min-h-screen py-24">
       <h3 className="text-2xl font-regular mb-4 font-sans tracking-tight">
-        {" "}
-        About{" "}
+        A little bit more about who I am.
       </h3>
       <div className="font-light text-sm space-y-3 text-zinc-900 dark:text-zinc-200 mb-12">
         <p>
@@ -30,7 +29,7 @@ export default function Page() {
           Science at the University of British Columbia.
         </p>
         <p>
-          Previously developed enterprise Frontend applications for{" "}
+          Previously developed enterprise frontend applications for{" "}
           <CustomLink href="https://icbc.com/" target="_blank">
             ICBC
           </CustomLink>{" "}

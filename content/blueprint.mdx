@@ -13,7 +13,7 @@ export const metadata = {
     "Michael Cui",
   ],
   description:
-    "Networking is hard. Through NFC (Near Field Communication) and an integrated software platform, we made it easier for students to connect with professionals and each other at our flagship conference using personalized data and innovative technology.",
+    "Through NFC (Near Field Communication) and an integrated software platform, we made it easier for students to connect with professionals and each other at our flagship conference using personalized data and innovative technology.",
   date: "2025-01-27",
   tags: ["3D", "Branding", "Figma", "Mobile"],
   additionalLinks: [],
@@ -23,9 +23,13 @@ export const metadata = {
   priority: 1,
 };
 
-# Project Overview
+#### OVERVIEW
 
-First introduced in 2017, BluePrint is UBC BizTech's flagship conference designed to empower students with the tools and connections they need to thrive in the tech industry. It is known as UBC's largest technology conference, boasting **270+** attendees, **80+** partners, and attracting **40+** companies from the likes of **Google**, **Tesla**, and **Meta** annually. This year's theme revolved around _Getting Your Start_ and helping students initiate their first step into tech.
+# Networking is hard. We made it easier to stay connected.
+
+BluePrint is UBC BizTech's flagship conference designed to empower students with the tools and connections they need to thrive in the tech industry. Its UBC's largest technology conference, boasting **270+** attendees, **80+** partners, and attracting **40+** companies from the likes of **Google**, **Tesla**, and **Meta** annually. This year's theme revolved around _Getting Your Start_ and helping students initiate their first step into tech.
+
+The biggest pain point with tech events? **_Networking_**. Lining up for 30 minutes to speak with someone you don't know just for the chance at an opportunity, fumbling with your phone and trying to find someone's LinkedIn to connect, and then having to remember everyone after the fact makes these events _exhausting_.
 
 <Image
   src="/projects/blueprint/panel.webp"
@@ -36,15 +40,11 @@ First introduced in 2017, BluePrint is UBC BizTech's flagship conference designe
   caption="Partner Q&A panel at BluePrint 2025"
 />
 
-### Innovation
+#### PROBLEM IDENTIFICATION
 
-The question was: how do we innovate? Previous iterations of Blueprint had seen _gamified_ networking, where attendees had been rewarded for scanning the QR codes of partners through points towards raffle prizes. However, we wanted to get rid of the superficiality of students only talking with delegates to gather more points. We also wanted to polish the networking experience by eliminating the common pain points associated with networking.
+# We did some research into how people really feel about networking.
 
----
-
-# Research & insights
-
-We wanted to uncover how people really felt about networking conferences to unveil insights about how we can improve them. In a survey done with 100 previous attendees, we discovered that the issue is not just{" "} _forming_ these connections, but also _maintaining_ them long after the event is over. On top of this, students felt as though it was difficult to navigate the overwhelming atmosphere of these events while having these conversations.
+In a survey done with 100 previous attendees, we discovered that the issue is not just{" "} _forming_ these connections, but also _maintaining_ them long after the event is over. On top of this, students felt as though it was difficult to navigate the overwhelming atmosphere of these events while having these conversations.
 
 <Image
   src="/projects/blueprint/ux/pain-points.png"
@@ -62,8 +62,6 @@ We wanted to uncover how people really felt about networking conferences to unve
   alt="Current user journey"
 />
 
-## Problem Identification
-
 Its clear that conference attendees are coming to BluePrint to make meaningful connections, but have trouble remembering who they have talked to and where to find them, making it difficult to quantify the value they received by attending.
 
 ---
@@ -80,9 +78,17 @@ Its clear that conference attendees are coming to BluePrint to make meaningful c
   alt="Pain points"
 />
 
-# Our Solution
+#### SOLUTION
 
-We built a mobile web app that generates custom user profiles upon event registration for every single conference attendee and delegate. Using this system as the foundation, we engineered a system that persists **_connections_** between two people, which we defined as everyone who visits your profile and everyone whose profile you have visited.
+# We made everything accessible through the tap of a card.
+
+We knew that our solution needed an _X-factor_ that got people talking without compromising on user experience. NFC technology presented an opportunity to do all three of those. Each attendees nametag came with an NFC card inside, and by holding your mobile device up to someone's nametag you instantly gained access to a custom profile which had their LinkedIn, company, and fun facts about them. We ingested event signup data into a backend service that generated these profiles automatically. Each NFC card was then mapped to a custom profile URL for each attendee.
+
+<Video src="/projects/blueprint/nfc-animation.webm" />
+
+## We remember who you meet so you can focus on the present.
+
+We developed a system that persists **_connections_** between two people, which we defined as everyone who visits your profile and everyone whose profile you have visited. This way, anyone could get a long list of everyone they met at the event. After the event had ended, we launched a recap similar to Spotify Wrapped, where you could look back on what you accomplished and check out what everyone else got up to.
 
     <div className='grid grid-cols-3 gap-2 md:gap-8 -mb-8'>
     <Image
@@ -111,13 +117,6 @@ We built a mobile web app that generates custom user profiles upon event registr
       Mobile screenshots of the BluePrint companion app
     </div>
 
-### LEVERAGING NFC TECHNOLOGY
-
-We wanted our solution to be functional, easy to use, but still come with a _wow-factor_ that gets people talking - NFC technology presented an opportunity to do all three of those. Each attendees nametag came with an NFC card inside, and by holding your mobile device up to someone's nametag you instantly gained access to their profile which had their LinkedIn, company, and fun facts about them. Any tap interaction between two people would be counted as a connection, and party A would appear in party B's connections journal (and vice versa).
-
-{" "}
-<Video src="/projects/blueprint/nfc-animation.webm" />
-
 ---
 
 <ImageMarquee folder="projects/blueprint/prototypes/app" direction="right" />
@@ -128,7 +127,9 @@ We wanted our solution to be functional, easy to use, but still come with a _wow
 
 ---
 
-# Our Impact
+#### AFTERMATH
+
+# Our club was awarded multiple awards by our student body for our innovation.
 
 BluePrint 2025 was a resounding success and was awarded **Conference of the Year** by the UBC Sauder Commerce Undergraduate Society. The NFC technology proved to be a hit, with attendees raving about how easy it was to connect with others and how they could easily remember who they had talked to. In total, the app facilitated **4700** unique connections among a group of **270** attendees.
 
@@ -139,3 +140,29 @@ BluePrint 2025 was a resounding success and was awarded **Conference of the Year
   className="self-center w-full h-full object-cover"
   alt="Collage"
 />
+
+#### NEXT STEPS
+
+# What if we extended beyond the scope of a single event?
+
+Coming off the resounding success of the BluePrint NFC cards, BizTech decided to start a new initiative - **_Membership Cards_**. Any individual who signs up as a member receives a membership card that keeps track of connections throughout every single BizTech event and also allows them to checkin at the door.
+
+<Image
+  src="/projects/bt-web-v2/bt-web-nfc.png"
+  alt="User profiles accessible through NFC membership cards."
+  height={400}
+  width={1280}
+  className="self-center rounded-xl brightness-100 col-span-2"
+  caption="User profiles accessible through NFC membership cards."
+/>
+
+<Image
+  src="/projects/blueprint/bizwall.webp"
+  alt="User profiles accessible through NFC membership cards."
+  height={400}
+  width={1280}
+  className="self-center brightness-100 col-span-2"
+  caption="Modelling connections at MIS Night 2025 as edges in a graph data structure"
+/>
+
+Our NFC membership cards are available for all BizTech members today. If you're in the area, come check out our events and get your hands on some!

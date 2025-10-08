@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Sandbox() {
   return (
-    <div className="columns-1 md:columns-3 gap-x-8 space-y-16 justify-items-center">
+    <div className="columns-1 md:columns-3 gap-x-12 space-y-12 justify-items-center">
       {sandbox_projects.map((project) => (
         <div key={project.title}>
           <div className="block hover:rotate-1 group transition-all duration-300 break-inside-avoid">
@@ -38,7 +38,7 @@ export default function Sandbox() {
             </div>
             <div className="mt-4">
               <h3 className="text-md font-regular mb-1">{project.title}</h3>
-              <p className="text-sm font-light text-zinc-400">
+              <p className="text-sm font-light text-muted-foreground">
                 {project.description}
               </p>
             </div>

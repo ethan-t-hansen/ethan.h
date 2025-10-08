@@ -44,11 +44,11 @@ export default async function Page({
   return (
     <>
       <ScrollToTop />
-      <main className="relative lg:justify-start justify-center min-h-screen h-screen w-full mt-24 md:px-[8vw]">
-        <div className="flex flex-col gap-4 w-full mb-16">
+      <main className="relative lg:justify-start justify-center min-h-screen h-screen w-full lg:w-[48rem] mx-auto mt-16 md:mt-24">
+        <div className="flex flex-col gap-4 w-full mb-8">
           <div className="flex flex-col md:flex-row justify-between gap-4 md:items-end">
             <div className="tracking-tighter">
-              <h1 className="uppercase text-2xl md:text-3xl">
+              <h1 className="uppercase text-2xl md:text-3xl font-medium">
                 {metadata?.title}
               </h1>
 

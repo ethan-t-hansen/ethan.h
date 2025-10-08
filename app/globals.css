@@ -84,5 +84,20 @@ body {
   @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
 }
 
+.tag {
+  --darkened: /* your darkened color logic */;
+  
+  border-color: var(--border-color);
+  background-color: rgb(from var(--border-color) r g b / 0.25);
+  color: var(--border-color);
+}
+
+@media (prefers-color-scheme: light) {
+  .tag {
+    /* Apply darkened color in light mode */
+    border-color: color-mix(in srgb, var(--border-color) 80%, black);
+    color: color-mix(in srgb, var(--border-color) 80%, black);
+  }
+}
 
 /* TRANSITIONS */

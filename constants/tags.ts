@@ -55,7 +55,7 @@ export const TAGS: Record<string, TagConfig> = {
   Drizzle: {
     label: "Drizzle",
     icon: SiDrizzle,
-    borderColor: "#C6FA50",
+    borderColor: "#a2dc1c",
   },
   Railway: {
     label: "Railway",
@@ -180,7 +180,7 @@ export const TAGS: Record<string, TagConfig> = {
   Linear: {
     label: "Linear",
     icon: SiLinear,
-    borderColor: "#f1f1f1"
+    borderColor: "#cfcfcf"
   },
   AWS: {
     label: "AWS",
