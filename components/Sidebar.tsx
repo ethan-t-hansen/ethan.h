@@ -21,8 +21,8 @@ export function Sidebar() {
       name: "Development",
       children: [
         { name: "MA Portal", href: "/project/membership-portal" },
-        { name: "BizTech Web", href: "/project/bt-web-v2" },
         { name: "BizTag", href: "/project/biztag" },
+        { name: "BizTech Web", href: "/project/bt-web-v2" },
       ],
     },
   ];

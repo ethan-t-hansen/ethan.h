@@ -34,9 +34,11 @@ export const metadata = {
   priority: 2,
 };
 
-# Project Overview
+#### PROJECT OVERVIEW
 
-Spawn started as a hackathon project with a simple idea - make spontaneous planning simple. Coordinating plans with your friends can be frustrating, especially in cold and rainy Vancouver. In our city in particular, it can sometimes feel like our friends need 5 days of notice to go out for an hour, and the status quo becomes scrolling social media for hours instead of going out and having fun.
+# People struggle to hang out casually and spontaneously.
+
+Coordinating plans with your friends can be frustrating, especially in less bright cities like mine (Vancouver, Canada). Organizing events takes about one hundred back and forths, and traditional event planning tools such as Google Calendar and when2meet feel too formal for a casual hang out.
 
 <Image
   src={"/projects/spawn/problem-statement.png"}
@@ -47,15 +49,11 @@ Spawn started as a hackathon project with a simple idea - make spontaneous plann
   caption="Early research insights from our initial survey of UBC students"
 />
 
-# Research Insights
+## 83% of people believed they spend too much time on their phones, 91% wished there was an easier way to plan events.
 
-We surveyed people at our university to uncover more about how people felt. 83% believed they spend too much time on their phones, 91% wished there was an easier way to plan events.
+We surveyed people at our university to uncover more about how people felt. In our studies, we found that people often subconsciously categorize the people they spend time with - for example, your pickup basketball friend group is different to the friends you might go to a bar with on a Friday night. We honed in on this, as it offered a unique way for us to decrease the time it takes to organize an activity if premade groups already exist.
 
-In our studies, we found that people often subconsciously categorize the people they spend time with - for example, your pickup basketball friend group is different to the friends you might go to a bar with on a Friday night. We honed in on this, as it offered a unique way for us to decrease the time it takes to organize an activity if premade groups already exist.
-
-## Problem Identification
-
-Its clear that students and young adults alike find grievances with traditional event planning systems as a method to do activities with your friends. Group chats often feel too open and lead to coordination issues, and Google Calendar is too formal and associated with work and not play.
+Its clear that students and young adults alike find grievances with traditional event planning systems as a method to do activities with your friends.
 
 ---
 
@@ -63,7 +61,9 @@ Its clear that students and young adults alike find grievances with traditional 
 
 ---
 
-# Version 1 - Early Explorations
+#### EARLY EXPLORATIONS
+
+# Spawn's humble beginnings as a design hackathon project
 
 The first iteration of the app was designed for a UX competition hosted at UBC. The system was built around the idea of **events** filling a social media feed, and a **map** where you could see the locations of all of your friends' events from a birdseye view.
 
@@ -78,19 +78,21 @@ The first iteration of the app was designed for a UX competition hosted at UBC. 
 
 Although I was **not** a part of the original team that built this version, I included some of the early wireframes below to show how our thinking has evolved since then.
 
-## Areas for Improvement
+## Accessibility scored low and user flow lacked depth.
 
-From a design perspective, we found that accessibility was a concern. The chosen font was too thin and the contrast between text and background was too low to meet WCAG 2 standards. Additionally, the app lacked a cohesive design system, and the user flows were not intuitive enough to onboard new users.
+The chosen font was too thin and the contrast between text and background was too low to meet WCAG 2 standards. Additionally, the app lacked a cohesive design system, and the user flows were not intuitive enough to onboard new users.
 
 Moving into development, the dev team wanted a scalable and consistent design system to reference as they built out new features. The designers were also unsatisfied with the branding and overall aesthetic of the app, and wanted to create a more polished and professional look before any code was written.
 
 ---
 
-# Version 2 - Our Approach
+#### INTERVENTION
+
+# How I transformed Spawn from a concept to a scalable app.
 
 When I joined the team, I built a new design system from scratch in Figma. This included a new color palette, typography styles, button components, and iconography.
 
-## Schema - Friend Tags & Events vs. Activities
+### Schema - Friend Tags & Events vs. Activities
 
 We decided to pivot the app to focus more on **activities types** rather than events. Originally our idea was to group your friends with **tags** (ex. "Basketball Buddies", "Study Group", "Party Crew") and have users create **events** that their friends could join. However, we found that this created friction in the user experience, as users had to go through a tedious process to choose who to invite. Instead, we decided to simplify the process by allowing users to create **activities** that were categorized by **activity types** (ex. "Gym", "Chill", "Hiking"). This allowed users to quickly create an activity and have all of their friends who were interested in that activity type notified.
 
@@ -103,14 +105,16 @@ We decided to pivot the app to focus more on **activities types** rather than ev
   caption="The new prototypes for Spawn v1, released on the app store."
 />
 
-## Implementation
+### We aim to foster casual user behaviour
 
-We hoped to build a user culture such that whenever a user is doing something like going to the gym or relaxing at the park, they could announce that to their friend network in a few button taps. From there, all of their friends would see what they were up to, when it was happening, and where it was going to be through our map feature.
+Whenever a user is doing something like going to the gym or relaxing at the park, they could announce that to their friend network in a few button taps. From there, all of their friends would see what they were up to, when it was happening, and where it was going to be through our map feature.
 
 We built the app using **SwiftUI** for mobile and **Java** + **Springboot** + **MySQL** for the backend. We used **Firebase** for account verification and push notifications. We leveraged the iOS native **MapKit** framework for our geolocation features.
 
 ---
 
-# Where we are now
+#### NEXT STEPS
+
+# We're still working out some kinks.
 
 Our team has recently launched the beta of our app on the **app store**. We've reached **105** total users and are hoping to gather more feedback as our app grows. Check it out at the links below!
