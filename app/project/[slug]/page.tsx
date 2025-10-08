@@ -44,7 +44,7 @@ export default async function Page({
   return (
     <>
       <ScrollToTop />
-      <main className="relative lg:justify-start justify-center min-h-screen h-screen w-full mt-32 md:px-[16vw]">
+      <main className="relative lg:justify-start justify-center min-h-screen h-screen w-full mt-24 md:px-[8vw]">
         <div className="flex flex-col gap-4 w-full mb-16">
           <div className="flex flex-col md:flex-row justify-between gap-4 md:items-end">
             <div className="tracking-tighter">
@@ -78,7 +78,7 @@ export default async function Page({
 
           <MediaPreview
             src={metadata.image}
-            className="rounded-lg flex h-64 md:h-[24rem] w-full my-4"
+            className="flex h-64 md:h-[24rem] w-full my-4"
           />
 
           <div className="tracking-tight text-md md:text-xl font-regular">

@@ -2,19 +2,25 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
-import { NavBar } from "@/components/NavBar";
-import { Toaster } from "@/components/ui/toaster";
-import { ThemeToggle } from "@/components/ThemeToggle";
-import { nanumPenScript, onest } from "@/lib/fonts";
+import { Toaster } from "sonner"
+import { nanumPenScript, rethinkSans } from "@/lib/fonts";
+import { Sidebar } from "@/components/Sidebar";
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | Ethan Hansen',
-    default: 'Ethan Hansen',
+    template: "%s | Ethan Hansen",
+    default: "Ethan Hansen",
   },
   description:
     "Ethan's Design Engineer Portfolio - showcasing design, engineering, and business projects with a focus on creativity and innovation.",
-  keywords: ["Ethan", "Hansen", "Portfolio", "Design", "Engineering", "Business"],
+  keywords: [
+    "Ethan",
+    "Hansen",
+    "Portfolio",
+    "Design",
+    "Engineering",
+    "Business",
+  ],
   openGraph: {
     title: "Ethan's Portfolio",
     description:
@@ -35,36 +41,38 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Ethan's Portfolio",
-    description:
-      "Design, engineering, and business projects by Ethan.",
-    images: ["https://rvkf0y9jdjpjjuzl.public.blob.vercel-storage.com/portfolio-preview.png"],
+    description: "Design, engineering, and business projects by Ethan.",
+    images: [
+      "https://rvkf0y9jdjpjjuzl.public.blob.vercel-storage.com/portfolio-preview.png",
+    ],
   },
   alternates: {
     canonical: "https://www.ethanthansen.com",
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${onest.variable} ${nanumPenScript.variable} font-sans antialiased`}>
+      <body
+        className={`${rethinkSans.className} ${nanumPenScript.variable} font-sans antialiased`}
+      >
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           disableTransitionOnChange
         >
-          <div className="relative z-20 mx-6 lg:mx-24">
-            <NavBar />
-            {children}
+          <div className="relative z-20 flex flex-row">
+            {/* <NavBar /> */}
+            <Sidebar />
+            <div className="px-8 md:px-16 md:ml-48 w-full">{children}</div>
           </div>
-          <div className="fixed bottom-4 right-4 z-[999]">
-            <ThemeToggle />
-          </div>
-          <Toaster />
+          <Toaster richColors position="bottom-center"/>
         </ThemeProvider>
       </body>
     </html>

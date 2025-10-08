@@ -15,7 +15,7 @@ interface MDXImageProps extends ImageProps {
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     Image: (props: MDXImageProps) => (
-      <div className="my-12 rounded-lg">
+      <div className="my-12">
         <Image {...props} alt={props.alt || ""} />{" "}
         {props.caption && (
           <p className="text-xs text-muted-foreground mt-2">
@@ -28,7 +28,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
 
     Video: ({ src, caption }: { src: string; caption?: string }) => (
       <div className="my-12">
-        <div className="rounded-xl overflow-hidden">
+        <div className="overflow-hidden">
           <ClientVideo src={src} className="w-full" />
         </div>
         {caption && (

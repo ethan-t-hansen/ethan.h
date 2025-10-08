@@ -28,8 +28,8 @@ export default function ProjectLinkButton({ item }: { item: ExternalLink }) {
   return (
     <Link href={url} target="_blank">
       <button
-        className="flex flex-row gap-2 w-fit items-center px-4 py-2 border border-foreground/20 rounded-full
-      shadow-[inset_0_-1px_8px_rgba(100,100,100,0.6)] hover:bg-white/10 bg-background transition-all duration-500 group"
+        className="flex flex-row gap-2 w-fit items-center px-4 py-2 border border-foreground/20
+      dark:shadow-[inset_0_-1px_8px_rgba(100,100,100,0.6)] shadow-[inset_0_-1px_8px_rgba(200,200,200,0.6)] hover:bg-white/10 bg-background transition-all duration-500 group"
       >
         {icon && icon}
         <span className="relative inline-flex overflow-hidden text-sm">

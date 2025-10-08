@@ -38,7 +38,7 @@ export default function ScrollGallery() {
             alt=""
             width={400}
             height={400}
-            className="flex-shrink-0 object-cover rounded-lg"
+            className="flex-shrink-0 object-cover"
           />
           ))}
         </motion.div>
@@ -52,7 +52,7 @@ export default function ScrollGallery() {
             alt=""
             width={400}
             height={400}
-            className="flex-shrink-0 object-cover rounded-lg"
+            className="flex-shrink-0 object-cover "
           />
           ))}
         </motion.div>
@@ -66,7 +66,7 @@ export default function ScrollGallery() {
             alt=""
             width={400}
             height={400}
-            className="flex-shrink-0 object-cover rounded-lg"
+            className="flex-shrink-0 object-cover "
           />
           ))}
         </motion.div>
@@ -80,7 +80,7 @@ export default function ScrollGallery() {
             alt=""
             width={400}
             height={400}
-            className="flex-shrink-0 object-cover rounded-lg"
+            className="flex-shrink-0 object-cover "
           />
           ))}
         </motion.div>

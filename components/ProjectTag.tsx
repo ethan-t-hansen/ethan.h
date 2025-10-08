@@ -28,17 +28,17 @@ export function ProjectTag({ tagKey }: ProjectTagProps) {
 
 
   const color =
-    theme === "light" ? darkenColor(borderColor, 0.4) : borderColor;
+    theme === "light" ? darkenColor(borderColor, 0.2) : borderColor;
 
   return (
     <span
       className="inline-flex items-center gap-1.5 rounded-full px-2 py-1 text-xs font-medium border backdrop-blur-sm text-nowrap"
       style={{
-        border: `1px solid ${borderColor}`,
-        background: `${borderColor}2A`,
+        border: `1px solid ${color}`,
+        background: `${borderColor}4A`,
       }}
     >
-      <Icon className={cn(`w-3 h-3 shrink-0`)} style={{ color: borderColor }} />
+      <Icon className={cn(`w-3 h-3 shrink-0`)} style={{ color: color }} />
       <p style={{color: color }}>{label}</p>
     </span>
   );

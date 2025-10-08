@@ -34,6 +34,7 @@ export async function getAllProjects() {
     slug: string;
     title: string;
     role: string;
+    type: string
     tags: string[];
     previewImage: string;
     featured: boolean;
