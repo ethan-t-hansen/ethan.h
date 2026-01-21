@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggle";
+// import LofiPlayer from "./AudioPlayer";
 
 export function Sidebar() {
   const projects = [
@@ -62,6 +63,10 @@ export function Sidebar() {
 
   return (
     <>
+      {/* <div className="fixed bottom-0 right-0 m-4 z-50">
+        <LofiPlayer />
+      </div> */}
+
       <div className="md:hidden">
         {/* Mobile menu button */}
         <motion.button

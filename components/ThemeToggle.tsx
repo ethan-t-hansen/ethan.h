@@ -30,7 +30,7 @@ export function ThemeToggle() {
       variant="outline"
       size="icon"
       onClick={toggleTheme}
-      className="relative overflow-hidden shadow-lg"
+      className="relative overflow-hidden shadow-lg rounded-none"
     >
       <Sun
         className={`h-[1.2rem] w-[1.2rem] transition-all duration-300 ${

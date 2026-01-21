@@ -58,7 +58,15 @@ export const club_experience: Experience[] = [
 
 export const work_experience: Experience[] = [
   {
-    id: 1,
+    id: 2,
+    company: "OnDeck (YCW25)",
+    title: "Designer",
+    type: "Part-time",
+    date: "Jan 2026 - Current",
+    points: ["Sample"],
+  },
+  {
+    id: 2,
     company: "ICBC",
     title: "Design Engineer Intern",
     type: "Internship",
@@ -66,7 +74,7 @@ export const work_experience: Experience[] = [
     points: ["Sample"],
   },
   {
-    id: 2,
+    id: 3,
     company: "Moment Energy",
     title: "UI / UX Engineer Intern",
     type: "Internship",
@@ -74,21 +82,21 @@ export const work_experience: Experience[] = [
     points: ["Sample"],
   },
   {
-    id: 3,
+    id: 4,
     company: "Crown Agencies Secretariat (Government)",
     title: "UX & Digital Strategy Intern",
     type: "Internship",
     date: "Sept 2023 - Dec 2023",
     points: ["Sample"],
   },
-  {
-    id: 4,
-    company: "Ibbaka",
-    title: "Data Analytics Intern",
-    type: "Internship",
-    date: "May 2022 - Aug 2022",
-    points: ["Sample"],
-  },
+  // {
+  //   id: 4,
+  //   company: "Ibbaka",
+  //   title: "Data Analytics Intern",
+  //   type: "Internship",
+  //   date: "May 2022 - Aug 2022",
+  //   points: ["Sample"],
+  // },
 ];
 
 export const sandbox_projects = [

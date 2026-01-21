@@ -19,6 +19,13 @@ const experience = [
   //   colors: "from-[#4f39f6] to-[#aea7ee]",
   // },
   {
+    company: "OnDeck AI (YC25)",
+    title: "Designer",
+    website: "https://ondeckai.com/",
+    period: "2026",
+    colors: "from-[#0d0d0d] to-[#adabab]",
+  },
+  {
     company: "ICBC",
     title: "Software Developer",
     website: "https://icbc.com/",
@@ -40,13 +47,13 @@ const experience = [
     period: "2023",
     colors: "from-[#013367] to-[#2d6caf]",
   },
-  {
-    company: "Ibbaka",
-    title: "Data Analytics",
-    website: "https://www.ibbaka.com/",
-    period: "2025",
-    colors: "from-yellow-500 to-yellow-400",
-  },
+  // {
+  //   company: "Ibbaka",
+  //   title: "Data Analytics",
+  //   website: "https://www.ibbaka.com/",
+  //   period: "2025",
+  //   colors: "from-yellow-500 to-yellow-400",
+  // },
 ];
 
 const extracurriculars = [
@@ -54,8 +61,15 @@ const extracurriculars = [
     company: "UBCMA",
     title: "Software Lead",
     website: "https://www.ubcma.ca/",
-    period: "2025",
+    period: "2026",
     colors: "from-[#ef3050] to-[#ffa7b5]",
+  },
+  {
+    company: "BizTech",
+    title: "Sr. Dev & Designer",
+    website: "https://www.ubcbiztech.com/",
+    period: "2026",
+    colors: "from-[#4CC8BD] to-[#00081c]",
   },
   {
     company: "Sauder JDC West",
@@ -63,13 +77,6 @@ const extracurriculars = [
     website: "https://www.instagram.com/sauder.jdcwest/",
     period: "2025",
     colors: "from-[#ffe9ab] to-[#ffdd81]",
-  },
-  {
-    company: "BizTech",
-    title: "Sr. Dev & Designer",
-    website: "https://www.ubcbiztech.com/",
-    period: "2025",
-    colors: "from-[#4CC8BD] to-[#00081c]",
   },
   {
     company: "NSCC",

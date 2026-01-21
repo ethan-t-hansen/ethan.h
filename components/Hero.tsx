@@ -8,7 +8,7 @@ export default function Hero() {
         <p>
           {"Hey! I'm Ethan, a developer with a curiousity for human-computer interaction and a passion for motion + interface design. I enjoy crafting unique approaches that solve real issues."}
         </p>
-        <p>{"Currently studying Business + Computer Science @ UBC."}</p>
+        <p>{"Currently leading design at OnDeck AI (YC S25)."}</p>
       </div>
     </div>
   );
