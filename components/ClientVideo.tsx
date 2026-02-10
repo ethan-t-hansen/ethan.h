@@ -15,7 +15,7 @@ export default function ClientVideo({
       loop
       disableRemotePlayback
       playsInline
-      className="pointer-events-none touch-none select-none w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+      className="pointer-events-none touch-none select-none w-full h-full object-cover group-hover:scale-[1.02] transition-all duration-200 ease-out"
       controlsList="noplaybackrate nodownload nofullscreen"
       disablePictureInPicture
       onLoadedData={onLoadedData}

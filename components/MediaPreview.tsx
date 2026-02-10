@@ -31,7 +31,7 @@ export default function MediaPreview({ src, className, width, height }: { src: s
           height={height || 1080}
           onLoad={() => setIsLoading(false)}
           className={clsx(
-            "transition-all duration-500 w-full h-full object-cover group-hover:scale-105",
+            "transition-all duration-200 ease-out w-full h-full object-cover group-hover:scale-[1.02]",
             isLoading ? "opacity-0" : "opacity-100"
           )}
         />

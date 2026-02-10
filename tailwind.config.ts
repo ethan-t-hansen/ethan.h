@@ -91,8 +91,8 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-onest)"],
-        serif: ["var(--font-ibm-plex-serif)"],
+        sans: ["var(--font-crimson-pro)", "serif"],
+        serif: ["var(--font-crimson-pro)", "serif"],
       },
       keyframes: {
         glow: {

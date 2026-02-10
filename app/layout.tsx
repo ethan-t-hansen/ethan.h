@@ -3,7 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
 import { Toaster } from "sonner"
-import { nanumPenScript, rethinkSans } from "@/lib/fonts";
+import { crimsonPro } from "@/lib/fonts";
 import { Sidebar } from "@/components/Sidebar";
 
 export const metadata: Metadata = {
@@ -60,17 +60,16 @@ export default async function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${rethinkSans.className} ${nanumPenScript.variable} font-sans antialiased`}
+        className={`${crimsonPro.className} ${crimsonPro.variable} font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           disableTransitionOnChange
         >
-          <div className="relative z-20 flex flex-row">
-            {/* <NavBar /> */}
+          <div className="relative z-20">
             <Sidebar />
-            <div className="px-8 md:px-16 md:ml-48 w-full">{children}</div>
+            <div className="max-w-[571px] px-6 mx-0 sm:px-0 sm:mx-auto mt-4 mb-8 w-full">{children}</div>
           </div>
           <Toaster richColors position="bottom-center"/>
         </ThemeProvider>

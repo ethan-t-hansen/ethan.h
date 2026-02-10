@@ -1,313 +1,153 @@
 "use client";
 
+import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUpRight, Menu, X } from "lucide-react";
 import Link from "next/link";
-import { ThemeToggle } from "./ThemeToggle";
-// import LofiPlayer from "./AudioPlayer";
+import { ArrowUpRight } from "lucide-react";
+
+const menuItems = [
+  { href: "/about", label: "about" },
+  { href: "/sandbox", label: "sandbox" },
+  {
+    href: "https://8gjt2hpyoydupxo2.public.blob.vercel-storage.com/resume.pdf",
+    label: "cv",
+    external: true,
+  },
+];
 
 export function Sidebar() {
-  const projects = [
-    {
-      name: "Design",
-      children: [
-        { name: "BluePrint", href: "/project/blueprint" },
-        { name: "Spawn", href: "/project/spawn" },
-        { name: "ProductX", href: "/project/productx" },
-        { name: "VanDwelling", href: "/project/vancouver-dwelling" },
-      ],
-    },
-    {
-      name: "Development",
-      children: [
-        { name: "MA Portal", href: "/project/membership-portal" },
-        { name: "BizTag", href: "/project/biztag" },
-        { name: "BizTech Web", href: "/project/bt-web-v2" },
-      ],
-    },
-  ];
-
   const [isOpen, setIsOpen] = useState(false);
 
-  const menuItems = [
-    { href: "/about", label: "About" },
-    { href: "/sandbox", label: "Sandbox" },
-    {
-      href: "https://8gjt2hpyoydupxo2.public.blob.vercel-storage.com/resume.pdf",
-      label: "CV",
+  const backgroundVariants = {
+    hidden: {
+      clipPath: "inset(0 0 100% 0)",
     },
-  ];
-
-  const contactLinks = [
-    { label: "Mail", href: "mailto:ethan.t.hansen@gmail.com" },
-    { label: "GitHub", href: "https://github.com/ethan-t-hansen" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/ethanth/" },
-    { label: "Twitter", href: "https://twitter.com/ethanthansen" },
-  ];
-
-  // Calculate cumulative delays for proper cascading
-  const baseDelay = 0.05;
-  const itemDelay = 0.04;
-
-  let delayCounter = 0;
-  const getDelay = () => {
-    const delay = delayCounter * itemDelay + baseDelay;
-    delayCounter++;
-    return delay;
+    visible: {
+      clipPath: "inset(0 0 0% 0)",
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut",
+      },
+    },
+    exit: {
+      clipPath: "inset(0 0 100% 0)",
+      transition: {
+        duration: 0.4,
+        ease: "easeInOut",
+      },
+    },
   };
 
-  // Mobile view
-  // Reset counter for each render
-  delayCounter = 0;
+  const menuItemVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.2,
+        delay: 0.2 + i * 0.05,
+        ease: "easeOut",
+      },
+    }),
+    exit: (i: number) => ({
+      opacity: 0,
+      y: -10,
+      transition: {
+        duration: 0.2,
+        delay: (menuItems.length - i) * 0.02,
+        ease: "easeIn",
+      },
+    }),
+  };
 
   return (
-    <>
-      {/* <div className="fixed bottom-0 right-0 m-4 z-50">
-        <LofiPlayer />
-      </div> */}
-
-      <div className="md:hidden">
-        {/* Mobile menu button */}
-        <motion.button
-          onClick={() => setIsOpen(!isOpen)}
-          className="fixed bottom-6 right-6 z-50 bg-foreground text-background p-2 shadow-lg"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          {isOpen ? <X size={16} /> : <Menu size={16} />}
-        </motion.button>
-
-        {/* Mobile menu overlay */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
-              animate={{ opacity: 1, backdropFilter: "blur(8px)" }}
-              exit={{ opacity: 0, backdropFilter: "blur(0px)" }}
-              transition={{ duration: 0.3 }}
-              className="fixed inset-0 z-40 bg-background"
-            >
-              <motion.div
-                initial={{ opacity: 0, filter: "blur(10px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0, filter: "blur(10px)" }}
-                transition={{ duration: 0.3 }}
-                className="flex flex-col h-full overflow-y-auto p-8 pt-16"
-              >
-                {/* Logo */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                  animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                  transition={{ delay: getDelay(), duration: 0.4 }}
-                  className="mb-12"
-                >
-                  <Link
-                    href="/"
-                    className="inline-block rounded bg-muted px-3 py-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <span className="text-base font-semibold">ethan.h</span>
-                  </Link>
-                </motion.div>
-
-                {/* Main Navigation */}
-                <nav className="space-y-4 mb-12">
-                  {menuItems.map((item) => (
-                    <motion.div
-                      key={item.href}
-                      initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                      transition={{
-                        delay: getDelay(),
-                        duration: 0.4,
-                        ease: "easeOut",
-                      }}
-                    >
-                      <Link
-                        href={item.href}
-                        className="flex flex-row text-2xl font-medium hover:text-muted-foreground"
-                        target={item.label == "CV" ? "_blank" : ""}
-                        onClick={() => setIsOpen(false)}
-                      >
-                        {item.label}
-                        {item.label == "CV" && (
-                          <ArrowUpRight size={16} className="mt-1 ml-1" />
-                        )}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </nav>
-
-                {/* Project Sections */}
-                {projects.map((section) => (
-                  <div key={section.name} className="mb-12">
-                    <motion.h3
-                      initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                      animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                      transition={{
-                        delay: getDelay(),
-                        duration: 0.4,
-                        ease: "easeOut",
-                      }}
-                      className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4"
-                    >
-                      {section.name}
-                    </motion.h3>
-                    <div className="space-y-3">
-                      {section.children?.map((child) => (
-                        <motion.div
-                          key={child.href || child.name}
-                          initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                          transition={{
-                            delay: getDelay(),
-                            duration: 0.4,
-                            ease: "easeOut",
-                          }}
-                        >
-                          <Link
-                            href={child.href || "#"}
-                            className="block text-base hover:text-muted-foreground/80 "
-                            onClick={() => setIsOpen(false)}
-                          >
-                            {child.name}
-                          </Link>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
-                ))}
-
-                {/* Contact Section */}
-                <div>
-                  <motion.h3
-                    initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{
-                      delay: getDelay(),
-                      duration: 0.4,
-                      ease: "easeOut",
-                    }}
-                    className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-4"
-                  >
-                    Contact
-                  </motion.h3>
-                  <div className="space-y-3">
-                    {contactLinks.map((link) => (
-                      <motion.div
-                        key={link.href}
-                        initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                        animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                        transition={{
-                          delay: getDelay(),
-                          duration: 0.4,
-                          ease: "easeOut",
-                        }}
-                      >
-                        <Link
-                          href={link.href}
-                          className="block text-base hover:text-muted-foreground "
-                          onClick={() => setIsOpen(false)}
-                        >
-                          {link.label}
-                        </Link>
-                      </motion.div>
-                    ))}
-                  </div>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20, filter: "blur(10px)" }}
-                    animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                    transition={{
-                      delay: getDelay(),
-                      duration: 0.4,
-                      ease: "easeOut",
-                    }}
-                    className="mt-12"
-                  >
-                    <ThemeToggle />
-                  </motion.div>
-                </div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
-      {/* Desktop View */}
-      <aside className="w-48 min-w-48 border-r bg-background p-6 fixed top-0 left-0 h-screen overflow-y-auto hidden md:block">
-        {/* Logo */}
-        <div className="mb-8">
-          <Link href="/" className="inline-block bg-muted px-3 py-2">
-            <span className="text-base font-semibold">ethan.h</span>
+    <div className="relative z-40 w-full">
+      <header className="py-4">
+        <div className="px-6 mx-0 sm:px-0 sm:mx-auto w-full flex h-14 max-w-[571px] items-center justify-between text-sm text-[#3b3b3b]">
+          <Link href="/" className="hover:opacity-70 transition-opacity">
+            ethan.h
           </Link>
-        </div>
 
-        {/* Main Navigation */}
-        <nav className="space-y-1 mb-8">
-          {menuItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              target={item.label == "CV" ? "_blank" : ""}
-              className="flex flex-row text-lg font-medium hover:text-muted-foreground"
-            >
-              {item.label}
-              {item.label == "CV" && (
-                <ArrowUpRight size={12} className="mt-1.5 ml-1" />
-              )}
-            </Link>
-          ))}
-        </nav>
-
-        <div className="w-full border-muted-foreground/20 border-t my-8" />
-
-        {/* Project Sections */}
-        {projects.map((section) => (
-          <div key={section.name} className="mb-8">
-            <>
-              <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-                {section.name}
-              </h3>
-              <div className="space-y-1">
-                {section.children?.map((child) => (
-                  <Link
-                    key={child.href || child.name}
-                    href={child.href || "#"}
-                    className="block text-sm hover:text-muted-foreground "
-                  >
-                    {child.name}
-                  </Link>
-                ))}
-              </div>
-            </>
-          </div>
-        ))}
-
-        <div className="w-full border-muted-foreground/20 border-t my-8" />
-
-        {/* Contact Section */}
-        <div className="">
-          <h3 className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-3">
-            Contact
-          </h3>
-          <div className="space-y-1">
-            {contactLinks.map((link) => (
+          <nav className="hidden items-center gap-8 sm:flex">
+            {menuItems.map((item) => (
               <Link
-                key={link.href}
-                href={link.href}
-                className="block text-sm hover:text-muted-foreground "
+                key={item.href}
+                href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
+                className="inline-flex items-center gap-1 hover:opacity-70 transition-opacity"
               >
-                {link.label}
+                {item.label}
+                {item.external && <ArrowUpRight size={12} />}
               </Link>
             ))}
-          </div>
-        </div>
+          </nav>
 
-        <div className="absolute bottom-4 left-4">
-          <ThemeToggle />
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="relative z-[101] h-8 w-8 sm:hidden"
+            aria-label="Toggle menu"
+          >
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="flex h-6 w-6 flex-col items-center justify-center">
+                <span
+                  className={`absolute h-[1px] bg-foreground transition-all duration-300 ${
+                    isOpen ? "w-6 translate-y-0 rotate-45" : "w-6 -translate-y-1"
+                  }`}
+                />
+                <span
+                  className={`absolute h-[1px] w-6 bg-foreground transition-all duration-300 ${
+                    isOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`absolute h-[1px] bg-foreground transition-all duration-300 ${
+                    isOpen ? "w-6 translate-y-0 -rotate-45" : "w-6 translate-y-1"
+                  }`}
+                />
+              </div>
+            </div>
+          </button>
         </div>
-      </aside>
-    </>
+      </header>
+
+      <AnimatePresence mode="wait">
+        {isOpen && (
+          <motion.div
+            variants={backgroundVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="fixed inset-0 z-50 bg-background md:hidden"
+          >
+            <div className="h-full w-full overflow-auto pt-32">
+              <div className="space-y-6 px-6">
+                {menuItems.map((item, index) => (
+                  <motion.div
+                    key={item.href}
+                    custom={index}
+                    variants={menuItemVariants}
+                    initial="hidden"
+                    animate="visible"
+                    exit="exit"
+                  >
+                    <Link
+                      href={item.href}
+                      onClick={() => setIsOpen(false)}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noopener noreferrer" : undefined}
+                      className="inline-flex items-center gap-3 text-4xl"
+                    >
+                      {item.label}
+                      {item.external && <ArrowUpRight className="h-10 w-10" />}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }

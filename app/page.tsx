@@ -5,13 +5,17 @@ import ProjectGrid from "@/components/ProjectGrid";
 
 export default function Page() {
   return (
-    <main className="lg:justify-start justify-center items-start space-y-8 mt-16 md:mt-24">
-      <Hero />
-      <ContactTeamsSection />
+    <main className="w-full">
+      <div className="space-y-4">
+        <Hero />
 
-      <div className="w-full border-muted-foreground/20 border-t pb-8"/>
-      <ProjectGrid />
-      <div className="mt-16 h-1"/>
+        <div className="w-full border-t border-dashed border-muted-foreground/20" />
+        <ContactTeamsSection />
+
+        <div className="w-full border-t border-dashed border-muted-foreground/20" />
+        <ProjectGrid />
+      </div>
+      <div className="mt-16 h-1" />
       <Footer />
     </main>
   );

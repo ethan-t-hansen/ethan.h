@@ -1,14 +1,26 @@
 export default function Hero() {
   return (
-    <div className="w-full flex flex-col justify-center items-start">
-      <div className="flex flex-col gap-2 text-2xl font-medium tracking-tight mb-4 md:w-3/4">
-        {"Welcome to my creative archive."}
+    <div className="w-full flex flex-col justify-center items-start text-[#3b3b3b]">
+      <div className="flex flex-col gap-2 text-xl font-medium tracking-tight mb-4 w-full">
+        {"Ethan’s creative archive."}
       </div>
-      <div className="lg:w-3/4 space-y-4 text-sm">
+      <div className="w-full space-y-4 text-sm tracking-[-0.01em]">
         <p>
-          {"Hey! I'm Ethan, a developer with a curiousity for human-computer interaction and a passion for motion + interface design. I enjoy crafting unique approaches that solve real issues."}
+          {
+            "I’m a designer with a background in software systems and a passion for human interaction design. I enjoy crafting solutions to unique issues that invoke inspiration in others."
+          }
         </p>
-        <p>{"Currently leading design at OnDeck AI (YC S25)."}</p>
+        <p>
+          {"Currently leading brand and human interaction design at "}
+          <a
+            href="https://ondeckai.com/"
+            target="_blank"
+            className="underline text-[#898989]"
+          >
+            OnDeck AI (YC S25)
+          </a>
+          .
+        </p>
       </div>
     </div>
   );
