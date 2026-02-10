@@ -2,6 +2,7 @@
 
 import MediaPreview from "./MediaPreview";
 import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 export interface ProjectCardProps {
   slug: string;
@@ -11,6 +12,14 @@ export interface ProjectCardProps {
   type?: string;
   previewImage: string;
   featured: boolean;
+  date?: string;
+  className?: string;
+  yearLabel?: string;
+  isDimmed?: boolean;
+  isActive?: boolean;
+  showMeta?: boolean;
+  onHoverStart?: () => void;
+  onHoverEnd?: () => void;
 }
 
 export function ProjectCard({
@@ -20,52 +29,50 @@ export function ProjectCard({
   // type,
   // tags,
   previewImage,
+  className,
+  yearLabel,
+  isDimmed = false,
+  isActive = false,
+  showMeta = true,
+  onHoverStart,
+  onHoverEnd,
 }: ProjectCardProps) {
   return (
     <Link
       href={`/project/${slug}`}
-      className="block w-full group transition-all duration-500 break-inside-avoid"
+      className={cn(
+        "block w-full group transition-all duration-200 ease-out break-inside-avoid relative",
+        className,
+        isDimmed && "opacity-20",
+        isActive && "z-30 opacity-100"
+      )}
+      onMouseEnter={onHoverStart}
+      onMouseLeave={onHoverEnd}
     >
-      <div className="relative overflow-hidden aspect-[5/3]">
+      <div className="relative overflow-hidden aspect-[5/3] bg-background transition-all duration-200 ease-out">
         <MediaPreview
           src={previewImage}
           className="absolute flex h-full w-full"
         />
-
-        <div className="opacity-0 absolute bottom-0 left-0 group-hover:opacity-100 transition-opacity duration-200 w-full h-full bg-gradient-to-t from-black/80 to-black/0">
-          {/* <div className="absolute flex flex-col bottom-4 left-4">
-            <span className="text-white font-medium text-lg">
-              {title}
-            </span>
-            <span className="text-neutral-400 text-sm">
-              {role}
-            </span>
-          </div> */}
-        </div>
-
-        <div className="opacity-0 group-hover:opacity-60 transition-opacity duration-300">
-          <span className="absolute left-0 top-0 h-2 w-2">
-            <span className="absolute left-0 top-0 h-[1px] w-4 bg-foreground" />
-            <span className="absolute left-0 top-0 h-4 w-[1px] bg-foreground" />
-          </span>
-          <span className="absolute right-0 top-0 h-2 w-2">
-            <span className="absolute right-0 top-0 h-[1px] w-4 bg-foreground" />
-            <span className="absolute right-0 top-0 h-4 w-[1px] bg-foreground" />
-          </span>
-          <span className="absolute bottom-0 left-0 h-2 w-2">
-            <span className="absolute bottom-0 left-0 h-[1px] w-4 bg-foreground" />
-            <span className="absolute left-0 bottom-0 h-4 w-[1px] bg-foreground" />
-          </span>
-          <span className="absolute bottom-0 right-0 h-2 w-2">
-            <span className="absolute bottom-0 right-0 h-[1px] w-4 bg-foreground" />
-            <span className="absolute right-0 bottom-0 h-4 w-[1px] bg-foreground" />
-          </span>
-        </div>
       </div>
-      <div className="flex flex-col mt-4">
-        <span className="text-foreground font-medium text-base">{title}</span>
-        <span className="text-muted-foreground text-xs">{role}</span>
-      </div>
+
+      {isActive && (
+        <>
+          <div className="absolute left-[-8px] top-[-10px] border border-[#e3e3e3] bg-white px-3 py-2 text-[12px] text-black transition-all duration-200 ease-out">
+            {title}
+          </div>
+          <div className="absolute bottom-[-10px] right-[-8px] border border-[#e3e3e3] bg-white px-3 py-2 text-[12px] text-black transition-all duration-200 ease-out">
+            {yearLabel ?? "2026"}
+          </div>
+        </>
+      )}
+
+      {showMeta && (
+        <div className="flex flex-col my-2 -space-y-0.5">
+          <span className="text-foreground font-normal text-sm">{title}</span>
+          <span className="text-muted-foreground font-thin text-[11px]">{role}</span>
+        </div>
+      )}
     </Link>
   );
 }

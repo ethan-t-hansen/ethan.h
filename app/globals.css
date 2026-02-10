@@ -77,7 +77,7 @@
 
 body {
   overflow-x: hidden;
-  font-family: sans-serif; 
+  font-family: var(--font-crimson-pro), serif;
 }
 
 .no-scrollbar {

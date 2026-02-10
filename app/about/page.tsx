@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import PolaroidGallery from "@/components/PolaroidGallery";
 import { cn } from "@/lib/utils";
 
@@ -18,11 +19,11 @@ export default function Page() {
   );
 
   return (
-    <main className="relative lg:pr-48 lg:justify-start justify-center max-w-[900px] min-h-screen py-24">
-      <h3 className="text-2xl font-regular mb-4 font-sans tracking-tight">
+    <main className="relative justify-center">
+      <h3 className="text-xl font-regular mb-4 font-sans tracking-tight">
         A little bit more about who I am.
       </h3>
-      <div className="font-light text-sm space-y-3 text-zinc-900 dark:text-zinc-200 mb-12">
+      <div className="font-light text-sm space-y-3 text-zinc-900 dark:text-zinc-200 mb-4">
         <p>
           I&apos;m exploring and building at the intersection of product design
           and fullstack app development. Currently studying Business + Computer

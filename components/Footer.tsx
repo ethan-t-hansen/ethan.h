@@ -1,17 +1,22 @@
+'use client'
+
 import { ArrowUp } from "lucide-react";
-import Link from "next/link";
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   return (
-    <div className="w-full text-xs flex flex-row justify-between items-center mt-32 font-light pb-16">
-      <p>© OCT 2025</p>
-      <Link
-        href="#"
+    <div className="w-full text-xs flex flex-row justify-between items-center mt-16 font-light">
+      <p>© January 2026</p>
+      <button
+        onClick={scrollToTop}
         className="flex flex-row gap-1 text-foreground hover:underline items-center"
       >
-        BACK TO TOP
-        <ArrowUp height={16} width={16} />
-      </Link>
+        Back to top
+        <ArrowUp height={8} width={8} />
+      </button>
     </div>
   );
 }

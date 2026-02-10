@@ -1,8 +1,7 @@
 "use client";
 
-import { ArrowUpRight, Copy } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
-import { toast } from "sonner";
 
 const contactLinks = [
   { label: "GitHub", href: "https://github.com/ethan-t-hansen" },
@@ -19,131 +18,67 @@ const experience = [
   //   colors: "from-[#4f39f6] to-[#aea7ee]",
   // },
   {
-    company: "OnDeck AI (YC25)",
-    title: "Designer",
+    company: "OnDeck AI (YC S25)",
     website: "https://ondeckai.com/",
-    period: "2026",
-    colors: "from-[#0d0d0d] to-[#adabab]",
+    period: "2026 -",
+    colors: "bg-[#3b3b3b]",
   },
   {
     company: "ICBC",
-    title: "Software Developer",
     website: "https://icbc.com/",
     period: "2025",
-    colors: "from-sky-400 to-sky-300",
+    colors: "bg-[#56ddff]",
   },
   {
     company: "Moment Energy",
-    title: "UI/UX Engineer",
     website: "https://www.momentenergy.com/",
     period: "2024",
-    colors: "from-[#a23263] to-[#c25d89]",
-  },
-  {
-    company: "Ministry of Finance",
-    title: "UX Strategy",
-    website:
-      "https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/central-government-agencies/crown-agencies-secretariat",
-    period: "2023",
-    colors: "from-[#013367] to-[#2d6caf]",
-  },
-  // {
-  //   company: "Ibbaka",
-  //   title: "Data Analytics",
-  //   website: "https://www.ibbaka.com/",
-  //   period: "2025",
-  //   colors: "from-yellow-500 to-yellow-400",
-  // },
-];
-
-const extracurriculars = [
-  {
-    company: "UBCMA",
-    title: "Software Lead",
-    website: "https://www.ubcma.ca/",
-    period: "2026",
-    colors: "from-[#ef3050] to-[#ffa7b5]",
-  },
-  {
-    company: "BizTech",
-    title: "Sr. Dev & Designer",
-    website: "https://www.ubcbiztech.com/",
-    period: "2026",
-    colors: "from-[#4CC8BD] to-[#00081c]",
-  },
-  {
-    company: "Sauder JDC West",
-    title: "VP Marketing",
-    website: "https://www.instagram.com/sauder.jdcwest/",
-    period: "2025",
-    colors: "from-[#ffe9ab] to-[#ffdd81]",
-  },
-  {
-    company: "NSCC",
-    title: "VP Marketing",
-    website: "https://www.thenscc.com/",
-    period: "2023",
-    colors: "from-[#013367] to-[#2d6caf]",
+    colors: "bg-[#c26297]",
   },
 ];
 
 export default function ContactTeamsSection() {
-  const handleCopyEmail = (email: string) => {
-    navigator.clipboard.writeText(email);
-    toast.success("Copied email to your clipboard.");
-  };
-
   return (
-    <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-16">
+    <div className="w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {/* Contact Section */}
-      <div className="">
+      <div>
         <div className="flex items-center mb-2">
-          <h2 className="text-sm font-semibold">Contact</h2>
+          <h2 className="text-sm font-medium">Contact</h2>
         </div>
-        <div className="space-y-1">
+        <div className="-space-y-0.5">
           {contactLinks.map((link, index) => (
             <Link
               key={link.label}
               href={link.href}
               target="_blank"
-              className="flex items-center justify-between group hover:text-muted-foreground"
+              className="flex items-center justify-between group hover:text-muted-foreground text-sm"
             >
-              <span className="flex items-center gap-2 text-sm">
-                <span className="text-muted-foreground text-[12px]">
+              <span className="flex items-center gap-1.5">
+                <span className="text-muted-foreground text-[8px] w-2 text-center">
                   {index + 1}
                 </span>
                 <span>{link.label}</span>
               </span>
-              <ArrowUpRight className="w-4 h-4" />
+              <ArrowUpRight className="w-3 h-3" />
             </Link>
           ))}
-          <div
-            className="flex items-center justify-between group hover:text-muted-foreground cursor-pointer"
-            onClick={() => handleCopyEmail("ethan.t.hansen@gmail.com")}
-          >
-            <span className="flex items-center gap-2 text-sm">
-              <span className="text-muted-foreground text-[12px]">4</span>
-              <span>Mail</span>
-            </span>
-            <Copy className="w-3 h-3 m-0.5" />
-          </div>
         </div>
       </div>
 
-      {/* Teams Section */}
-      <div className="">
+      <div>
         <div className="flex items-center mb-2">
-          <h2 className="text-sm font-semibold">Experience</h2>
+          <h2 className="text-sm font-medium">Experience</h2>
         </div>
-        <div className="space-y-1">
+        <div className="-space-y-0.5">
           {experience.map((exp) => (
             <div
               key={exp.company}
-              className="flex items-start justify-between gap-2 group text-sm"
+              className="flex items-start justify-between gap-2 text-sm"
             >
-              <div className="flex gap-3">
+              <div className="flex items-center gap-2">
                 <div
-                  className={`w-2 h-2 mt-1.5 bg-gradient-to-br aspect-square ${exp.colors}`}
+                  className={`w-1.5 h-1.5 mt-0.5 aspect-square ${exp.colors}`}
                 />
                 <span>
                   <a
@@ -152,46 +87,14 @@ export default function ContactTeamsSection() {
                     target="_blank"
                   >
                     {exp.company}
-                  </a>{" "}
-                  - {exp.title}
+                  </a>
                 </span>
               </div>
-              <span className="text-muted-foreground">{exp.period}</span>
+              <span>{exp.period}</span>
             </div>
           ))}
         </div>
       </div>
-
-      {/* Teams Section */}
-      <div className="">
-        <div className="flex items-center mb-2">
-          <h2 className="text-sm font-semibold">Extracurriculars</h2>
-        </div>
-        <div className="space-y-1">
-          {extracurriculars.map((exp) => (
-            <div
-              key={exp.company}
-              className="flex items-start justify-between gap-2 group text-sm"
-            >
-              <div className="flex gap-3">
-                <div
-                  className={`w-2 h-2 mt-1.5 bg-gradient-to-br aspect-square ${exp.colors}`}
-                />
-                <span>
-                  <a
-                    href={exp.website}
-                    className="hover:text-muted-foreground"
-                    target="_blank"
-                  >
-                    {exp.company}
-                  </a>{" "}
-                  - {exp.title}
-                </span>
-              </div>
-              <span className="text-muted-foreground">{exp.period}</span>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   );

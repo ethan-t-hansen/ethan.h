@@ -16,6 +16,7 @@ export type PostMetadata = Metadata & {
   tags: string[];
   role: string;
   team: string[];
+  date?: string;
   additionalLinks?: ExternalLink[];
   image: string;
 };
@@ -40,55 +41,45 @@ export default async function Page({
   }
 
   const components = getMDXComponents();
+  const parsedYear = metadata.date
+    ? new Date(metadata.date).getFullYear()
+    : undefined;
+  const projectYear =
+    parsedYear && !Number.isNaN(parsedYear) ? String(parsedYear) : null;
+
+  const projectRole = metadata.role;
 
   return (
     <>
       <ScrollToTop />
-      <main className="relative lg:justify-start justify-center min-h-screen h-screen w-full lg:w-[48rem] mx-auto mt-16 md:mt-24">
-        <div className="flex flex-col gap-4 w-full mb-8">
-          <div className="flex flex-col md:flex-row justify-between gap-4 md:items-end">
-            <div className="tracking-tighter">
-              <h1 className="uppercase text-2xl md:text-3xl font-medium">
-                {metadata?.title}
-              </h1>
-
-              <div className="flex flex-col md:flex-row gap-2 text-muted-foreground capitalize tracking-normal mt-1 text-xs md:text-s font-regular">
-                <p>Role: {metadata?.role}</p>
-                {metadata?.team && <p className="md:block hidden"> | </p>}
-                {metadata?.team && (
-                  <div>
-                    Team:{" "}
-                    {metadata?.team?.map((name, idx) => (
-                      <p className="inline gap-2" key={idx}>
-                        {name}
-                        {idx !== metadata?.team?.length - 1 && <>,</>}{" "}
-                      </p>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap gap-1">
-            {metadata?.tags.map((tag, index) => (
-              <ProjectTag key={index} tagKey={tag} />
-            ))}
-          </div>
-
+      <main className="relative mx-auto min-h-screen w-full justify-center lg:justify-start">
+        <div className="flex flex-col gap-1 w-full mb-8">
           <MediaPreview
             src={metadata.image}
             className="flex h-64 md:h-[24rem] w-full my-4"
           />
 
-          <div className="tracking-tight text-md md:text-xl font-regular">
-            {metadata?.description}
-          </div>
+          <p className="text-2xl font-regular tracking-tight mb-4">
+              {metadata.description}
+            </p>
 
-          <div className="flex flex-wrap gap-2">
-            {metadata?.additionalLinks?.map((item, index) => (
-              <ProjectLinkButton item={item} key={index} />
-            ))}
+          <div className="flex flex-row gap-16 border-b border-border border-dashed pb-10">
+
+          <div className="">
+              <p className="text-xs text-muted-foreground">Title</p>
+              <p className="text-sm">{metadata.title ?? "—"}</p>
+            </div>
+
+          <div className="">
+              <p className="text-xs text-muted-foreground">Role</p>
+              <p className="text-sm">{projectRole ?? "—"}</p>
+            </div>
+
+
+            <div className="">
+              <p className="text-xs text-muted-foreground">Year</p>
+              <p className="text-sm">{projectYear ?? "—"}</p>
+            </div>
           </div>
         </div>
 
