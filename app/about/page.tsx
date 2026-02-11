@@ -2,21 +2,21 @@ import Footer from "@/components/Footer";
 import PolaroidGallery from "@/components/PolaroidGallery";
 import { cn } from "@/lib/utils";
 
+type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
+export const CustomLink = (props: CustomLinkProps) => (
+  <a
+    {...props}
+    target="_blank"
+    className={cn(
+      "relative inline-block text-blue-400 transition-colors duration-200 ease-in-out hover:text-blue-300",
+      "after:absolute after:left-0 after:bottom-[3px] after:h-[1px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-300 after:transition-transform after:duration-300 after:ease-out",
+      "hover:after:scale-x-100"
+    )}
+  />
+);
+
 export default function Page() {
-
-  type CustomLinkProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
-
-  const CustomLink = (props: CustomLinkProps) => (
-    <a
-      {...props}
-      target="_blank"
-      className={cn(
-        "relative inline-block text-blue-400 transition-colors duration-200 ease-in-out hover:text-blue-300",
-        "after:absolute after:left-0 after:bottom-[3px] after:h-[1px] after:w-full after:origin-left after:scale-x-0 after:bg-blue-300 after:transition-transform after:duration-300 after:ease-out",
-        "hover:after:scale-x-100"
-      )}
-    />
-  );
 
   return (
     <main className="relative justify-center">

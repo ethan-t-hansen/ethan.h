@@ -54,8 +54,8 @@ export default function ContactTeamsSection() {
               target="_blank"
               className="flex items-center justify-between group hover:text-muted-foreground text-sm"
             >
-              <span className="flex items-center gap-1.5">
-                <span className="text-muted-foreground text-[8px] w-2 text-center">
+              <span className="flex flex-row items-start justify-start gap-0.5">
+                <span className="text-muted-foreground text-[8px] w-2 text-center -mt-0.5">
                   {index + 1}
                 </span>
                 <span>{link.label}</span>

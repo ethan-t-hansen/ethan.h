@@ -1,3 +1,6 @@
+import { CustomLink } from "@/app/about/page";
+import Link from "next/link";
+
 export default function Hero() {
   return (
     <div className="w-full flex flex-col justify-center items-start text-[#3b3b3b]">
@@ -12,14 +15,9 @@ export default function Hero() {
         </p>
         <p>
           {"Currently leading brand and human interaction design at "}
-          <a
-            href="https://ondeckai.com/"
-            target="_blank"
-            className="underline text-[#898989]"
-          >
-            OnDeck AI (YC S25)
-          </a>
-          .
+          <Link href="https://ondeckai.com/" target="_blank" className="hover:underline hover:text-muted-foreground text-muted-foreground/60">
+            {"OnDeck AI (YC S25)."}
+          </Link>
         </p>
       </div>
     </div>
