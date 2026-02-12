@@ -116,14 +116,9 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     strong: ({ children, ...props }) => (
       <strong
         {...props}
-        // className={cn(
-        //   props.className,
-        //   "relative font-semibold bg-gradient-to-t from-sky-300 to-zinc-50 bg-clip-text text-transparent",
-        //   "shadow-white shadow-lg"
-        //   // "before:absolute before:inset-0 before:bg-gradient-to-r before:from-sky-300 before:via-purple-400 before:to-pink-400 before:blur-sm before:opacity-10 before:content-[''] before:rounded-sm"
-        // )}
-        className="font-semibold bg-gradient-to-tr from-sky-600 dark:from-sky-300 dark:to-sky-100 to-sky-400 bg-clip-text text-transparent 
-             [text-shadow:0_0_6px_rgba(223,233,235,0.4),0_0_12px_rgba(223,233,235,0.3)] overflow-visible"
+        // className="font-medium bg-gradient-to-tr from-blue-600 dark:from-blue-300 dark:to-blue-100 to-blue-400 bg-clip-text text-transparent 
+        //      [text-shadow:0_0_6px_rgba(223,233,235,0.4),0_0_12px_rgba(223,233,235,0.3)] overflow-visible"
+        className="font-semibold"
       >
         {children}
       </strong>

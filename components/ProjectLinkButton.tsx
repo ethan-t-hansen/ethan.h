@@ -10,37 +10,31 @@ export default function ProjectLinkButton({ item }: { item: ExternalLink }) {
 
   switch (linkType) {
     case LinkType.GITHUB:
-      icon = <FaGithub size={16} />;
+      icon = <FaGithub size={10} />;
       break;
     case LinkType.FIGMA:
-      icon = <FaFigma size={16} />;
+      icon = <FaFigma size={10} />;
       break;
     case LinkType.WEBSITE:
-      icon = <Globe size={16} />;
+      icon = <Globe size={10} />;
       break;
     case LinkType.APPLE:
-      icon = <FaApple size={16} />;
+      icon = <FaApple size={10} />;
       break;
     default:
       break;
   }
 
   return (
-    <Link href={url} target="_blank">
-      <button
-        className="flex flex-row gap-2 w-fit items-center px-4 py-2 border border-foreground/20
-      dark:shadow-[inset_0_-1px_8px_rgba(100,100,100,0.6)] shadow-[inset_0_-1px_8px_rgba(200,200,200,0.6)] hover:bg-white/10 bg-background transition-all duration-500 group"
-      >
-        {icon && icon}
-        <span className="relative inline-flex overflow-hidden text-sm">
-          <div className="translate-y-0 skew-y-0 transition-all duration-500 group-hover:-translate-y-[150%] group-hover:skew-y-12">
-            {cta}
-          </div>
-          <div className="absolute translate-y-[150%] skew-y-12 transition-all duration-500 group-hover:translate-y-0 group-hover:skew-y-0 ">
-            {cta}
-          </div>
-        </span>
-      </button>
+    <Link
+      href={url}
+      target="_blank"
+      className="flex flex-row gap-1 w-fit items-center bg-background hover:underline"
+    >
+      {icon && icon}
+      <div className="text-sm leading-[0px]">
+        {cta}
+      </div>
     </Link>
   );
 }

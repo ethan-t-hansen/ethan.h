@@ -7,7 +7,6 @@ import { ArrowUpRight } from "lucide-react";
 
 const menuItems = [
   { href: "/about", label: "about" },
-  { href: "/sandbox", label: "sandbox" },
   {
     href: "https://8gjt2hpyoydupxo2.public.blob.vercel-storage.com/resume.pdf",
     label: "cv",
@@ -15,7 +14,7 @@ const menuItems = [
   },
 ];
 
-export function Sidebar() {
+export function SiteNavbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const backgroundVariants = {
@@ -25,15 +24,15 @@ export function Sidebar() {
     visible: {
       clipPath: "inset(0 0 0% 0)",
       transition: {
-        duration: 0.4,
-        ease: "easeInOut",
+        duration: 0.3,
+        ease: "easeOut",
       },
     },
     exit: {
       clipPath: "inset(0 0 100% 0)",
       transition: {
-        duration: 0.4,
-        ease: "easeInOut",
+        duration: 0.3,
+        ease: "easeOut",
       },
     },
   };
@@ -75,10 +74,10 @@ export function Sidebar() {
                 href={item.href}
                 target={item.external ? "_blank" : undefined}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-1 hover:opacity-70 transition-opacity"
+                className="inline-flex items-center gap-0.5 hover:opacity-70 transition-opacity"
               >
                 {item.label}
-                {item.external && <ArrowUpRight size={12} />}
+                {item.external && <ArrowUpRight size={8} className="mb-1"/>}
               </Link>
             ))}
           </nav>
@@ -136,10 +135,10 @@ export function Sidebar() {
                       onClick={() => setIsOpen(false)}
                       target={item.external ? "_blank" : undefined}
                       rel={item.external ? "noopener noreferrer" : undefined}
-                      className="inline-flex items-center gap-3 text-4xl"
+                      className="inline-flex items-center gap-1 text-4xl"
                     >
                       {item.label}
-                      {item.external && <ArrowUpRight className="h-10 w-10" />}
+                      {item.external && <ArrowUpRight size={16}/>}
                     </Link>
                   </motion.div>
                 ))}
