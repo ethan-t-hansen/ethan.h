@@ -26,8 +26,8 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
       </div>
     ),
 
-    Video: ({ src, caption }: { src: string; caption?: string }) => (
-      <div className="my-12">
+    Video: ({ src, caption, className }: { src: string; caption?: string; className?: string }) => (
+      <div className={cn("my-12", className)}>
         <div className="overflow-hidden">
           <ClientVideo src={src} className="w-full" />
         </div>

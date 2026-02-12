@@ -21,84 +21,6 @@ export interface Experience {
   points: string[];
 }
 
-export const club_experience: Experience[] = [
-  {
-    id: 1,
-    company: "BizTech",
-    title: "Senior Developer",
-    type: "University Club",
-    date: "May 2025 - Current",
-    points: ["Sample"],
-  },
-  {
-    id: 2,
-    company: "UBC Marketing Association",
-    title: "VP Technology & Development",
-    type: "University Club",
-    date: "May 2024 - Current",
-    points: ["Sample"],
-  },
-  {
-    id: 3,
-    company: "Sauder JDC West",
-    title: "VP Marketing & Design",
-    type: "University Club",
-    date: "May 2024 - Current",
-    points: ["Sample"],
-  },
-  {
-    id: 4,
-    company: "NSCC",
-    title: "VP Marketing & Design",
-    type: "University Club",
-    date: "May 2023 - Dec 2023",
-    points: ["Sample"],
-  },
-];
-
-export const work_experience: Experience[] = [
-  {
-    id: 2,
-    company: "OnDeck (YCW25)",
-    title: "Designer",
-    type: "Part-time",
-    date: "Jan 2026 - Current",
-    points: ["Sample"],
-  },
-  {
-    id: 2,
-    company: "ICBC",
-    title: "Design Engineer Intern",
-    type: "Internship",
-    date: "Jan 2025 - Aug 2025",
-    points: ["Sample"],
-  },
-  {
-    id: 3,
-    company: "Moment Energy",
-    title: "UI / UX Engineer Intern",
-    type: "Internship",
-    date: "Sept 2024 - Dec 2024",
-    points: ["Sample"],
-  },
-  {
-    id: 4,
-    company: "Crown Agencies Secretariat (Government)",
-    title: "UX & Digital Strategy Intern",
-    type: "Internship",
-    date: "Sept 2023 - Dec 2023",
-    points: ["Sample"],
-  },
-  // {
-  //   id: 4,
-  //   company: "Ibbaka",
-  //   title: "Data Analytics Intern",
-  //   type: "Internship",
-  //   date: "May 2022 - Aug 2022",
-  //   points: ["Sample"],
-  // },
-];
-
 export type SandboxProject = {
   id: string;
   title: string;
@@ -115,6 +37,12 @@ const baseSandboxProjects = [
     description:
       "Timelines, state machines, and mouse interaction with rive runtime (2kb file size)",
     image: "/projects/sandbox/rive-cloud/video.webm",
+  },
+  {
+    id: "jdc-west",
+    title: "Sauder JDC West",
+    description: "Brand & social media design for Sauder's Jeux du Commerce West team.)",
+    image: "/projects/sandbox/jdc-west/varsity-patch.jpg",
   },
   {
     id: "rive-subscribe",
@@ -162,8 +90,8 @@ const baseSandboxProjects = [
     id: "nscc",
     title: "NSCC",
     description:
-      "Branding & social media management for UBC's largest consulting focused case competition and conference.",
-    image: "/projects/sandbox/nscc/cover.png",
+      "Branding & marketing strategy for western Canada's largest strategy consulting case competition and conference.",
+    image: "/projects/sandbox/nscc/merch-logo.jpg",
   },
 ];
 
@@ -171,5 +99,5 @@ export const sandbox_projects: SandboxProject[] = baseSandboxProjects.map(
   (project) => ({
     ...project,
     galleryFolder: `/projects/sandbox/${project.id}`,
-  })
+  }),
 );

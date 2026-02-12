@@ -56,18 +56,18 @@ export default async function Page({
       <main className="relative mx-auto min-h-screen w-full justify-center lg:justify-start">
         <PageLoadCascade stagger={0.05}>
           <div className="flex flex-col gap-1 w-full mb-8 border-b border-border border-dashed pb-8">
-            <div className="flex flex-row gap-16">
-              <div className="">
+            <div className="flex flex-col gap-2 sm:flex-row sm:gap-8">
+              <div className="min-w-0">
                 <p className="text-xs text-muted-foreground">Title</p>
-                <p className="text-sm">{metadata.title ?? "—"}</p>
+                <p className="text-sm break-words">{metadata.title ?? "—"}</p>
               </div>
 
-              <div className="">
+              <div className="min-w-0">
                 <p className="text-xs text-muted-foreground">Role</p>
-                <p className="text-sm">{projectRole ?? "—"}</p>
+                <p className="text-sm break-words">{projectRole ?? "—"}</p>
               </div>
 
-              <div className="">
+              <div className="min-w-0">
                 <p className="text-xs text-muted-foreground">Year</p>
                 <p className="text-sm">{projectYear ?? "—"}</p>
               </div>
