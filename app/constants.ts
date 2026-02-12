@@ -41,7 +41,7 @@ const baseSandboxProjects = [
   {
     id: "jdc-west",
     title: "Sauder JDC West",
-    description: "Brand & social media design for Sauder's Jeux du Commerce West team.)",
+    description: "Brand & social media design for Sauder's Jeux du Commerce West team.",
     image: "/projects/sandbox/jdc-west/varsity-patch.jpg",
   },
   {
