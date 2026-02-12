@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <div className="w-full text-xs flex flex-row justify-between items-center mt-16 font-light">
-      <p>© January 2026</p>
+      <p>© February 2026</p>
       <button
         onClick={scrollToTop}
         className="flex flex-row gap-1 text-foreground hover:underline items-center"

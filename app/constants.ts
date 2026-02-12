@@ -99,68 +99,77 @@ export const work_experience: Experience[] = [
   // },
 ];
 
-export const sandbox_projects = [
+export type SandboxProject = {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  galleryFolder: string;
+  gallery?: string[];
+};
+
+const baseSandboxProjects = [
   {
-    id: "8",
+    id: "rive-cloud",
     title: "Interactive Cloud Avatar Animation",
     description:
       "Timelines, state machines, and mouse interaction with rive runtime (2kb file size)",
-    image: "/projects/video/rive-cloud-demo.webm",
+    image: "/projects/sandbox/rive-cloud/video.webm",
   },
   {
-    id: "2",
+    id: "rive-subscribe",
     title: "Rive Subscribe Animation",
     description:
-      "Recreating YouTube's Lottie web animation in Rive. An uncompressed Lottie file is JSON formatted, which is versatile but bloated compared to Rive’s optimized binary files, leading to a ~1500% decrease in file size (240kb -> 16kb)",
-    image: "/projects/video/subscribe-animation.webm",
+      "Recreating YouTube's Lottie web animation in Rive (240kb -> 16kb file size reduction).",
+    image: "/projects/sandbox/rive-subscribe/video.webm",
   },
   {
-    id: "3",
+    id: "mis-night",
     title: "MIS Night",
     description:
-      "Branding for BizTech's kick-off networking event, MIS Night, inviting 80+ attendees and delegates for a night of good eats and casual conversation.",
-    image: "/projects/mis-night.png",
+      "Branding for BizTech's kick-off networking event, MIS Night, inviting 100+ attendees and delegates for a night of good eats and casual conversation.",
+    image: "/projects/sandbox/mis-night/cover.jpg",
   },
   {
-    id: "1",
+    id: "blueprint",
     title: "BluePrint 3D Logo animation",
     description:
       "Spinning 3D animation for BluePrint's promotional material. Used in event advertisement and as a static logo asset.",
-    image: "/projects/video/blueprint-logo.webm",
+    image: "/projects/sandbox/blueprint/logo-video.webm",
   },
   {
-    id: "4",
+    id: "tri-mentorship",
     title: "Tri-Mentorship",
     description:
       "Branding & visual asset design for BizTech's legacy tri-mentorship program.",
-    image: "/projects/tri-mentorship.png",
+    image: "/projects/sandbox/tri-mentorship/cover.jpg",
   },
   {
-    id: "5",
+    id: "dataverse",
     title: "Dataverse",
     description:
       "Branding & visual asset design for BizTech's premier data conference.",
-    image: "/projects/dataverse.png",
+    image: "/projects/sandbox/dataverse/cover.jpg",
   },
   {
-    id: "9",
+    id: "rive-feather",
     title: "Fluted Glass Feathering with Rive",
     description:
       "Design exploration for Rive's feathering capabilities (13kb file size)",
-    image: "/projects/video/rive-feathering-glass-demo.webm",
+    image: "/projects/sandbox/rive-feather/video.webm",
   },
   {
-    id: "6",
+    id: "nscc",
     title: "NSCC",
     description:
       "Branding & social media management for UBC's largest consulting focused case competition and conference.",
-    image: "/projects/nscc.png",
-  },
-  {
-    id: "7",
-    title: "LPL Merch Front",
-    description:
-      "Design exploration for league of legends e-sports digital storefront",
-    image: "/projects/lpl.png",
+    image: "/projects/sandbox/nscc/cover.png",
   },
 ];
+
+export const sandbox_projects: SandboxProject[] = baseSandboxProjects.map(
+  (project) => ({
+    ...project,
+    galleryFolder: `/projects/sandbox/${project.id}`,
+  })
+);

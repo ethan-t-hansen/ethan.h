@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import type React from "react";
 import { Toaster } from "sonner"
 import { crimsonPro } from "@/lib/fonts";
-import { Sidebar } from "@/components/Sidebar";
+import { SiteNavbar } from "@/components/SiteNavbar";
 
 export const metadata: Metadata = {
   title: {
@@ -68,8 +68,8 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative z-20">
-            <Sidebar />
-            <div className="max-w-[571px] px-6 mx-0 sm:px-0 sm:mx-auto mt-4 mb-8 w-full">{children}</div>
+            <SiteNavbar />
+            <div className="max-w-[571px] px-6 mx-0 sm:px-0 sm:mx-auto mt-4 mb-8 w-full tracking-tight">{children}</div>
           </div>
           <Toaster richColors position="bottom-center"/>
         </ThemeProvider>

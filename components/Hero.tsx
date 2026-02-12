@@ -7,15 +7,15 @@ export default function Hero() {
       <div className="flex flex-col gap-2 text-xl font-medium tracking-tight mb-4 w-full">
         {"Ethan’s creative archive."}
       </div>
-      <div className="w-full space-y-4 text-sm tracking-[-0.01em]">
+      <div className="w-full space-y-4 text-sm tracking-tight">
         <p>
           {
-            "I’m a designer with a background in software systems and a passion for human interaction design. I enjoy crafting solutions to unique issues that invoke inspiration in others."
+            "I’m a designer with a foundation in software engineering and a passion for human interaction design. I enjoy tackling creative problems and discovering solutions that inspire others."
           }
         </p>
         <p>
-          {"Currently leading brand and human interaction design at "}
-          <Link href="https://ondeckai.com/" target="_blank" className="hover:underline hover:text-muted-foreground text-muted-foreground/60">
+          {"Currently leading visual design at "}
+          <Link href="https://ondeckai.com/" target="_blank" className="hover:underline hover:text-muted-foreground text-muted-foreground/80">
             {"OnDeck AI (YC S25)."}
           </Link>
         </p>
