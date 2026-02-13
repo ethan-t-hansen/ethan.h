@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "Ethan's Portfolio",
     images: [
       {
-        url: "https://rvkf0y9jdjpjjuzl.public.blob.vercel-storage.com/portfolio-preview.png",
+        url: "https://rvkf0y9jdjpjjuzl.public.blob.vercel-storage.com/ethan-portfolio.png",
         width: 1200,
         height: 630,
         alt: "Ethan's Portfolio Preview",
