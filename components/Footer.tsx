@@ -16,7 +16,7 @@ export default function Footer() {
         height={64}
         src="/icon/maltese-lazy.png"
         alt="Dog"
-        className="h-fit md:w-16 w-10 pointer-events-none fixed left-1/2 ml-2 md:ml-8 bottom-0 select-none block"
+        className="h-fit md:w-16 w-10 pointer-events-none absolute left-1/2 ml-2 md:ml-8 bottom-0 select-none block"
       />
       <button
         onClick={scrollToTop}
