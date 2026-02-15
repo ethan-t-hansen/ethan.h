@@ -1,6 +1,7 @@
 'use client'
 
 import { ArrowUp } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -10,10 +11,12 @@ export default function Footer() {
   return (
     <div className="relative mt-16 flex w-full flex-row items-center justify-between overflow-visible text-xs font-light">
       <p>© February 2026</p>
-      <img
+      <Image
+        width={64}
+        height={64}
         src="/icon/maltese-lazy.png"
         alt="Dog"
-        className="h-fit md:w-16 w-10 pointer-events-none absolute left-[60%] bottom-0 select-none"
+        className="h-fit md:w-16 w-10 pointer-events-none fixed left-1/2 ml-2 md:ml-8 bottom-0 select-none block"
       />
       <button
         onClick={scrollToTop}
