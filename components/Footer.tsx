@@ -8,8 +8,13 @@ export default function Footer() {
   };
 
   return (
-    <div className="w-full text-xs flex flex-row justify-between items-center mt-16 font-light">
+    <div className="relative mt-16 flex w-full flex-row items-center justify-between overflow-visible text-xs font-light">
       <p>© February 2026</p>
+      <img
+        src="/icon/maltese-lazy.png"
+        alt="Dog"
+        className="h-fit md:w-16 w-10 pointer-events-none absolute left-[60%] bottom-0 select-none"
+      />
       <button
         onClick={scrollToTop}
         className="flex flex-row gap-1 text-foreground hover:underline items-center"
